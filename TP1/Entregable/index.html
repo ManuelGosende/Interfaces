@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <h1>Paint 2020</h1>
+    </header>
+
+    <button onclick="document.querySelector('.openImage').click();">Elegir archivo</button>
+    <input class = "openImage" type="file" style="display: none;">
+
+    <section>
+        <form action="" class="herramienta">
+            <input type="radio" id="pintar" name="pintar" value="pintar">
+            <label for="male">Pintar</label><br>
+            <input type="radio" id="borrar" name="borrar" value="borrar">
+            <label for="female">Borrar</label><br>
+        </form>
+    </section>
+
+    <section>
+        <form action="" class="pinceles">
+            <input type="radio" id="three" name="pixel" value="3">
+            <label for="male">3 Pixeles</label><br>
+            <input type="radio" id="five" name="pixel" value="5">
+            <label for="other">5 Pixeles</label>
+        </form>
+    </section>
+
+    <canvas id = "canvas" width = "800" height = "500" style="border:1px solid #d3d3d3;"></canvas>
+
+    <a href="" id="download">Descargar</a>
+
+    <script src="js/js.js"></script>
+
+</body>
+</html>

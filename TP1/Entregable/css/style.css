@@ -1,0 +1,32 @@
+header {
+    width: 100%;
+    border-bottom: #ec7944 solid 10px;
+    font-family: 'Pacifico', cursive;
+    padding-left: 5%;
+    color: #ffffff;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: rgb(75, 75, 75);
+    box-sizing: border-box;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.pinceles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2%;
+}
+
+#download {
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgb(75, 75, 75);
+}
