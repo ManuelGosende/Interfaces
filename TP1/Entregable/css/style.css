@@ -12,10 +12,20 @@ header {
     box-sizing: border-box;
 }
 
-section {
+h2 {
+    font-family: 'Pacifico', cursive;
+    display: flex;
+    justify-content: center;
+    color:#ec7944;
+}
+
+section, .herramienta {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 120%;
+    color:rgb(75, 75, 75);  
 }
 
 .pinceles {
