@@ -22,8 +22,9 @@
             <input type="radio" name="accion" value="borrar">
             <label for="female">Borrar</label><br>
             <button class= "getImage" onclick="document.querySelector('.openImage').click();">Subir imagen</button>
-            <input class = "openImage" type="file" style="display: none;" name="none">
+            <input class= "openImage" type="file" style="display: none;" name="none">
             <button class= "clean">Limpiar lienzo</button>
+            <!-- <button class= "originalImage">Reestablecer imagen original</button> -->
         </div>
     </section>
 
@@ -45,6 +46,14 @@
         <button id="sepia">Sepia</button>
         <button id="brillo">Brillo</button>
         <button id="binarizacion">Binarización</button>
+        <button id="grises">Escala de grises</button>
+    </section>
+
+    <h2>Retoques fotográficos</h2>
+
+    <section>
+        <button id="saturacion">Saturación</button>
+        <button id="desenfoque">Desenfoque</button>
     </section>
 
     <canvas id = "canvas" width = "800" height = "500" style="border:1px solid #d3d3d3;"></canvas>

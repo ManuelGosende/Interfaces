@@ -2,27 +2,56 @@
 
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
-let selectImage = document.querySelector('.openImage');
-
-// ---------------------------- LIMPIAR LIENZO ----------------------------- //
-
-let cleanCanvas = document.querySelector('.clean');
-cleanCanvas.addEventListener("click", function() {
-    for(let x = 0; x < canvas.width; x++) {
-        for(let y = 0; y < canvas.height; y++) {
-            executionTool(x, y, 255, 255, 255);
-        }
-    }
-    ctx.putImageData(imageData, 0, 0);
-})
+let imageData = ctx.createImageData(canvas.width, canvas.height);
+let originalImage = [];
+// recoverImage();
 
 let r = 0;
 let g = 0;
 let b = 0;
 
-let imageData = ctx.createImageData(canvas.width, canvas.height);
+// ---------------------------- GUARDAR IMAGEN ORIGINAL ----------------------------- //
+
+function saveOriginalImage() {
+    originalImage = [];
+    for(let x = 0; x < canvas.width - 1; x++) {
+        for(let y = 0; y < canvas.height; y++) {
+            originalImage[originalImage.length] = getRed(x, y);
+            originalImage[originalImage.length] = getGreen(x, y);
+            originalImage[originalImage.length] = getBlue(x, y);
+            originalImage[originalImage.length] = getAlpha(x, y);
+        }
+    }
+}
+
+function resetImage() {
+    let pos = 0;
+    for(let x = 0; x < canvas.width - 1; x++) {
+        for(let y = 0; y < canvas.height; y++) {
+            setPixel(imageData, x, y, originalImage[pos], originalImage[pos+1], originalImage[pos+2], originalImage[pos+3]);
+            pos += 4;
+        }
+    }
+    ctx.putImageData(imageData, 0, 0);
+}
+
+// ---------------------------- LIMPIAR LIENZO ----------------------------- //
+
+let cleanCanvas = document.querySelector('.clean');
+cleanCanvas.addEventListener("click", function() {
+    originalImage = [];
+    imageData = ctx.createImageData(canvas.width, canvas.height);
+    ctx.putImageData(imageData, 0, 0);
+});
 
 // ---------------------------- CARGAR IMAGEN ----------------------------- //
+
+let selectImage = document.querySelector('.openImage');
+
+/*function clickInput() {
+    document.querySelector('.openImage').click();
+}
+document.querySelector('.openImage').addEventListener("click", clickInput);*/
 
 selectImage.onchange = e => {
     let file = e.target.files[0];
@@ -34,7 +63,7 @@ selectImage.onchange = e => {
             let content = readerEvent.target.result;
             let image = new Image();
             image.src = content;
-    
+
             image.onload = function () {
                 let imageAspectRatio = (1.0 * this.height) / this.width;
                 let imageScaledWidth = canvas.width;
@@ -45,24 +74,41 @@ selectImage.onchange = e => {
                 imageData = ctx.getImageData(0, 0, imageScaledWidth, imageScaledHeight);
                 
                 ctx.putImageData(imageData, 0, 0);
+                saveOriginalImage();
+                //recoverImage();
             }
         }
+        
     }
     else {
-        alert("El archivo que quiere subir no es válido.")
+        alert("El archivo que quiere subir no es válido.");
     }
 }
 
-function areImg(image){
+function areImg(image) {    
     let isImg = true;
     let imgType = image['type'];
     if(imgType == 'image/jpeg' || imgType == 'image/jpg' || imgType =='image/png') {
         isImg = true;
-    }else{
+    } else {
         isImg = false;
     }
     return isImg;
 }
+
+/*function recoverImage() {
+    if(originalImage != []) {
+        document.querySelector('.originalImage').style.visibility = 'hidden';
+    } 
+    else {
+        document.querySelector('.originalImage').style.visibility = 'visible';
+        let getOriginalImage = document.querySelector('.originalImage');
+        getOriginalImage.addEventListener("click", function() {
+            resetImage();
+        });
+    }
+}*/
+
 
 // ---------------------------- DESCARGAR IMAGEN ----------------------------- //
 
@@ -191,7 +237,7 @@ function setPixel(imageData, x, y, r, g, b, a) {
     imageData.data[index + 3] = a;
 }
 
-// ---------------------------- FILTROS ----------------------------- //
+// ---------------------------- FILTROS BÁSICOS ----------------------------- //
 
 function getRed(x, y) {
     let index = (x + y * imageData.width) * 4;
@@ -208,7 +254,17 @@ function getBlue(x, y) {
     return imageData.data[index + 2];
 }
 
+function getAlpha(x, y) {
+    let index = (x + y * imageData.width) * 4;
+    return imageData.data[index+3];
+}
+
+// -- NEGATIVO
+
 document.getElementById("negativo").addEventListener("click", function() {
+    if(originalImage != []) {
+        resetImage();
+    }
     for(let x = 0; x < canvas.width - 1; x++) {
         for(let y = 0; y < canvas.height; y++) {
             let newRed = 255 - getRed(x, y);
@@ -221,7 +277,12 @@ document.getElementById("negativo").addEventListener("click", function() {
     ctx.putImageData(imageData, 0, 0);
 });
 
-/*document.getElementById("sepia").addEventListener("click", function() {
+// -- SEPIA
+
+document.getElementById("sepia").addEventListener("click", function() {
+    if(originalImage != []) {
+        resetImage();
+    }
     for(let x = 0; x < canvas.width - 1; x++) {
         for(let y = 0; y < canvas.height; y++) {    
                 let average = Math.floor((getRed(x, y) + getGreen(x, y) + getBlue(x, y))/3);
@@ -232,33 +293,236 @@ document.getElementById("negativo").addEventListener("click", function() {
             }
         }
         ctx.putImageData(imageData, 0, 0);
-    });
+});
 
-    document.getElementById("brillo").addEventListener("click", function() {
-        let variation = 3;
-        for(let x = 0; x < canvas.width - 1; x++) {
-            for(let y = 0; y < canvas.height; y++) {
-                let newRed = Math.min(getRed(x, y) + variation, 255)
-                let newGreen = Math.min(getGreen(x, y) + variation, 255)
-                let newBlue = Math.min(getBlue(x, y) + variation, 255)
-                setPixel(imageData, x, y, newRed, newGreen, newBlue, 255)
+// -- BRILLO
+
+document.getElementById("brillo").addEventListener("click", function() {
+    if(originalImage != []) {
+        resetImage();
+    }
+    let variation = 25;
+    for(let x = 0; x < canvas.width - 1; x++) {
+        for(let y = 0; y < canvas.height; y++) {
+            let newRed = Math.min(getRed(x, y) + variation, 255);
+            let newGreen = Math.min(getGreen(x, y) + variation, 255);
+            let newBlue = Math.min(getBlue(x, y) + variation, 255);
+            setPixel(imageData, x, y, newRed, newGreen, newBlue, 255);
+        }
+    }
+    ctx.putImageData(imageData, 0, 0);
+});
+
+// -- BINARIZACIÓN
+
+document.getElementById("binarizacion").addEventListener("click", function(){
+    if(originalImage != []) {
+        resetImage();
+    }
+    let umbral = 50;
+    for(let x = 0; x < canvas.width - 1; x++) {
+        for(let y = 0; y < canvas.height; y++) {
+            let average = Math.floor((getRed(x, y) + getGreen(x, y) + getBlue(x, y))/3);
+            if(average > umbral) {
+                setPixel(imageData, x, y, 255, 255, 255, 255);
+            }else {
+                setPixel(imageData,x, y, 0, 0, 0, 255);
             }
         }
-        ctx.putImageData(imageData, 0, 0);
-    });
+    }
+    ctx.putImageData(imageData,0,0);
+});
 
-    document.getElementById("binarizacion").addEventListener("click", function(){
-        let umbral = 50;
-        for(let x = 0; x < canvas.width - 1; x++) {
-            for(let y = 0; y < canvas.height; y++) {
-                let average = Math.floor((getRed(x, y) + getGreen(x, y) + getBlue(x, y))/3);
-                if(average > umbral) {
-                    setPixel(imageData, x, y, 255, 255, 255, 255);
-                }else {
-                    setPixel(imageData,x, y, 0, 0, 0, 255);
+// -- ESCALA DE GRISES
+
+document.getElementById("grises").addEventListener("click", function() {
+    if(originalImage != []) {
+        resetImage();
+    }
+    for(let x = 0; x < canvas.width - 1; x++) {
+        for(let y = 0; y < canvas.height; y++) {
+            let newRed = getRed(x, y) * 0.2126;
+            let newGreen = getGreen(x, y) * 0.7152;
+            let newBlue = getBlue(x, y) * 0.0722;
+            let scale = newRed + newGreen + newBlue;
+            setPixel(imageData, x, y, scale, scale, scale, 255);
+        }
+    }
+    ctx.putImageData(imageData,0,0);
+});
+
+// ---------------------------- FILTROS COMPLEJOS ----------------------------- //
+
+
+// -- DESENFOQUE
+
+document.getElementById("desenfoque").addEventListener("click", function() {
+    if(originalImage != []) {
+        resetImage();
+    }
+    Filters.blur(imageData, matReference, false);
+});
+
+let matReference = [1/36, 1/36, 1/36,
+                    1/36, 1/36, 1/36,
+                    1/36, 1/36, 1/36,
+                    1/36, 1/36, 1/36,
+                    1/36, 1/36, 1/36,
+                    1/36, 1/36, 1/36,
+                    1/36, 1/36, 1/36,
+                    1/36, 1/36, 1/36,
+                    1/36, 1/36, 1/36,
+                    1/36, 1/36, 1/36,
+                    1/36, 1/36, 1/36,
+                    1/36, 1/36, 1/36 ];
+
+let Filters = {}
+Filters.tmpCanvas = document.createElement('canvas');
+Filters.tmpCtx = Filters.tmpCanvas.getContext('2d');
+
+Filters.createImageData = function(w,h) {
+    return this.tmpCtx.createImageData(w,h);
+};
+
+Filters.blur = function(imageData, matReference, opaque) {
+    let side = Math.round(Math.sqrt(matReference.length));
+    let halfSide = Math.floor(side/2);
+    let src = imageData.data;
+    let sw = imageData.width;
+    let sh = imageData.height;
+    let w = sw;
+    let h = sh;
+    let output = Filters.createImageData(w, h);
+    let dst = output.data;
+    let alphaFac = opaque ? 1 : 0;
+    for (let y=0; y<h; y++) {
+        for (let x=0; x<w; x++) {
+            let sy = y;
+            let sx = x;
+            let dstOff = (y*w+x)*4;
+            let r=0, g=0, b=0, a=0;
+            for (let cy=0; cy<side; cy++) {
+                for (let cx=0; cx<side; cx++) {
+                    let scy = sy + cy - halfSide;
+                    let scx = sx + cx - halfSide;
+                    if (scy >= 0 && scy < sh && scx >= 0 && scx < sw) {
+                        let srcOff = (scy*sw+scx)*4;
+                        let wt = matReference[cy*side+cx];
+                        r += src[srcOff] * wt;
+                        g += src[srcOff+1] * wt;
+                        b += src[srcOff+2] * wt;
+                        a += src[srcOff+3] * wt;
+                    }       
                 }
             }
+            dst[dstOff] = r;
+            dst[dstOff+1] = g;
+            dst[dstOff+2] = b;
+            dst[dstOff+3] = a + alphaFac*(255-a);
         }
-        ctx.putImageData(imageData,0,0);
-    });*/
+    }
+    imageData = output;
+    ctx.putImageData(imageData, 0, 0);
+};
 
+// -- SATURACIÓN
+
+document.getElementById("saturacion").addEventListener("click", function() {
+    if(originalImage != []) {
+        resetImage();
+    }
+    Filters.saturation();
+});
+
+Filters.saturation = function() {
+    for(let i = 0; i < canvas.width - 1; i++) {
+        for(let j = 0; j < canvas.height; j++) {
+            let red = getRed(i, j);
+            let green = getGreen(i, j);
+            let blue = getBlue(i, j);
+            let r = red/255;
+            let g = green/255;
+            let b = blue/255;
+            let cmax = Math.max(r, g, b); // Obtengo el más grande de los tres.
+            let cmin = Math.min(r, g, b); // Obtengo el menor de los tres.
+            let delta = cmax - cmin;
+            // Convierto en HSL
+            let hue = calculateHue(delta, cmax, r, g, b);
+            let light = calculateLight(cmax, cmin);
+            let sat = calculateSat(light, delta) + 0.2;
+            // Calculo el cxm
+            let c = calculateC(sat, light);
+            let x = getX(hue, c);
+            let m = light - (c/2);
+            let arrayNewRGB = calcularNewRGB(hue, c, x);
+            let r1 = arrayNewRGB[0];
+            let g1 = arrayNewRGB[1];
+            let b1 = arrayNewRGB[2];
+            let newRed = (r1 + m)*255;
+            let newGreen = (g1 + m)*255;
+            let newBlue = (b1 + m)*255; 
+            setPixel(imageData, i, j, newRed, newGreen, newBlue, 255);
+        }
+    }
+    ctx.putImageData(imageData,0,0)
+}
+
+function calcularNewRGB(hue, c, x) {
+    if(hue >= 0 && hue < 60) {
+        return [c, x, 0];
+    }else if (hue >= 60 && hue < 120) {
+        return [x, c, 0];
+    }else if (hue >= 120 && hue < 180) {
+        return [0, c, x];
+    }else if (hue >= 180 && hue < 240) {
+        return [0, x, c];
+    }else if (hue >= 240 && hue < 300) {
+        return [x, 0, c];
+    }else {
+        return [c, 0, x];
+    }
+}
+
+function getX(hue, c) {
+    let aux = ((hue / 60) % 2) - 1;
+    if (aux < 0) {
+        aux = aux * -1;
+    }
+    return c * (1 - aux);
+}
+
+function calculateC(sat, light) {
+    let aux = 2 * light - 1;
+    if (aux < 0) {
+        aux = aux * -1;
+    }
+    return (1 - aux) * sat;
+}
+
+function calculateHue(delta, cmax, r, g, b) {
+    if (delta == 0){
+        return 0
+    }else if (cmax == r) {
+        return Math.floor(60*(((g-b)/delta)%6));
+    }else if(cmax == g){
+        return Math.floor(60*(((b-r)/delta)+2));
+    }else{
+        return Math.floor(60*(((r-g)/delta)+4));
+    }
+}
+
+function calculateLight(cmax, cmin) {
+    return (cmax + cmin) / 2;
+}
+
+function calculateSat(light, delta) {
+    if (delta == 0) {
+        return 0;
+    }else {
+        let aux = (2 * light) -1;
+        if (aux < 0) {
+            aux = aux * -1;
+        }
+        return delta/(1-((2*light)-1));
+    }
+}
