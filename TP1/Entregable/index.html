@@ -6,6 +6,7 @@
     <title>Paint</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -24,9 +25,11 @@
             <button class= "getImage" onclick="document.querySelector('.openImage').click();">Subir imagen</button>
             <input class= "openImage" type="file" style="display: none;" name="none">
             <button class= "clean">Limpiar lienzo</button>
-            <!-- <button class= "originalImage">Reestablecer imagen original</button> -->
+            <button class= "originalImage">Reestablecer imagen original</button>
         </div>
     </section>
+
+    <h3>¿Tamaño de pixel?</h3>
 
     <section>
         <form action="" class="pinceles">
@@ -42,25 +45,34 @@
     <h2>¡Aplicá filtros a tu imagen!</h2>
 
     <section>
-        <button id="negativo">Negativo</button>
-        <button id="sepia">Sepia</button>
-        <button id="brillo">Brillo</button>
-        <button id="binarizacion">Binarización</button>
-        <button id="grises">Escala de grises</button>
+        <div class="filtroBasic">
+            <button id="negativo">Negativo</button>
+            <button id="sepia">Sepia</button>
+            <button id="brillo">Brillo</button>
+            <button id="binarizacion">Binarización</button>
+            <button id="grises">Escala de grises</button>
+        </div>
     </section>
 
     <h2>Retoques fotográficos</h2>
 
     <section>
-        <button id="saturacion">Saturación</button>
-        <button id="desenfoque">Desenfoque</button>
+        <div class="filtroComplex">
+            <button id="saturacion">Saturación</button>
+            <button id="desenfoque">Desenfoque</button>
+        </div>
     </section>
 
-    <canvas id = "canvas" width = "800" height = "500" style="border:1px solid #d3d3d3;"></canvas>
+    <picture>
+        <canvas id = "canvas" width = "700" height = "700" style="border:1px solid #d3d3d3;"></canvas>
+    </picture>
 
+    <a href="" id="download">¡Descargá tu imagen aquí!</a>
 
-
-    <a href="" id="download">Descargar</a>
+    <footer>
+        <p>Paint 2020</p>
+        <p>SEGUINOS EN LAS REDES! @paint</p>
+    </footer>
 
     <script src="js/js.js"></script>
 
