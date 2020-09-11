@@ -7,8 +7,16 @@ let canOriginalH = canvas.height;
 let imageData = ctx.createImageData(canvas.width, canvas.height);
 let originalImage = [];
 
+let filterBasic = document.querySelector('.filtroBasic');
+let filterComplex = document.querySelector('.filtroComplex');
 let original = document.querySelector('.originalImage');
+let titlesB = document.querySelector('.titlesBasic');
+let titlesC = document.querySelector('.titlesComplex');
 original.disabled = true;
+filterBasic.disabled = true;
+filterComplex.disabled = true;
+titlesB.disabled = true;
+titlesC.disabled = true;
 recoverImage();
 
 let r = 0;
@@ -44,8 +52,10 @@ function resetImage() {
 
 let cleanCanvas = document.querySelector('.clean');
 cleanCanvas.addEventListener("click", function() {
+    console.log(canOriginalH);
+    console.log(canOriginalW);
     originalImage = [];
-    imageData = ctx.createImageData(canvas.width, canvas.height);
+    imageData = ctx.createImageData(canOriginalW, canOriginalH);
     ctx.putImageData(imageData, 0, 0);
     recoverImage();
 });
@@ -113,18 +123,37 @@ function adaptCanvas(picture) {
     }
     arr.push(imageScaledWidth);
     arr.push(imageScaledHeight);
-    canvas.width=imageScaledWidth;
-    canvas.height=imageScaledHeight;     
+    canvas.width = imageScaledWidth;
+    canvas.height = imageScaledHeight;     
     return arr;
 }
 
 // ---------------------------- RECUPERAR IMAGEN ORIGINAL ----------------------------- //
+
+
 
 function recoverImage() {
     if(originalImage.length > 0) {
         original.style.display = '';
         original.style.visibility = 'visible';
         original.disabled = false;
+
+        filterBasic.style.display = '';
+        filterBasic.style.visibility = 'visible';
+        filterBasic.disabled = false;
+
+        filterComplex.style.display = '';
+        filterComplex.style.visibility = 'visible';
+        filterComplex.disabled = false;
+
+        titlesB.style.display = '';
+        titlesB.style.visibility = 'visible';
+        titlesB.disabled = false;
+
+        titlesC.style.display = '';
+        titlesC.style.visibility = 'visible';
+        titlesC.disabled = false;
+
         let getOriginalImage = document.querySelector('.originalImage');
         getOriginalImage.addEventListener("click", function() {
             resetImage();
@@ -134,6 +163,22 @@ function recoverImage() {
         original.style.display = 'none';
         original.style.visibility = 'hidden';
         original.disabled = true;
+
+        filterBasic.style.display = 'none';
+        filterBasic.style.visibility = 'hidden';
+        filterBasic.disabled = true;
+
+        filterComplex.style.display = 'none';
+        filterComplex.style.visibility = 'hidden';
+        filterComplex.disabled = true;
+
+        titlesB.style.display = 'none';
+        titlesB.style.visibility = 'hidden';
+        titlesB.disabled = true;
+
+        titlesC.style.display = 'none';
+        titlesC.style.visibility = 'hidden';
+        titlesC.disabled = true;
     }
 }
 
@@ -333,14 +378,14 @@ document.getElementById("brillo").addEventListener("click", function() {
 // -- BINARIZACIÓN
 
 document.getElementById("binarizacion").addEventListener("click", function(){
-    let umbral = 50;
+    let umbral = 80;
     for(let x = 0; x < canvas.width - 1; x++) {
         for(let y = 0; y < canvas.height; y++) {
             let average = Math.floor((getRed(x, y) + getGreen(x, y) + getBlue(x, y))/3);
             if(average > umbral) {
                 setPixel(imageData, x, y, 255, 255, 255, 255);
             }else {
-                setPixel(imageData,x, y, 0, 0, 0, 255);
+                setPixel(imageData, x, y, 0, 0, 0, 255);
             }
         }
     }
@@ -414,7 +459,7 @@ Filters.blur = function(imageData, matReference, opaque) {
                     let scy = sy + cy - halfSide;
                     let scx = sx + cx - halfSide;
                     if (scy >= 0 && scy < sh && scx >= 0 && scx < sw) {
-                        let srcOff = (scy*sw+scx)*4;
+                        let srcOff = (scy * sw + scx)*4;
                         let wt = matReference[cy*side+cx];
                         r += src[srcOff] * wt;
                         g += src[srcOff+1] * wt;
