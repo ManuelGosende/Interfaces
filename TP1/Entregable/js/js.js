@@ -2,6 +2,7 @@
 
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
+
 let canOriginalW = canvas.width;
 let canOriginalH = canvas.height;
 let imageData = ctx.createImageData(canvas.width, canvas.height);
