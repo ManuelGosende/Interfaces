@@ -7,16 +7,28 @@ let canOriginalH = canvas.height;
 let imageData = ctx.createImageData(canvas.width, canvas.height);
 let originalImage = [];
 
-let filterBasic = document.querySelector('.filtroBasic');
-let filterComplex = document.querySelector('.filtroComplex');
 let original = document.querySelector('.originalImage');
-let titlesB = document.querySelector('.titlesBasic');
+
+let filterBasic1 = document.querySelector('.filtroBasic1');
+let titlesB1 = document.querySelector('.titlesBasic1');
+
+let filterBasic2 = document.querySelector('.filtroBasic2');
+let titlesB2 = document.querySelector('.titlesBasic2');
+
 let titlesC = document.querySelector('.titlesComplex');
+let filterComplex = document.querySelector('.filtroComplex');
+
 original.disabled = true;
-filterBasic.disabled = true;
-filterComplex.disabled = true;
-titlesB.disabled = true;
+
+filterBasic1.disabled = true;
+titlesB1.disabled = true;
+
+filterBasic2.disabled = true;
+titlesB2.disabled = true;
+
 titlesC.disabled = true;
+filterComplex.disabled = true;
+
 recoverImage();
 
 let r = 0;
@@ -52,11 +64,11 @@ function resetImage() {
 
 let cleanCanvas = document.querySelector('.clean');
 cleanCanvas.addEventListener("click", function() {
-    console.log(canOriginalH);
-    console.log(canOriginalW);
     originalImage = [];
     imageData = ctx.createImageData(canOriginalW, canOriginalH);
     ctx.putImageData(imageData, 0, 0);
+    canvas.setAttribute("width", "700");
+    canvas.setAttribute("height", "700");
     recoverImage();
 });
 
@@ -84,6 +96,8 @@ selectImage.onchange = e => {
                 imageData = ctx.getImageData(0, 0, imageScaledWidth, imageScaledHeight);
                 ctx.putImageData(imageData, 0, 0);
                 saveOriginalImage();
+                ///////////////////////////////////////////////////////
+                saveImageDrawing();
                 recoverImage();
             }
         }
@@ -130,29 +144,35 @@ function adaptCanvas(picture) {
 
 // ---------------------------- RECUPERAR IMAGEN ORIGINAL ----------------------------- //
 
-
-
 function recoverImage() {
     if(originalImage.length > 0) {
         original.style.display = '';
         original.style.visibility = 'visible';
         original.disabled = false;
 
-        filterBasic.style.display = '';
-        filterBasic.style.visibility = 'visible';
-        filterBasic.disabled = false;
+        filterBasic1.style.display = '';
+        filterBasic1.style.visibility = 'visible';
+        filterBasic1.disabled = false;
 
-        filterComplex.style.display = '';
-        filterComplex.style.visibility = 'visible';
-        filterComplex.disabled = false;
+        titlesB1.style.display = '';
+        titlesB1.style.visibility = 'visible';
+        titlesB1.disabled = false;
 
-        titlesB.style.display = '';
-        titlesB.style.visibility = 'visible';
-        titlesB.disabled = false;
+        filterBasic2.style.display = '';
+        filterBasic2.style.visibility = 'visible';
+        filterBasic2.disabled = false;
+
+        titlesB2.style.display = '';
+        titlesB2.style.visibility = 'visible';
+        titlesB2.disabled = false;
 
         titlesC.style.display = '';
         titlesC.style.visibility = 'visible';
         titlesC.disabled = false;
+
+        filterComplex.style.display = '';
+        filterComplex.style.visibility = 'visible';
+        filterComplex.disabled = false;
 
         let getOriginalImage = document.querySelector('.originalImage');
         getOriginalImage.addEventListener("click", function() {
@@ -164,21 +184,29 @@ function recoverImage() {
         original.style.visibility = 'hidden';
         original.disabled = true;
 
-        filterBasic.style.display = 'none';
-        filterBasic.style.visibility = 'hidden';
-        filterBasic.disabled = true;
+        filterBasic1.style.display = 'none';
+        filterBasic1.style.visibility = 'hidden';
+        filterBasic1.disabled = true;
 
-        filterComplex.style.display = 'none';
-        filterComplex.style.visibility = 'hidden';
-        filterComplex.disabled = true;
+        titlesB1.style.display = 'none';
+        titlesB1.style.visibility = 'hidden';
+        titlesB1.disabled = true;
 
-        titlesB.style.display = 'none';
-        titlesB.style.visibility = 'hidden';
-        titlesB.disabled = true;
+        filterBasic2.style.display = 'none';
+        filterBasic2.style.visibility = 'hidden';
+        filterBasic2.disabled = true;
+
+        titlesB2.style.display = 'none';
+        titlesB2.style.visibility = 'hidden';
+        titlesB2.disabled = true;
 
         titlesC.style.display = 'none';
         titlesC.style.visibility = 'hidden';
         titlesC.disabled = true;
+
+        filterComplex.style.display = 'none';
+        filterComplex.style.visibility = 'hidden';
+        filterComplex.disabled = true;
     }
 }
 
@@ -273,6 +301,7 @@ canvas.addEventListener("mousemove", function(e) {
             executionToolWithSize(x, y, size, r, g, b);
         }
         ctx.putImageData(imageData, 0, 0);
+        painted = true;
     }
 });
 
@@ -362,8 +391,46 @@ document.getElementById("sepia").addEventListener("click", function() {
 
 // -- BRILLO
 
-document.getElementById("brillo").addEventListener("click", function() {
-    let variation = 25;
+let imageDrawing = [];
+let brightness = document.getElementById("brillo");
+let painted = false;
+
+function saveImageDrawing() {
+    imageDrawing = [];
+    for(let x = 0; x < canvas.width - 1; x++) {
+        for(let y = 0; y < canvas.height; y++) {
+            imageDrawing[imageDrawing.length] = getRed(x, y);
+            imageDrawing[imageDrawing.length] = getGreen(x, y);
+            imageDrawing[imageDrawing.length] = getBlue(x, y);
+            imageDrawing[imageDrawing.length] = getAlpha(x, y);
+        }
+    }
+}
+
+function resetImageDrawing() {
+    let pos = 0;
+    for(let x = 0; x < canvas.width - 1; x++) {
+        for(let y = 0; y < canvas.height; y++) {
+            setPixel(imageData, x, y, imageDrawing[pos], imageDrawing[pos+1], imageDrawing[pos+2], imageDrawing[pos+3]);
+            pos += 4;
+        }
+    }
+    ctx.putImageData(imageData, 0, 0);
+    painted = false;
+}
+
+brightness.addEventListener("click", function() {
+    if(painted == true) {
+        saveImageDrawing();
+    }
+    else {
+        resetImageDrawing();
+    }
+    adjustLight(this.value);
+});
+
+function adjustLight(brightness) {
+    let variation = brightness / 2;
     for(let x = 0; x < canvas.width - 1; x++) {
         for(let y = 0; y < canvas.height; y++) {
             let newRed = Math.min(getRed(x, y) + variation, 255);
@@ -373,7 +440,8 @@ document.getElementById("brillo").addEventListener("click", function() {
         }
     }
     ctx.putImageData(imageData, 0, 0);
-});
+    painted = false;
+};
 
 // -- BINARIZACIÓN
 

@@ -12,13 +12,19 @@ header {
     box-sizing: border-box;
 }
 
-.getImage, .clean, .filtroBasic button, .filtroComplex button {
+.getImage, .clean, .filtroBasic2 button, .filtroComplex button {
     color: #ffffff;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background: #ec7944;
     border-radius: 15%;
     border: solid 5px #e66d35;
     margin-bottom: 5%;
+}
+
+.brillo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .originalImage {
