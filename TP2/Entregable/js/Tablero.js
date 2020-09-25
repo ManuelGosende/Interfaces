@@ -10,37 +10,73 @@
 }*/
 class Tablero {
     
-    constructor(w,h,ctx,cvs,i){
-        this.width=w;
-        this.height=h;
-        this.img = new Image()
-        this.img.src = "./image/imagen.png";
-        this.totalFichas=i;
-        this.firstDrawing(ctx,cvs)
+    constructor(f, c, ctx, cvs, img) {
+        this.fila = f;
+        this.columna = c;
+        this.totalFichas = f * c;
+        this.ctx = ctx;
+        this.cvs = cvs;
+        this.img = img;
+        this.firstDrawing();
+        this.columDeFichero = Math.round((this.totalFichas / 2) / this.fila);
+        this.anchoDeFicha = img.width / c;
+        this.altoDeFicha = img.height / f;
+        this.arregloDePosiciones = [];
     }
-
-   /*  crearTablero(filas, columnas) {
-        this.filas = filas
-        this.columnas = columnas
-    } */
     
-    firstDrawing(ctx,cvs){
-        let tabler=this;
-        this.img.onload=function(){
-            tabler.drawMy(ctx,cvs,this,this.width,this.height)
-            console.log(this.height)
+    firstDrawing() {
+        let tablero = this;
+        this.img.onload= function() {
+            tablero.drawMy(this, this.width, this.height);
         }
     }
 
-    drawMy(ctx,cvs,image,w,h){
-        this.width=w;
-        this.height=h;
-        let ptoX=(cvs.width/2)-(this.width/2);
-        //let ptoY=canvas.height/2;
-        let filasDeFichas= this.totalFichas /this.height;
-        let pxMargin= //pxsize(filasDeFichas);
-        let image=ctx.createImageData(ctx.width-pxMargin , this.height);
-        ctx.drawImage(image, ptoX, 0, cvs.width, cvs.height);
-        console.log(cvs);
+    drawMy(image, w, h) {
+        this.cvs.width = this.cvs.width + ((this.filasDeFichero * this.anchoDeFicha) * 2);
+        this.cvs.height = this.cvs.height + this.altoDeFicha * 2;
+        let ptoX = (this.cvs.width/2)-(w/2);
+        ctx.drawImage(image, ptoX, this.cvs.height - h);
     }
+
+    getRadioParaFicha(reductor) {
+        return this.anchoDeFicha / 2 - reductor; 
+    }
+
+    getAltura(){
+        return this.img.height;
+    }
+    getAltoFicha(){
+        return this.altoDeFicha;
+    }
+
+    getAnchoFicha(){
+        return this.anchoDeFicha;
+    }
+    getColFichero(){
+        return this.columDeFichero;
+    }
+    getFila(){
+        return this.fila;
+    }
+    /*ubicarFicha(jugador) {
+        if(jugador==1){
+            if(this.arregloDePosiciones!=[]){
+                let lastUb=this.arregloDePosiciones.lastIndexOf();
+                if(lastUb[1]!=(this.cvs.height-(this.altoDeFicha/2))){
+                    let posicion=[
+                        x:lastUb[0],
+                        y:lastUb[1] + altoDeFicha
+                    ]
+                    this.arregloDePosiciones.push(posicion);
+                    return    
+                }
+                }
+            }   
+        let anchoDelFichero= this.anchoDeFicha * this.columDeFichero;
+        let altoDelFichero= this.altoDeFicha *this.fila;
+        let posX= this.canvas +  anchoDeFicha;
+        let posY=this.canvas + altoDeFicha;
+    }*/
+
+
 }
