@@ -50,7 +50,7 @@ tableros.addEventListener("click", function() {
 
 function dibujarFichas(tablero, imgFicha) {
 
-    let radio = tablero.getRadioParaFicha();
+    let radio = tablero.getRadioParaFicha() * 0.8;
 
     // Fichero izquierdo
     for (let posX = tablero.getX1(); posX < tablero.getAnchoFichero(); posX += tablero.getAnchoFicha()) {
@@ -102,26 +102,31 @@ function onmousedown(event) {
     if(ultimaClickeada != null) {
         xOriginal = ultimaClickeada.getX();
         yOriginal = ultimaClickeada.getY();
+        ultimaClickeada.setSeleccionada(true);
+        redibujar();
     }
 }
 
 function onmousemove(event) {
     let x = event.pageX - canvas.offsetLeft;
     let y = event.pageY - canvas.offsetTop;
-    if (ultimaClickeada != null) {
-        ultimaClickeada.setSeleccionada(true);
+    if (ultimaClickeada != null && !ultimaClickeada.getJugada()) {
         ultimaClickeada.setPosicion(x, y);
         redibujar();
     }
 }
 
 function onmouseup(event) {
-    if (ultimaClickeada != null) {
+    if (ultimaClickeada != null && !ultimaClickeada.getJugada()) {
         let x = event.pageX - canvas.offsetLeft;
         let y = event.pageY - canvas.offsetTop;
-        if(tablero.enPosDeUbicacion(x, y) && tablero.hayLugar(x, y)) {
+        let empate = tablero.columna * tablero.fila;
+        if(tablero.enPosDeUbicacion(x, y) && tablero.hayLugar(x, y) && empate > 0) {
             tablero.ubicarFicha(ultimaClickeada, x, y);
+            empate --;
             if(tablero.hayGanador(ultimaClickeada, JUGADA_GANADORA)) {
+                redibujar();
+                // Mostrar jugada ganadora !!
                 if(juegaJugador1) {
                     alert("¡GANASTE! FELICITACIONES JUGADOR 1");
                 }
@@ -143,6 +148,9 @@ function onmouseup(event) {
             ultimaClickeada.setPosicion(xOriginal, yOriginal);
             ultimaClickeada.setSeleccionada(false);
             redibujar();
+            if(empate == 0) {
+                alert("¡EMPATE!");
+            }
         }
         ultimaClickeada = null;
     }

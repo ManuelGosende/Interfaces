@@ -11,6 +11,7 @@ class Ficha {
         this.jugador = jugador;
         this.filUbicada = null;
         this.colUbicada = null;
+        this.jugada = false;
         this.draw();
     }
 
@@ -73,6 +74,14 @@ class Ficha {
 
     setColUbicada(columna) {
         this.colUbicada = columna;
+    }
+
+    getJugada() {
+        return this.jugada;
+    }
+
+    setJugada(valor) {
+        this.jugada = valor;
     }
 
 }

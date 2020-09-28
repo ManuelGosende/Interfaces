@@ -47,7 +47,7 @@ class Tablero {
                 this.ctx.lineTo(this.getPosX(col + 1) - (this.getCeldaParaUbicar()/2), this.getPosY(fil + 1) + this.getRadioParaFicha());
                 this.ctx.lineTo(this.getPosX(col + 1) - (this.getCeldaParaUbicar()/2), this.getPosY(fil) + this.getRadioParaFicha());
                 this.ctx.closePath();
-                this.ctx.arc(this.getPosX(col), this.getPosY(fil), this.getRadioParaFicha() * 0.7, 0, Math.PI*2);
+                this.ctx.arc(this.getPosX(col), this.getPosY(fil), this.getRadioParaFicha() * 0.6, 0, Math.PI*2);
                 this.ctx.fill("evenodd");
             }
         }
@@ -103,24 +103,35 @@ class Tablero {
         aux[2] = ficha;
         ficha.setColUbicada(x_);
         ficha.setFilUbicada(y_);
+        ficha.setJugada(true);
         ficha.setPosicion(aux[0], aux[1]);
     }
 
+// --------------------------- METODOS PARA CHEQUEAR GANADOR ----------------------------------
+
     hayGanador(ficha, ganadora) {
-        if(this.chequearDiagonalAsc(ficha) == ganadora 
-        || this.chequearDiagonalDesc(ficha) == ganadora
-        || this.chequearHorizontal(ficha) == ganadora
-        || this.chequearAbajo(ficha) == ganadora) {
-            return true;
+        if(ficha.getFilUbicada() > 0) {
+            if(this.chequearAbajo(ficha) == ganadora) {
+                return true;
+            }
         }
+        if(this.chequearDiagonalAsc(ficha) == ganadora 
+            || this.chequearDiagonalDesc(ficha) == ganadora
+            || this.chequearHorizontal(ficha) == ganadora) {
+                return true;
+        } 
         return false;
     }
 
 // Chequeo de diagonal desde abajo hacia arriba en la matriz.
     chequearDiagonalAsc(ficha) {
         let cont = 1;
-        cont += this.izqAbajo(ficha);
-        cont += this.derArriba(ficha);
+        if(ficha.getColUbicada() > 0 && ficha.getFilUbicada() > 0) {
+            cont += this.izqAbajo(ficha);
+        }
+        if(ficha.getColUbicada() < this.columna - 1 && ficha.getFilUbicada() < this.fila - 1) {
+            cont += this.derArriba(ficha);
+        }
         return cont;
     }
 
@@ -138,7 +149,7 @@ class Tablero {
 
     derArriba(ficha) {
         let cont = 0;
-        if(ficha.getColUbicada() < this.columna && ficha.getFilUbicada() < this.fila) {
+        if(ficha.getColUbicada() < this.columna - 1 && ficha.getFilUbicada() < this.fila - 1) {
             let aux = this.arregloDePosiciones[ficha.getColUbicada() + 1][ficha.getFilUbicada() + 1];
             if(aux[2] != null && ficha.getJugador() == aux[2].getJugador()) {
                 cont ++;
@@ -151,14 +162,18 @@ class Tablero {
 // Chequeo de diagonal desde arriba hacia abajo en la matriz.
     chequearDiagonalDesc(ficha) {
         let cont = 1;
-        cont += this.izqArriba(ficha);
-        cont += this.derAbajo(ficha);
+        if(ficha.getColUbicada() > 0 && ficha.getFilUbicada() < this.fila - 1) {
+            cont += this.izqArriba(ficha);
+        }
+        if(ficha.getColUbicada() < this.columna - 1 && ficha.getFilUbicada() > 0) {
+            cont += this.derAbajo(ficha);
+        }
         return cont;
     }
 
     izqArriba(ficha) {
         let cont = 0;
-        if(ficha.getColUbicada() > 0 && ficha.getFilUbicada() < this.fila) {
+        if(ficha.getColUbicada() > 0 && ficha.getFilUbicada() < this.fila - 1) {
             let aux = this.arregloDePosiciones[ficha.getColUbicada() - 1][ficha.getFilUbicada() + 1];
             if(aux[2] != null && ficha.getJugador() == aux[2].getJugador()) {
                 cont ++;
@@ -170,7 +185,7 @@ class Tablero {
 
     derAbajo(ficha) {
         let cont = 0;
-        if(ficha.getColUbicada() < this.columna && ficha.getFilUbicada() > 0) {
+        if(ficha.getColUbicada() < this.columna - 1 && ficha.getFilUbicada() > 0) {
             let aux = this.arregloDePosiciones[ficha.getColUbicada() + 1][ficha.getFilUbicada() - 1];
             if(aux[2] != null && ficha.getJugador() == aux[2].getJugador()) {
                 cont ++;
@@ -183,8 +198,12 @@ class Tablero {
 // Chequeo horizontal de tablero
     chequearHorizontal(ficha) {
         let cont = 1;
-        cont += this.izqHoriz(ficha);
-        cont += this.derHoriz(ficha);
+        if(ficha.getColUbicada() > 0) {
+            cont += this.izqHoriz(ficha);
+        }
+        if(ficha.getColUbicada() < this.columna - 1) {
+            cont += this.derHoriz(ficha);
+        }
         return cont;
     }
     
@@ -202,7 +221,7 @@ class Tablero {
 
     derHoriz(ficha) {
         let cont = 0;
-        if(ficha.getColUbicada() < this.columna) {
+        if(ficha.getColUbicada() < this.columna - 1) {
             let aux = this.arregloDePosiciones[ficha.getColUbicada() + 1][ficha.getFilUbicada()];
             if(aux[2] != null && ficha.getJugador() == aux[2].getJugador()) {
                 cont ++;
