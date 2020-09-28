@@ -14,15 +14,224 @@ class Tablero {
         this.draw();
     }
 
+// --------------------------- METODOS DE DIBUJO -----------------------------------------
+
     draw() {
         this.canvas.width = this.img.width + ((this.colDeFichero * this.anchoDeFicha) * 2);
         this.canvas.height = this.img.height + this.altoDeFicha * 2;
         let ptoX = (this.canvas.width/2) - (this.img.width/2);
         this.ctx.drawImage(this.img, ptoX, this.canvas.height - this.img.height);
+        this.drawPunteros();
     }
+
+    drawPunteros() {
+        let ubicacionY = this.getAltoFicha() * 2 - this.getRadioParaFicha();
+        let ubicacionX = this.getAnchoFichero() + this.getCeldaParaUbicar()/2;
+        for(let col = 0; col < this.columna; col ++) {
+            this.ctx.beginPath();
+            this.ctx.fillStyle = 'green';
+            this.ctx.arc(ubicacionX, ubicacionY, this.getRadioParaFicha() * 0.8, 0, 2 * Math.PI);
+            this.ctx.fill();
+            this.ctx.closePath();
+            ubicacionX += this.getCeldaParaUbicar();
+        }
+    }
+
+    drawTapa() {
+        for(let col = 0; col < this.columna; col ++) {
+            for(let fil = 0; fil < this.fila; fil ++) {
+                this.ctx.fillStyle = "#34673E";
+                this.ctx.beginPath();
+                this.ctx.moveTo(this.getPosX(col) - (this.getCeldaParaUbicar()/2), this.getPosY(fil) + this.getRadioParaFicha());
+                this.ctx.lineTo(this.getPosX(col) - (this.getCeldaParaUbicar()/2), this.getPosY(fil + 1) + this.getRadioParaFicha());
+                this.ctx.lineTo(this.getPosX(col + 1) - (this.getCeldaParaUbicar()/2), this.getPosY(fil + 1) + this.getRadioParaFicha());
+                this.ctx.lineTo(this.getPosX(col + 1) - (this.getCeldaParaUbicar()/2), this.getPosY(fil) + this.getRadioParaFicha());
+                this.ctx.closePath();
+                this.ctx.arc(this.getPosX(col), this.getPosY(fil), this.getRadioParaFicha() * 0.7, 0, Math.PI*2);
+                this.ctx.fill("evenodd");
+            }
+        }
+    }
+
+// --------------------------- METODOS DE TRATAMIENTO DE FICHAS ----------------------------------
+
+    enPosDeUbicacion(x, y) {
+        let ubicacionY = this.getAltoFicha() * 2 - this.getRadioParaFicha();
+        let ubicacionX = this.getAnchoFichero() + this.getCeldaParaUbicar()/2;
+        for(let col = 0; col < this.columna; col ++) {
+            let x_ = ubicacionX - x;
+            let y_ = ubicacionY - y;
+            if(Math.sqrt(x_ * x_ + y_ * y_) < (this.getRadioParaFicha() * 0.8)) {
+                return true;
+            }
+            ubicacionX += this.getCeldaParaUbicar();
+        }
+    }
+
+    hayLugar(x, y) {    
+        let x_ = this.getColumnaDeseada(x, y);
+        let aux = this.arregloDePosiciones[x_][this.fila - 1];
+        return aux[2] == null;
+    }
+
+    getColumnaDeseada(x, y) {
+        let ubicacionY = this.getAltoFicha() * 2 - this.getRadioParaFicha();
+        let ubicacionX = this.getAnchoFichero() + this.getCeldaParaUbicar()/2;
+        for(let col = 0; col < this.columna; col ++) {
+            let x_ = ubicacionX - x;
+            let y_ = ubicacionY - y;
+            if(Math.sqrt(x_ * x_ + y_ * y_) < (this.getRadioParaFicha() * 0.8)) {
+                return col;
+            }
+            ubicacionX += this.getCeldaParaUbicar();
+        }
+    }
+
+    getFilaPosible(x) {
+        for(let fil = 0; fil < this.fila; fil ++) {
+            let aux = this.arregloDePosiciones[x][fil];
+            if(aux[2] == null) {
+                return fil;
+            }
+        }
+    }
+
+    ubicarFicha(ficha, x, y) {
+        let x_ = this.getColumnaDeseada(x, y);
+        let y_ = this.getFilaPosible(x_);
+        let aux = this.arregloDePosiciones[x_][y_];
+        aux[2] = ficha;
+        ficha.setColUbicada(x_);
+        ficha.setFilUbicada(y_);
+        ficha.setPosicion(aux[0], aux[1]);
+    }
+
+    hayGanador(ficha, ganadora) {
+        if(this.chequearDiagonalAsc(ficha) == ganadora 
+        || this.chequearDiagonalDesc(ficha) == ganadora
+        || this.chequearHorizontal(ficha) == ganadora
+        || this.chequearAbajo(ficha) == ganadora) {
+            return true;
+        }
+        return false;
+    }
+
+// Chequeo de diagonal desde abajo hacia arriba en la matriz.
+    chequearDiagonalAsc(ficha) {
+        let cont = 1;
+        cont += this.izqAbajo(ficha);
+        cont += this.derArriba(ficha);
+        return cont;
+    }
+
+    izqAbajo(ficha) {
+        let cont = 0;
+        if(ficha.getColUbicada() > 0 && ficha.getFilUbicada() > 0) {
+            let aux = this.arregloDePosiciones[ficha.getColUbicada() - 1][ficha.getFilUbicada() - 1];
+            if(aux[2] != null && ficha.getJugador() == aux[2].getJugador()) {
+                cont ++;
+                cont += this.izqAbajo(aux[2]);
+            } 
+        }
+        return cont;
+    }
+
+    derArriba(ficha) {
+        let cont = 0;
+        if(ficha.getColUbicada() < this.columna && ficha.getFilUbicada() < this.fila) {
+            let aux = this.arregloDePosiciones[ficha.getColUbicada() + 1][ficha.getFilUbicada() + 1];
+            if(aux[2] != null && ficha.getJugador() == aux[2].getJugador()) {
+                cont ++;
+                cont += this.derArriba(aux[2]);
+            } 
+        }
+        return cont;
+    }
+
+// Chequeo de diagonal desde arriba hacia abajo en la matriz.
+    chequearDiagonalDesc(ficha) {
+        let cont = 1;
+        cont += this.izqArriba(ficha);
+        cont += this.derAbajo(ficha);
+        return cont;
+    }
+
+    izqArriba(ficha) {
+        let cont = 0;
+        if(ficha.getColUbicada() > 0 && ficha.getFilUbicada() < this.fila) {
+            let aux = this.arregloDePosiciones[ficha.getColUbicada() - 1][ficha.getFilUbicada() + 1];
+            if(aux[2] != null && ficha.getJugador() == aux[2].getJugador()) {
+                cont ++;
+                cont += this.izqArriba(aux[2]);
+            } 
+        }
+        return cont;
+    }
+
+    derAbajo(ficha) {
+        let cont = 0;
+        if(ficha.getColUbicada() < this.columna && ficha.getFilUbicada() > 0) {
+            let aux = this.arregloDePosiciones[ficha.getColUbicada() + 1][ficha.getFilUbicada() - 1];
+            if(aux[2] != null && ficha.getJugador() == aux[2].getJugador()) {
+                cont ++;
+                cont += this.derAbajo(aux[2]);
+            } 
+        }
+        return cont;
+    }
+
+// Chequeo horizontal de tablero
+    chequearHorizontal(ficha) {
+        let cont = 1;
+        cont += this.izqHoriz(ficha);
+        cont += this.derHoriz(ficha);
+        return cont;
+    }
+    
+    izqHoriz(ficha) {
+        let cont = 0;
+        if(ficha.getColUbicada() > 0) {
+            let aux = this.arregloDePosiciones[ficha.getColUbicada() - 1][ficha.getFilUbicada()];
+            if(aux[2] != null && ficha.getJugador() == aux[2].getJugador()) {
+                cont ++;
+                cont += this.izqHoriz(aux[2]);
+            } 
+        }
+        return cont;
+    }
+
+    derHoriz(ficha) {
+        let cont = 0;
+        if(ficha.getColUbicada() < this.columna) {
+            let aux = this.arregloDePosiciones[ficha.getColUbicada() + 1][ficha.getFilUbicada()];
+            if(aux[2] != null && ficha.getJugador() == aux[2].getJugador()) {
+                cont ++;
+                cont += this.derHoriz(aux[2]);
+            } 
+        }
+        return cont;
+    }
+
+// Chequeo vertical de tablero en sentido hacia abajo
+    chequearAbajo(ficha) {
+        let cont = 1;
+        if(ficha.getFilUbicada() > 0) {
+            let aux = this.arregloDePosiciones[ficha.getColUbicada()][ficha.getFilUbicada() - 1];
+            if(ficha.getJugador() == aux[2].getJugador()) {
+                cont += this.chequearAbajo(aux[2]);
+            }
+        }
+        return cont;
+    }
+
+// --------------------------- METODOS DE OBTENCIÓN DE DATOS -------------------------------------
 
     getRadioParaFicha() {
         return this.getAltura() / (this.getFila() * 2); 
+    }
+
+    getCeldaParaUbicar() {
+        return this.getAncho() / this.columna;
     }
 
     getAltura(){
@@ -83,6 +292,8 @@ class Tablero {
         return this.getAltura() + (this.getAltoFicha() * 2);
     }
 
+// --------------------------- METODOS PARA CARGAR MATRIZ -----------------------------------------
+
     cargarMatriz() {
         for(let x = 0; x < this.columna; x ++) {
             this.arregloDePosiciones[x] = new Array();
@@ -93,7 +304,7 @@ class Tablero {
     
     llenarMatriz(col) {
         for(let y = 0; y < this.fila; y ++) {
-            this.arregloDePosiciones[col].push([this.getPosX(col), this.getPosY(y)]);
+            this.arregloDePosiciones[col].push([this.getPosX(col), this.getPosY(y), null]);
         }
     }
 
@@ -102,92 +313,8 @@ class Tablero {
     }
 
     getPosX(variable) {
-        return (this.getAnchoFichero() + this.getRadioParaFicha()) + (this.getAnchoFicha() * variable);
+        return (this.getAnchoFichero() + this.getCeldaParaUbicar()/2) + (this.getCeldaParaUbicar() * variable);
     }
 
-
-    /* llenarMatriz() {
-        let col = 0;
-        let fil = 0;
-        /* for(let x = this.getAnchoFichero() + this.getRadioParaFicha(); x < (this.getAnchoCanvas() - this.getAnchoFichero() - this.getRadioParaFicha()); x += this.getAnchoFicha()) {
-            posiciones[col][fil] = new Array();
-            console.log(posiciones);
-            for(let y = (this.getAltoCanvas() - this.getRadioParaFicha()); y > (this.getAltoFicha() * 2) + this.getRadioParaFicha(); y -= this.getAltoFicha()) {
-                if(posiciones.length == 0) {
-                    posiciones[col].push(x, y)
-                }
-                col ++;
-                fil ++;
-            }
-            col = 0;
-        }
-        return posiciones;
-    } */
-
-
-
-
-    
- /*  var arr = [];
-
-  // Creates all lines:
-  for(var i=0; i < rows; i++){
-
-      // Creates an empty line
-      arr.Push([]);
-
-      // Adds cols to the empty line:
-      arr[i].Push( new Array(cols));
-
-      for(var j=0; j < cols; j++){
-        // Initializes:
-        arr[i][j] = defaultValue;
-      }
-  }
-
-return arr; */
-    
-    
-    /*ubicarFicha(jugador) {
-        if(jugador==1){
-            if(this.arregloDePosiciones!=[]){
-                let lastUb=this.arregloDePosiciones.lastIndexOf();
-                if(lastUb[1]!=(this.cvs.height-(this.altoDeFicha/2))){
-                    let posicion=[
-                        x:lastUb[0],
-                        y:lastUb[1] + altoDeFicha
-                    ]
-                    this.arregloDePosiciones.push(posicion);
-                    return    
-                }
-                }
-            }   
-        let anchoDelFichero= this.anchoDeFicha * this.columDeFichero;
-        let altoDelFichero= this.altoDeFicha *this.fila;
-        let posX= this.canvas +  anchoDeFicha;
-        let posY=this.canvas + altoDeFicha;
-    }*/
-
-
 }
-
-
-
- // OCTA
-/* let xStart = this.canvas.width/4;
-        let boxSize = 100;
-        let finalX = this.canvas.width - xStart;
-        let finalY = this.canvas.height;
-
-        for(let y = this.canvas.height/4; y <= finalY; y += boxSize){
-            for(let x = this.canvas.width/4 ; x <= finalX ;x += boxSize) {
-                this.context.fillStyle = "#6FDFE1";
-                this.context.beginPath();
-                this.context.moveTo(x, y);
-                this.context.lineTo(x, y + boxSize);
-                this.context.lineTo(x + boxSize, y + boxSize);
-                this.context.lineTo(x + boxSize, y);
-                this.context.closePath();
-                this.context.arc( x+50 , y+50 , 30, 0, Math.PI*2, true); //inner counter-clockwise
-                this.context.fill("evenodd"); */
                 
