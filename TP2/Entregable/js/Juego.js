@@ -1,6 +1,21 @@
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
 
+let reiniciar = document.querySelector(".tableroOriginal");
+reiniciar.style.display = 'none';
+reiniciar.style.visibility = 'hidden';
+reiniciar.disabled = true;
+
+let contGanador = document.querySelector(".contenedorGanador");
+contGanador.style.display = 'none';
+contGanador.style.visibility = 'hidden';
+contGanador.disabled = true;
+
+let ganador = document.querySelector("#ganador");
+let gano = document.createElement("p");
+let empate = null;
+let resultado = null;
+
 // JUGADOR 1
 let fichas1 = [];
 let fillStyleJ1 = '#F37A15';
@@ -12,8 +27,13 @@ let fillStyleJ2 = '#3F5BCF';
 let strokeStyleJ2 = '#0A2699';
 
 let tablero = null;
-
 let matrizTablero = null;
+
+let imgTablero = new Image();
+imgTablero.src = "./image/fondoTablero.jpg";
+
+let imgFicha = new Image();
+imgFicha.src= "./image/Ficha.png";
 
 let ultimaClickeada = null;
 let xOriginal = null;
@@ -22,36 +42,71 @@ let yOriginal = null;
 let juegaJugador1 = true;
 const JUGADA_GANADORA = 4;
 
-let tableros = document.querySelector("#tablero");
+// SELECCIONAR TABLERO
+
+let tableros = document.querySelector("#selectTablero");
 tableros.addEventListener("click", function() {
-
-    let tableroFondo = new Image();
-    tableroFondo.src = "./image/fondoTablero.jpg";
-
-    let imgFicha = new Image();
-    imgFicha.src= "./image/Ficha.png";
-
+    if(tablero != null) {
+        fichas1 = [];
+        fichas2 = [];
+        matrizTablero = xOriginal = yOriginal = ultimaClickeada = null;
+        juegaJugador1 = true;
+        tablero = null;
+    }
     switch (tableros.value) {
         case "7x6":
-            tablero = new Tablero(7, 6, ctx, canvas, tableroFondo);
+            tablero = new Tablero(7, 6, ctx, canvas, imgTablero);
             iniciarJuego(tablero, imgFicha);
             break;
-        case "8x5":
-            tablero = new Tablero(8, 5, ctx, canvas, tableroFondo);
+        case "7x9":
+            tablero = new Tablero(7, 9, ctx, canvas, imgTablero);
             iniciarJuego(tablero, imgFicha);
             break;
         case "6x8":
-            tablero = new Tablero(6, 8, ctx, canvas, tableroFondo);
+            tablero = new Tablero(6, 8, ctx, canvas, imgTablero);
+            iniciarJuego(tablero, imgFicha);
+            break;
+        case "4x4":
+            tablero = new Tablero(4, 4, ctx, canvas, imgTablero);
             iniciarJuego(tablero, imgFicha);
             break;
     };
-
+    if(tablero != null) {
+        reiniciar.style.display = '';
+        reiniciar.style.visibility = 'visible';
+        reiniciar.disabled = false;
+    }
 });
 
+reiniciar.addEventListener("click", function() { 
+    let colOriginal = tablero.getColumna();
+    let filOriginal = tablero.getFila();
+    fichas1 = [];
+    fichas2 = [];
+    matrizTablero = null;
+    ultimaClickeada = null;
+    xOriginal = null;
+    yOriginal = null;
+    empate = null;
+    juegaJugador1 = true;
+    if(!contGanador.disabled) {
+        gano.removeChild(resultado);
+        ganador.removeChild(gano);
+        canvas.style.display = '';
+        canvas.style.visibility = 'visible';
+        canvas.disabled = false;    
+    }
+    contGanador.style.display = 'none';
+    contGanador.style.visibility = 'hidden';
+    contGanador.disabled = true; 
+    tablero = new Tablero(filOriginal, colOriginal, ctx, canvas, imgTablero);
+    iniciarJuego(tablero, imgFicha);
+});
+
+// DIBUJAR FICHAS POR PRIMERA VEZ
+
 function dibujarFichas(tablero, imgFicha) {
-
     let radio = tablero.getRadioParaFicha() * 0.8;
-
     // Fichero izquierdo
     for (let posX = tablero.getX1(); posX < tablero.getAnchoFichero(); posX += tablero.getAnchoFicha()) {
         for (let posY = tablero.getY(); posY < tablero.getAltoFichero() && fichas1.length < tablero.getTotalFichas()/2; posY += tablero.getAltoFicha()) {
@@ -59,7 +114,6 @@ function dibujarFichas(tablero, imgFicha) {
             fichas1.push(ficha);
         }
     }
-
     // Fichero derecho
     for (let posX = tablero.getX2(); posX < ((tablero.getAnchoFichero() * 2) + tablero.getAncho()); posX += tablero.getAnchoFicha()) {
         for (let posY = tablero.getY(); posY < tablero.getAltoFichero() && fichas2.length < tablero.getTotalFichas()/2; posY += tablero.getAltoFicha()) {
@@ -69,9 +123,11 @@ function dibujarFichas(tablero, imgFicha) {
     }
 }
 
+// COMIENZA EL JUEGO
+
 function iniciarJuego(tablero, imgFicha) {
     matrizTablero = tablero.cargarMatriz();
-    //console.log(matrizTablero)
+    empate = tablero.getColumna() * tablero.getFila();
     dibujarFichas(tablero, imgFicha);
     tablero.drawTapa();
 
@@ -84,7 +140,7 @@ function iniciarJuego(tablero, imgFicha) {
 // --------------------------- EVENTOS DE MOUSE ----------------------------------
 
 function onmousedown(event) {
-    let x = event.pageX - canvas.offsetLeft;
+    let x = event.layerX;
     let y = event.pageY - canvas.offsetTop;
     
     if(ultimaClickeada != null) {
@@ -108,7 +164,7 @@ function onmousedown(event) {
 }
 
 function onmousemove(event) {
-    let x = event.pageX - canvas.offsetLeft;
+    let x = event.layerX;
     let y = event.pageY - canvas.offsetTop;
     if (ultimaClickeada != null && !ultimaClickeada.getJugada()) {
         ultimaClickeada.setPosicion(x, y);
@@ -118,22 +174,55 @@ function onmousemove(event) {
 
 function onmouseup(event) {
     if (ultimaClickeada != null && !ultimaClickeada.getJugada()) {
-        let x = event.pageX - canvas.offsetLeft;
+        let x = event.layerX;
         let y = event.pageY - canvas.offsetTop;
-        let empate = tablero.columna * tablero.fila;
-        if(tablero.enPosDeUbicacion(x, y) && tablero.hayLugar(x, y) && empate > 0) {
+        if(tablero.enPosDeUbicacion(x, y) && tablero.hayLugar(x, y)) {
             tablero.ubicarFicha(ultimaClickeada, x, y);
             empate --;
+            // entro en recursión para consultar si la ficha que ubico genera una jugada ganadora
             if(tablero.hayGanador(ultimaClickeada, JUGADA_GANADORA)) {
-                redibujar();
-                // Mostrar jugada ganadora !!
+                contGanador.style.visibility = 'visible';
+                contGanador.style.display = '';
+                contGanador.disabled = false;
+                // si gana jugador uno
                 if(juegaJugador1) {
-                    alert("¡GANASTE! FELICITACIONES JUGADOR 1");
+                    resultado = document.createTextNode("¡GANASTE! FELICITACIONES JUGADOR 1");
+                    gano.style.color = '#F37A15';
+                    ganador.style.border = '7px solid #F37A15'; 
                 }
+                // si gana jugador dos
                 else {
-                    alert("¡GANASTE! FELICITACIONES JUGADOR 2");
+                    resultado = document.createTextNode("¡GANASTE! FELICITACIONES JUGADOR 2");
+                    gano.style.color = '#3F5BCF';
+                    ganador.style.border = '7px solid #3F5BCF';
                 }
+                canvas.style.display = 'none';
+                canvas.style.visibility = 'hidden';
+                canvas.disabled = true; 
+                gano.appendChild(resultado);
+                ganador.appendChild(gano);
+                ganador.style.visibility = 'visible';
             }
+            // si se jugaron todas las fichas y nadie gano, es empate
+            else if(empate == 0) {
+                resultado = document.createTextNode("¡EMPATE!");
+
+                contGanador.style.visibility = 'visible';
+                contGanador.style.display = '';
+                contGanador.disabled = false;
+
+                gano.style.color = '#15ff00';
+                ganador.style.border = '7px solid #15ff00';
+
+                gano.appendChild(resultado);
+                ganador.appendChild(gano);
+                ganador.style.visibility = 'visible';
+                
+                canvas.style.display = 'none';
+                canvas.style.visibility = 'hidden';
+                canvas.disabled = true; 
+            }
+            // cambio de turno de jugador
             else {
                 if(juegaJugador1) {
                     juegaJugador1 = false;
@@ -141,17 +230,13 @@ function onmouseup(event) {
                 else {
                     juegaJugador1 = true;
                 }
-                redibujar();
             }
         }
         else {
             ultimaClickeada.setPosicion(xOriginal, yOriginal);
             ultimaClickeada.setSeleccionada(false);
-            redibujar();
-            if(empate == 0) {
-                alert("¡EMPATE!");
-            }
         }
+        redibujar();
         ultimaClickeada = null;
     }
 }

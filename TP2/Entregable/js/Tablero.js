@@ -29,7 +29,7 @@ class Tablero {
         let ubicacionX = this.getAnchoFichero() + this.getCeldaParaUbicar()/2;
         for(let col = 0; col < this.columna; col ++) {
             this.ctx.beginPath();
-            this.ctx.fillStyle = 'green';
+            this.ctx.fillStyle = "#2068249f";
             this.ctx.arc(ubicacionX, ubicacionY, this.getRadioParaFicha() * 0.8, 0, 2 * Math.PI);
             this.ctx.fill();
             this.ctx.closePath();
@@ -40,7 +40,7 @@ class Tablero {
     drawTapa() {
         for(let col = 0; col < this.columna; col ++) {
             for(let fil = 0; fil < this.fila; fil ++) {
-                this.ctx.fillStyle = "#34673E";
+                this.ctx.fillStyle = "#206824";
                 this.ctx.beginPath();
                 this.ctx.moveTo(this.getPosX(col) - (this.getCeldaParaUbicar()/2), this.getPosY(fil) + this.getRadioParaFicha());
                 this.ctx.lineTo(this.getPosX(col) - (this.getCeldaParaUbicar()/2), this.getPosY(fil + 1) + this.getRadioParaFicha());
@@ -51,6 +51,13 @@ class Tablero {
                 this.ctx.fill("evenodd");
             }
         }
+    }
+
+    limpiarTablero(f1, f2, mat, x, y, fichaClick, j1) {
+        f1 = [];
+        f2 = [];
+        mat = x = y = fichaClick = null;
+        j1 = true;
     }
 
 // --------------------------- METODOS DE TRATAMIENTO DE FICHAS ----------------------------------
@@ -285,6 +292,10 @@ class Tablero {
 
     getFila() {
         return this.fila;
+    }
+
+    getColumna() {
+        return this.columna;
     }
 
     getX1() {

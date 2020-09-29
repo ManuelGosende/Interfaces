@@ -22,7 +22,7 @@ class Ficha {
         this.ctx.fill();
         if (this.seleccionada === true) {
             this.ctx.strokeStyle = this.strokeStyle;
-            this.ctx.lineWidth = 4;
+            this.ctx.lineWidth = 2;
             this.ctx.stroke();
         }
         this.ctx.drawImage(this.img, this.posX - this.radius, this.posY - this.radius, this.getTamaño(), this.getTamaño());

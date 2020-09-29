@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--   <link rel="stylesheet" href="style.css">
-   -->  <title>Cuatro en Línea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cuatro en Línea</title>
 </head>
 <body>
     
@@ -12,17 +16,35 @@
         <h1>¡CUATRO EN LÍNEA!</h1>
     </header>
 
-    <select name="tableros" id="tablero">
-        <option disabled selected hidden>Tamaño de tablero</option>
-        <option value="7x6">7 X 6</option>
-        <option value="8x5">8 X 5</option>
-        <option value="6x8">6 X 8</option>
-    </select>
+    <section>
+        <div class="contenedorConfig">
+            <h2>¡Elegí el tamaño de tablero que quieras!</h2>
+            <select name="tableros" id="selectTablero">
+                <option disabled selected hidden>Tamaño de tablero</option>
+                <option value="6x8">6 filas X 8 columnas</option>
+                <option value="7x6">7 filas X 6 columnas</option>
+                <option value="7x9">7 filas x 9 columnas</option>
+                <!--  -->
+                <option value="4x4">4 filas x 4 columnas</option>
+            </select>
+            <div class="jugadores">
+                <h3 class="j1">JUGADOR 1</h3>
+                <h3 class="j2">JUGADOR 2</h3>
+            </div>
+            <button class= "tableroOriginal">Reiniciar juego</button>
+        </div>
+    </section>
 
-    <canvas id="canvas" width="500" height="500"></canvas>
-
-
-
+    
+    <div class="contenedorGanador">
+        <div id="ganador" hidden></div>
+        <h2>¡Reinicia el juego para la revancha!</h2>
+    </div>
+    
+    <div class="contenedorCanvas">
+        <canvas id="canvas"></canvas>
+    </div>
+    
     <script src="js/Ficha.js"></script>
     <script src="js/Tablero.js"></script>
     <script src="js/Juego.js"></script>
