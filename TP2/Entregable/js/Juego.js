@@ -130,6 +130,7 @@ function iniciarJuego(tablero, imgFicha) {
     empate = tablero.getColumna() * tablero.getFila();
     dibujarFichas(tablero, imgFicha);
     tablero.drawTapa();
+    // PROBANDO CON TURNO
     tablero.drawTurno(juegaJugador1);
 
     canvas.addEventListener("mousedown", onmousedown, false);
@@ -272,6 +273,7 @@ function redibujar() {
         fichas2[f2].draw();
     }
     tablero.drawTapa();
+    // PROBANDO CON TURNO
     tablero.drawTurno(juegaJugador1);
 }
 

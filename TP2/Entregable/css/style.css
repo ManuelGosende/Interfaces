@@ -1,0 +1,108 @@
+body {
+    background-color: #1c4433;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #589c5c;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 300%;
+    font-family: 'Chewy', cursive;
+}
+
+section, .contenedorGanador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jugadores {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #143527;
+    margin: 2%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.j1 {
+    font-size: 300%;
+    color: #F37A15;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.j2 {
+    font-size: 300%;
+    color: #3F5BCF;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.contenedorCanvas {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 150%;
+    font-family: 'Montserrat', sans-serif;
+    color: #2d5a30;
+    background-color: #dadada;
+}
+
+.contenedorConfig {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+#selectTablero {
+    font-size: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: #3d3d3d;
+    border-radius: 5px;
+    margin: 2%;
+}
+
+#selectTablero:hover {
+    font-family: 'Montserrat', sans-serif;
+    color: #1a1a1a;
+}
+
+#selectTablero:focus {
+    color:white;
+    background:#2d5a30;
+}
+
+.tableroOriginal {
+    font-family: 'Prompt', sans-serif;
+    background: transparent;
+    color:white;
+    border: 2px solid #15ff00;
+    border-radius: 10px;
+}
+
+p {
+    font-family: 'Prompt', sans-serif;
+}
+
+#ganador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 1%;
+}
+
+
