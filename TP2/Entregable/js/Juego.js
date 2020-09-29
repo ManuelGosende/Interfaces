@@ -47,6 +47,7 @@ const JUGADA_GANADORA = 4;
 let tableros = document.querySelector("#selectTablero");
 tableros.addEventListener("click", function() {
     if(tablero != null) {
+        // Si se cambia de dimensiones se regenera el tablero 
         fichas1 = [];
         fichas2 = [];
         matrizTablero = xOriginal = yOriginal = ultimaClickeada = null;
@@ -54,6 +55,14 @@ tableros.addEventListener("click", function() {
         tablero = null;
     }
     switch (tableros.value) {
+        case "4x4":
+            tablero = new Tablero(4, 4, ctx, canvas, imgTablero);
+            iniciarJuego(tablero, imgFicha);
+            break;
+        case "6x8":
+            tablero = new Tablero(6, 8, ctx, canvas, imgTablero);
+            iniciarJuego(tablero, imgFicha);
+            break;
         case "7x6":
             tablero = new Tablero(7, 6, ctx, canvas, imgTablero);
             iniciarJuego(tablero, imgFicha);
@@ -62,14 +71,7 @@ tableros.addEventListener("click", function() {
             tablero = new Tablero(7, 9, ctx, canvas, imgTablero);
             iniciarJuego(tablero, imgFicha);
             break;
-        case "6x8":
-            tablero = new Tablero(6, 8, ctx, canvas, imgTablero);
-            iniciarJuego(tablero, imgFicha);
-            break;
-        case "4x4":
-            tablero = new Tablero(4, 4, ctx, canvas, imgTablero);
-            iniciarJuego(tablero, imgFicha);
-            break;
+        
     };
     if(tablero != null) {
         reiniciar.style.display = '';
@@ -104,7 +106,6 @@ reiniciar.addEventListener("click", function() {
 });
 
 // DIBUJAR FICHAS POR PRIMERA VEZ
-
 function dibujarFichas(tablero, imgFicha) {
     let radio = tablero.getRadioParaFicha() * 0.8;
     // Fichero izquierdo
@@ -124,12 +125,13 @@ function dibujarFichas(tablero, imgFicha) {
 }
 
 // COMIENZA EL JUEGO
-
 function iniciarJuego(tablero, imgFicha) {
     matrizTablero = tablero.cargarMatriz();
     empate = tablero.getColumna() * tablero.getFila();
     dibujarFichas(tablero, imgFicha);
     tablero.drawTapa();
+    // PROBANDO CON TURNO
+    tablero.drawTurno(juegaJugador1);
 
     canvas.addEventListener("mousedown", onmousedown, false);
     canvas.addEventListener("mousemove", onmousemove, false);
@@ -271,5 +273,7 @@ function redibujar() {
         fichas2[f2].draw();
     }
     tablero.drawTapa();
+    // PROBANDO CON TURNO
+    tablero.drawTurno(juegaJugador1);
 }
 

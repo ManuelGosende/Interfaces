@@ -53,11 +53,17 @@ class Tablero {
         }
     }
 
-    limpiarTablero(f1, f2, mat, x, y, fichaClick, j1) {
-        f1 = [];
-        f2 = [];
-        mat = x = y = fichaClick = null;
-        j1 = true;
+    drawTurno(juegaJugador1) {
+        if(juegaJugador1) {
+            this.ctx.fillStyle = "#F37A15";
+            this.ctx.font = "bold 30px Prompt";
+            this.ctx.fillText("JUEGA JUGADOR 1", this.getRadioParaFicha(), this.getAltoFicha()/2);
+        }
+        else {
+            this.ctx.fillStyle = "#3F5BCF";
+            this.ctx.font = "bold 30px Prompt";
+            this.ctx.fillText("JUEGA JUGADOR 2", this.getAnchoCanvas() - this.getAncho()/2, this.getAltoFicha()/2);
+        }
     }
 
 // --------------------------- METODOS DE TRATAMIENTO DE FICHAS ----------------------------------
