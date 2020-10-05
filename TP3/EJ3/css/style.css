@@ -1,0 +1,49 @@
+@keyframes giro {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
+}
+
+#reloj {
+   
+    width: 220px;
+    height: 220px;
+    border-radius: 100%;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+#seg {
+    position: absolute;
+    margin: 110px;
+    width: 100px;
+    height: 0.3px;
+    border: solid 1px;
+    background-color: black;
+    transform-origin: left top;
+    animation: giro 60s linear infinite;
+}
+
+#min {
+    position: absolute;
+    margin: 110px;
+    width: 80px;
+    height: 0.7px;
+    border: solid 1px;
+    background-color: rgb(63, 63, 63);
+    transform-origin: left top;
+    animation: giro 36000s linear infinite;
+}
+
+#hora {
+    position: absolute;
+    margin: 110px;
+    width: 50px;
+    height: 1px;
+    border: solid 1px;
+    background-color: rgb(116, 116, 116);
+    transform-origin: left top;
+    animation: giro 216000s linear infinite;
+}
