@@ -1,0 +1,20 @@
+.contenedor {
+    width: 60px;
+    height: 75px;
+}
+
+#diego {
+    width: 100px;
+    height: 75px;
+    background-image: url("../img/secuencia.png");
+    animation: moveX 5s steps(6) infinite;
+}
+
+@keyframes moveX{
+    from{
+        background-position: 0px;
+    }
+    to{
+        background-position: 600px;
+    }
+}
