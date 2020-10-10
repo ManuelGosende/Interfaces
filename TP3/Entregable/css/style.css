@@ -1,0 +1,127 @@
+body {
+    margin: 0px;
+}
+
+.navegador {
+    background-color: rgb(26, 26, 26);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;   
+}
+
+.navegador .desplegable, #menu {
+    display: none;
+}
+
+#menu:checked ~ .desplegable {
+    display: flex;
+}
+
+#burguer {
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    user-select: none;
+    background-image: url("../img/menu.png");
+    background-size: 100%;
+}
+
+.desplegable {
+    width: 400px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.desplegable a {
+    text-decoration: none;
+    color: white;
+}
+
+.hero {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/fondoHero.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.pasto, .camioneta, .cielo, .humo1, .humo2, .humo3, .logo {
+    width: 1080px;
+    height: 300px;
+    background-size: 100%;
+    position: absolute;
+}
+
+@keyframes moverHero {	
+    from {
+        background-position: 0px;
+    }
+    to {
+        background-position: 1080px;
+    }	
+}
+
+@keyframes conducir {
+    from {
+        background-position-y: 1px;
+    }
+    to {
+        background-position-y: 3px;
+    }	
+}
+
+@keyframes opacidadHumo {
+    0% {	
+        opacity: 0;	
+    }	
+    100% {	
+        opacity: 1;	
+    }
+}
+
+
+.pasto {
+    background-image: url("../img/pasto.png");
+}
+
+.camioneta {
+    background-image: url("../img/camioneta.png");
+    animation: moverHero 10s linear infinite, conducir 1s ease-out infinite;
+    /* Pongo la sombra en la camioneta, para evitar que la sombra se mueva */
+    box-shadow: 0px 0px 37px 6px rgba(0,0,0,0.84);
+}
+
+.cielo {
+    background-image: url("../img/cielo.png");
+    animation: moverHero 15s linear infinite;
+}
+
+.humo1 {
+    background-image: url("../img/humo1.png");
+    animation: moverHero 10s linear infinite;
+}
+
+.humo2 {
+    background-image: url("../img/humo2.png");
+    animation: opacidadHumo 2s linear infinite, moverHero 10s linear infinite;	
+}
+
+.humo3 {
+    background-image: url("../img/humo3.png");
+    animation: opacidadHumo 3s linear infinite, moverHero 10s linear infinite;
+}
+
+.logo {
+    background-image: url("../img/logo.png");
+    /* probar con position: fixed para evitar q influya en los otros elementos */
+    perspective: 40px;
+    transform-style: preserve-3d;
+}
