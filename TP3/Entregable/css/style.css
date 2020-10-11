@@ -2,17 +2,23 @@ body {
     margin: 0px;
 }
 
-.navegador {
-    background-color: rgb(26, 26, 26);
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 1%;
+header {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: start;   
+    justify-content: center;
+    background-color: rgb(26, 26, 26);
 }
 
 .navegador .desplegable, #menu {
     display: none;
+}
+
+.navegador {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
 }
 
 #menu:checked ~ .desplegable {
@@ -34,6 +40,8 @@ body {
     width: 400px;
     flex-direction: row;
     justify-content: space-between;
+    /* NO ME FUNCIONA ESTA TRANSICION CUANDO CLICKEO SOBRE MENU, Y MODIFICO EL DISPLAY */
+    transition: 5s; 
 }
 
 .desplegable a {
@@ -51,6 +59,8 @@ body {
     background-image: url("../img/fondoHero.png");
     background-size: 100%;
     background-repeat: no-repeat;
+     /* PROBAR ESTO PARA QUE LO PISE EL ELEMENTO DE ABAJO
+    background-attacherment: fixed */
 }
 
 .pasto, .camioneta, .cielo, .humo1, .humo2, .humo3, .logo {
@@ -87,7 +97,6 @@ body {
     }
 }
 
-
 .pasto {
     background-image: url("../img/pasto.png");
 }
@@ -111,12 +120,12 @@ body {
 
 .humo2 {
     background-image: url("../img/humo2.png");
-    animation: opacidadHumo 2s linear infinite, moverHero 10s linear infinite;	
+    animation: opacidadHumo 2s ease-in infinite, moverHero 10s linear infinite;	
 }
 
 .humo3 {
     background-image: url("../img/humo3.png");
-    animation: opacidadHumo 3s linear infinite, moverHero 10s linear infinite;
+    animation: opacidadHumo 3s ease-out infinite, moverHero 10s linear infinite;
 }
 
 .logo {
@@ -125,3 +134,34 @@ body {
     perspective: 40px;
     transform-style: preserve-3d;
 }
+
+#grilla {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    transform-style: preserve-3d;
+}
+
+.personaje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    background: rgb(48, 48, 48);
+    background: linear-gradient(to bottom, rgb(25, 26, 24) 0%, rgba(5,9,1,1) 100%);
+    border-radius: 30px;
+    transform-style: preserve-3d;
+}
+
+.personaje img {
+    transform-style: preserve-3d;
+    transform: translateZ(80px);
+}
+
+.personaje p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    transform: translateZ(60px);
+}
+

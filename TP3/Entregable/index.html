@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-
-    <nav class="navegador">
-        <input type="checkbox" id="menu">
-        <label for="menu" id="burguer"></label>
-        <ul class="desplegable">
-            <a href="">Home</a>
-            <a href="">Eventos</a>
-            <a href="">Comentarios</a>
-        </ul>
-    </nav>
+    <header>
+        <nav class="navegador">
+            <input type="checkbox" id="menu">
+            <label for="menu" id="burguer"></label>
+            <ul class="desplegable">
+                <a href="">Home</a>
+                <a href="">Eventos</a>
+                <a href="">Comentarios</a>
+            </ul>
+        </nav>
+    </header>
 
     <section class="hero">
         <div class="cielo"></div>
@@ -27,8 +28,34 @@
         <div class="pasto"></div>
         <div class="logo"></div>
     </section>
-    
 
+    <article>
+        <div id="countdown"></div>
+    </article>
+
+    <div id="grilla">
+        <div class="personaje" onmousemove= "mouseMove(this, event)" onmouseout="mouseLeave(this)">
+            <img src="img/gustavo.png">
+            <p>Gustavo Fring</p>
+        </div>
+        <div class="personaje" onmousemove= "mouseMove(this, event)" onmouseout="mouseLeave(this)">
+            <img src="img/jesse.png">
+            <p>Jesse Pinkman</p>
+        </div>
+        <div class="personaje" onmousemove= "mouseMove(this, event)" onmouseout="mouseLeave(this)">
+            <img src="img/walter.png">
+            <p>Walter White</p>
+        </div>
+        <div class="personaje" onmousemove= "mouseMove(this, event)" onmouseout="mouseLeave(this)">
+            <img src="img/hank.png">
+            <p>Hank Schrader</p>
+        </div>
+        <div class="personaje" onmousemove= "mouseMove(this, event)" onmouseout="mouseLeave(this)"> 
+            <img src="img/mike.png">
+            <p>Mike Ehrmantraut</p>
+        </div>        
+    </div>
+    
     <script src="js/js.js"></script>
     
 </body>
