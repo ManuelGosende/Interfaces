@@ -74,7 +74,7 @@ tiempo = setInterval(generarCountDown, 1000);
     // POR LO QUE LLAMÉ A LOS SIGUIENTES MÉTODOS EN EL html. 
 
 function mouseMove(personaje, e) {
-    let xPerson = (window.innerWidth / 2 - e.pageX) / 25;
+    let xPerson = (window.innerWidth / 2 - e.layerX) / 25;
     let yPerson = (window.innerHeight / 2 - e.pageY) / 35;
     personaje.style.transform = `rotateX(${xPerson}deg) rotateY(${yPerson}deg)`;
     personaje.style.transition = "none"; 
@@ -84,4 +84,3 @@ function mouseLeave(personaje) {
     personaje.style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
     personaje.style.transition = "3s"; 
 }
-

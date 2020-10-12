@@ -7,6 +7,9 @@ header {
     display: flex;
     justify-content: center;
     background-color: rgb(26, 26, 26);
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 .navegador .desplegable, #menu {
@@ -49,18 +52,58 @@ header {
     color: white;
 }
 
+.parallax {
+    width: 100%;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.imgParallax {
+    width: 100%;
+    height: 590px;
+    position: sticky;
+}
+
+.cieloAtard, .desiertoAtard, .actoresAtard {
+    width: 100%;
+    height: 590px;
+    background-size: 100%;
+    position: absolute;
+}
+
+.cieloAtard {
+    background-image: url("../img/cieloatard.png");
+    background-attachment: fixed;
+}
+
+.desiertoAtard {
+    background-image: url("../img/desiertoatard.png");
+    background-attachment: fixed;
+}
+
+.actoresAtard {
+    background-image: url("../img/actoresatard.png");
+}
+
+h4 {
+    color: white;
+    position: relative;
+}
+
 .hero {
     width: 100%;
     height: 400px;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     background-image: url("../img/fondoHero.png");
     background-size: 100%;
     background-repeat: no-repeat;
-     /* PROBAR ESTO PARA QUE LO PISE EL ELEMENTO DE ABAJO
-    background-attacherment: fixed */
 }
 
 .pasto, .camioneta, .cielo, .humo1, .humo2, .humo3, .logo {
