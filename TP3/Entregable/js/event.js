@@ -75,7 +75,7 @@ tiempo = setInterval(generarCountDown, 1000);
 
 function mouseMove(personaje, e) {
     let xPerson = (window.innerWidth / 2 - e.layerX) / 25;
-    let yPerson = (window.innerHeight / 2 - e.pageY) / 35;
+    let yPerson = (window.innerHeight / 2 - e.layerY) / 35;
     personaje.style.transform = `rotateX(${xPerson}deg) rotateY(${yPerson}deg)`;
     personaje.style.transition = "none"; 
 }
@@ -84,3 +84,4 @@ function mouseLeave(personaje) {
     personaje.style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
     personaje.style.transition = "3s"; 
 }
+
