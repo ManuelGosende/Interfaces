@@ -31,7 +31,7 @@ let minuto = segundo * 60;
 let hora = minuto * 60;
 let dia = hora * 24;
 let tiempo;
-let divCountDown = document.getElementById("countdown");
+let textCountDown = document.getElementById("textCountDown");
 
 function generarCountDown() {
     var newFecha = new Date();
@@ -45,18 +45,10 @@ function generarCountDown() {
     let horas = Math.floor((distancia % dia) / hora);
     let minutos = Math.floor((distancia % hora) / minuto);
     let segundos = Math.floor((distancia % minuto) / segundo);
-    divCountDown.style.padding = "1%";
-    divCountDown.style.border = "solid 2px rgb(26, 26, 26)";
-    divCountDown.style.borderRadius = "25px";
-    divCountDown.style.color = "rgb(26, 26, 26)";
-    divCountDown.style.fontFamily = "Arial, Helvetica, sans-serif";
-    divCountDown.style.width = "300px";
-    divCountDown.style.display = "flex";
-    divCountDown.style.justifyContent = "center";
-    divCountDown.innerHTML = dias + ': ';
-    divCountDown.innerHTML += horas + ': ';
-    divCountDown.innerHTML += minutos + ': ';
-    divCountDown.innerHTML += segundos + ' PARA EL ESTRENO';
+    textCountDown.innerHTML = dias + ': ';
+    textCountDown.innerHTML += horas + ': ';
+    textCountDown.innerHTML += minutos + ': ';
+    textCountDown.innerHTML += segundos;
 }
 
 tiempo = setInterval(generarCountDown, 1000);
@@ -74,8 +66,9 @@ tiempo = setInterval(generarCountDown, 1000);
     // POR LO QUE LLAMÉ A LOS SIGUIENTES MÉTODOS EN EL html. 
 
 function mouseMove(personaje, e) {
-    let xPerson = (window.innerWidth / 2 - e.layerX) / 25;
-    let yPerson = (window.innerHeight / 2 - e.layerY) / 35;
+    
+    let xPerson = (window.innerWidth / 5 - e.offsetX) / 10;
+    let yPerson = (window.innerHeight / 5 - e.offsetY) / 10;
     personaje.style.transform = `rotateX(${xPerson}deg) rotateY(${yPerson}deg)`;
     personaje.style.transition = "none"; 
 }
@@ -83,5 +76,30 @@ function mouseMove(personaje, e) {
 function mouseLeave(personaje) {
     personaje.style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
     personaje.style.transition = "3s"; 
+}
+
+// y-y0=(y1-y0/x1-x0)*(x-x0)
+
+// movimiento de objetos con Scroll en Y
+
+let scrolling = 0;
+let menu = document.getElementsByTagName("header");
+let countDown = document.querySelector(".countDownContenedor");
+countDown.style.height = "0px";
+
+window.onscroll = function() {
+    scrolling = window.scrollY;
+    if(scrolling > 80) {
+        countDown.style.height = "150px";
+        countDown.style.transition = "2s";
+        menu[0].style.backgroundColor = "rgba(26, 26, 26, 0.960)";
+        menu[0].style.transition = "2s";
+    }
+    else {
+        countDown.style.height = "0px";
+        countDown.style.transition = "2s";
+        menu[0].style.backgroundColor = "rgb(5, 5, 5)";
+        menu[0].style.transition = "2s";
+    }
 }
 

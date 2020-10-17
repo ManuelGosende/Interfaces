@@ -2,11 +2,44 @@ body {
     margin: 0px;
 }
 
+/* /////////////////////////////////////////// HOME //////////////////////////////////////////////// */
+
+#loader {
+    width: 100%;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Geo', sans-serif;
+}
+
+.spinLoader {
+    border: 10px solid #9b9b9b;
+    border-radius: 50%;
+    border-top: 10px solid #000000;
+    width: 70px;
+    height: 70px;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 header {
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: rgb(26, 26, 26);
+    background-color: rgb(5, 5, 5);
     position: fixed;
     top: 0;
     z-index: 50;
@@ -41,7 +74,7 @@ header {
 
 .desplegable {
     width: 400px;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     /* NO ME FUNCIONA ESTA TRANSICION CUANDO CLICKEO SOBRE MENU, Y MODIFICO EL DISPLAY */
     transition: 5s;
@@ -52,7 +85,7 @@ header {
     color: white;
 }
 
-.parallaxContenedor {
+.parallaxContenedor, .carrouselContenedor {
     width: 100%;
     height: auto;
     display: flex;
@@ -63,40 +96,21 @@ header {
     background-repeat: no-repeat;
 }
 
+.carrouselContenedor {
+    z-index: 2;
+}
+
 .imgParallax {
     width: 100%;
     height: 590px;
+    z-index: 1;
 }
 
 .cieloAtard, .desiertoAtard, .actoresAtard {
     width: 100%;
     height: 590px;
-    background-size: 100%;
     position: absolute;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
-
-/* .parallax_1, .parallax_2, .parallax_3 {
-    width: 100%;
-    height: 590px;
-    background-size: 100%;
-    position: absolute;
-    overflow-x: hidden;
-    overflow-y: auto;
-} */
-
-/* .parallax_1 {
-    background-image: url("../img/cieloatard.png");
-}
-
-.parallax_2 {
-    background-image: url("../img/desiertoatard.png");
-}
-
-.parallax_3 {
-    background-image: url("../img/actoresatard.png");
-} */
 
 .cieloAtard {
     background-image: url("../img/cieloatard.png");
@@ -105,7 +119,6 @@ header {
 
 .desiertoAtard {
     background-image: url("../img/desiertoatard.png");
-    
     background-attachment: fixed;
 }
 
@@ -113,20 +126,13 @@ header {
     background-image: url("../img/actoresatard.png");
 }
 
-h4 {
+h2 {
     font-family: 'Special Elite', cursive;
-    font-size: 270%;
     color: white;
     position: relative;
-    visibility: hidden;
-    /* animation: deslizarDestacada 5s 1; */
 }
 
-/* .h4Deslizado {
-    animation: deslizarDestacada 5s 1;
-} */
-
-@keyframes deslizarDestacada {
+@keyframes deslizarTitulo {
     0% {
         transform: translateX(-1000px);
     }	
@@ -136,6 +142,19 @@ h4 {
     100% {
         transform: translateX(0px);
     }    
+}
+
+.sinopsis {
+    width: 400px;
+    height: auto;
+}
+
+.sinopsis p {
+    font-size: 85%;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 20px;
+    color: white;
+    margin-bottom: 90px;
 }
 
 .carrousel {
@@ -216,6 +235,8 @@ h4 {
         opacity: 1;
     }
 }
+
+/* /////////////////////////////////////////// EVENTS //////////////////////////////////////////////// */
 
 .hero {
     width: 100%;
@@ -302,20 +323,18 @@ h4 {
 }
 
 #grilla {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     transform-style: preserve-3d;
+    margin-top: 30px;
 }
 
 .personaje {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 200px;
     height: 300px;
-    background: rgb(48, 48, 48);
-    background: linear-gradient(to bottom, rgb(25, 26, 24) 0%, rgba(5,9,1,1) 100%);
+    background: rgb(26, 26, 26);
     border-radius: 30px;
     transform-style: preserve-3d;
 }
@@ -331,3 +350,27 @@ h4 {
     transform: translateZ(60px);
 }
 
+.countDown, .countDownContenedor, .cards, .personaje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countDownContenedor {
+    background-color: rgb(26, 26, 26);
+}
+
+.countDown {
+    padding: 20px 20px;
+}
+
+#textCountDown {
+    padding: 10px;
+    border: solid 2px rgb(25, 214, 0);
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
