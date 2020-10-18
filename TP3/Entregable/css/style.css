@@ -157,6 +157,39 @@ h2 {
     margin-bottom: 90px;
 }
 
+.cards {
+    width: 100%;
+    margin-bottom: 90px;
+}
+
+#grilla {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    transform-style: preserve-3d;
+    margin-top: 30px;
+}
+
+.personaje {
+    width: 200px;
+    height: 300px;
+    background: rgb(26, 26, 26);
+    border-radius: 30px;
+    transform-style: preserve-3d;
+}
+
+.personaje img {
+    transform-style: preserve-3d;
+    transform: translateZ(80px);
+}
+
+.personaje p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    transform: translateZ(60px);
+}
+
 .carrousel {
     width: 1080px;
     height: 400px;
@@ -317,47 +350,19 @@ h2 {
 
 .logo {
     background-image: url("../img/logo.png");
-    /* probar con position: fixed para evitar q influya en los otros elementos */
     perspective: 40px;
     transform-style: preserve-3d;
 }
 
-#grilla {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    transform-style: preserve-3d;
-    margin-top: 30px;
-}
-
-.personaje {
-    width: 200px;
-    height: 300px;
-    background: rgb(26, 26, 26);
-    border-radius: 30px;
-    transform-style: preserve-3d;
-}
-
-.personaje img {
-    transform-style: preserve-3d;
-    transform: translateZ(80px);
-}
-
-.personaje p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
-    transform: translateZ(60px);
-}
-
-.countDown, .countDownContenedor, .cards, .personaje {
+.countDown, .countDownContenedor, .cards, .personaje, .eventosContenedor {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .countDownContenedor {
-    background-color: rgb(26, 26, 26);
+    background-color: rgb(5, 92, 2);
+    overflow: hidden;
 }
 
 .countDown {
@@ -366,11 +371,64 @@ h2 {
 
 #textCountDown {
     padding: 10px;
-    border: solid 2px rgb(25, 214, 0);
+    border: solid 2px rgb(255, 168, 6);
     border-radius: 25px;
     color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     width: 150px;
     display: flex;
     justify-content: center;
+}
+
+.eventosContenedor {
+    width: 100%;
+    height: auto;
+    background-color: rgb(26, 26, 26);
+    margin-bottom: 140px;
+}
+
+.buttonAcordeon {
+    width: 500px;
+    background-color: rgb(182, 182, 182);
+    color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+    text-align: left;
+    border-radius: 10px 10px 0  0;
+    border-color: rgb(255, 255, 255);
+    padding: 0.5%;
+    margin: 2px;
+    transition: 0.3s;
+    outline: none;
+}
+
+.buttonActivo, .buttonAcordeon:hover {
+    background-color: rgb(145, 145, 156);
+    font-size: 102%;
+}
+
+.evento {
+    width: 460px;
+    height: 0px;
+    padding: 0 20px;
+    background-color: white;
+    /* display: none; */
+    overflow: hidden;
+    transition: 5s;
+}
+
+.eventoConjunto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.eventoConjunto img {
+    padding: 10px;
+}
+
+.eventoConjunto p {
+    color:  rgb(70, 70, 70);
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

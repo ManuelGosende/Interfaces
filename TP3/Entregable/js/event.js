@@ -53,31 +53,6 @@ function generarCountDown() {
 
 tiempo = setInterval(generarCountDown, 1000);
 
-// Grilla de Personajes 
-
-    /* let personajes = document.querySelectorAll('.personaje');
-    personajes.addEventListener('mousemove', function(e) {
-        let xPerson = (window.innerWidth / 2 - e.pageX) / 5;
-        let yPerson = (window.innerHeight / 2 - e.pageY) / 10;
-        personajes.style.transform = `rotateY(${xPerson}deg) rotateX(${yPerson}deg)`;
-    }); */
-    
-    // NO SUPE CÓMO CONSULTAR SI EL USUARIO ESTÁ POSICIONADO SOBRE UN PERSONAJE,
-    // POR LO QUE LLAMÉ A LOS SIGUIENTES MÉTODOS EN EL html. 
-
-function mouseMove(personaje, e) {
-    
-    let xPerson = (window.innerWidth / 5 - e.offsetX) / 10;
-    let yPerson = (window.innerHeight / 5 - e.offsetY) / 10;
-    personaje.style.transform = `rotateX(${xPerson}deg) rotateY(${yPerson}deg)`;
-    personaje.style.transition = "none"; 
-}
-
-function mouseLeave(personaje) {
-    personaje.style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
-    personaje.style.transition = "3s"; 
-}
-
 // y-y0=(y1-y0/x1-x0)*(x-x0)
 
 // movimiento de objetos con Scroll en Y
@@ -86,14 +61,22 @@ let scrolling = 0;
 let menu = document.getElementsByTagName("header");
 let countDown = document.querySelector(".countDownContenedor");
 countDown.style.height = "0px";
+let tituloMov = document.querySelectorAll(".tituloMov");
+for(let t = 0; t < tituloMov.length; t ++) {
+    tituloMov[t].style.visibility = "hidden";
+}
 
 window.onscroll = function() {
     scrolling = window.scrollY;
     if(scrolling > 80) {
-        countDown.style.height = "150px";
-        countDown.style.transition = "2s";
+        if(scrolling < 100) {
+            countDown.style.height = "150px";
+            countDown.style.transition = "2s";
+        }
         menu[0].style.backgroundColor = "rgba(26, 26, 26, 0.960)";
         menu[0].style.transition = "2s";
+        tituloMov[0].style.animation = `deslizarTitulo 3s 1`;
+        tituloMov[0].style.visibility = "visible";  
     }
     else {
         countDown.style.height = "0px";
@@ -102,4 +85,67 @@ window.onscroll = function() {
         menu[0].style.transition = "2s";
     }
 }
+
+// botonera de eventos
+
+let botones = document.getElementsByClassName("buttonAcordeon");
+/* let guardado = false; */
+let abierto = false;
+
+for (let boton = 0; boton < botones.length; boton ++) {
+    botones[boton].addEventListener("click", function() {
+    this.classList.toggle("buttonActivo");
+    let evento = this.nextElementSibling;
+    evento.style.height = "0px";
+    evento.style.transition = "2s";    
+    if (evento.style.height == 280 || abierto) {
+        evento.style.height = "0px";
+        abierto = false;
+    } else {
+        evento.style.height = "280px";
+        abierto = true;
+    }
+    ocultarRestantes(botones, botones[boton]);
+  });
+}
+
+/* for (let boton = 0; boton < botones.length; boton ++) {
+    botones[boton].addEventListener("click", function() {
+    this.classList.toggle("buttonActivo");
+    let evento = this.nextElementSibling;
+    evento.style.height = "0px";
+    evento.style.transition = "2s";    
+    if (evento.style.height == 280) {
+        evento.style.height = "0px";
+    } else {
+        evento.style.height = "280px";
+    }
+    ocultarRestantes(botones, botones[boton]);
+  });
+} */
+
+function ocultarRestantes(botones, pos) {
+    for (let boton = 0; boton < botones.length; boton ++) {
+        if(botones[boton] != pos) {
+            let evento = botones[boton].nextElementSibling;
+            evento.style.transition = "2s";
+            if(botones[boton].classList.contains("buttonActivo")) {
+                evento.style.height = "0px";
+                botones[boton].classList.toggle("buttonActivo", false);
+            }
+        }
+    }
+}
+
+function mouseMove(publicidad, e) {
+    let xPerson = (window.innerWidth / 5 - e.offsetX) / 10;
+    let yPerson = (window.innerHeight / 5 - e.offsetY) / 10;
+    publicidad.style.transform = `rotateX(${xPerson}deg) rotateY(${yPerson}deg)`;
+    publicidad.style.transition = "none"; 
+  }
+  
+  function mouseLeave(publicidad) {
+    publicidad.style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
+    publicidad.style.transition = "3s"; 
+  }
 
