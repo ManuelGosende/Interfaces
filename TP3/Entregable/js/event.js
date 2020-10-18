@@ -65,16 +65,20 @@ let tituloMov = document.querySelectorAll(".tituloMov");
 for(let t = 0; t < tituloMov.length; t ++) {
     tituloMov[t].style.visibility = "hidden";
 }
+let heisenberg = document.querySelector(".heisenberg");
+let angulo = null;
+let profesor = document.querySelector(".profesor");
 
 window.onscroll = function() {
     scrolling = window.scrollY;
+    console.log(scrolling);
     if(scrolling > 80) {
-        if(scrolling < 100) {
-            countDown.style.height = "150px";
-            countDown.style.transition = "2s";
-        }
+        countDown.style.height = "150px";
+        countDown.style.transition = "2s";
         menu[0].style.backgroundColor = "rgba(26, 26, 26, 0.960)";
+        ulDesplegable.style.backgroundColor = "rgba(26, 26, 26, 0.960)";
         menu[0].style.transition = "2s";
+        ulDesplegable.style.transition = "2s";
         tituloMov[0].style.animation = `deslizarTitulo 3s 1`;
         tituloMov[0].style.visibility = "visible";  
     }
@@ -82,57 +86,52 @@ window.onscroll = function() {
         countDown.style.height = "0px";
         countDown.style.transition = "2s";
         menu[0].style.backgroundColor = "rgb(5, 5, 5)";
+        ulDesplegable.style.backgroundColor = "rgb(5, 5, 5)";
         menu[0].style.transition = "2s";
+        ulDesplegable.style.transition = "2s";
+    }
+    if(scrolling > 240 && scrolling < 900) {
+        let avance = scrolling - 240;
+        angulo = avance;
+        heisenberg.style.transform = `rotate(${angulo}deg)`;
+        heisenberg.style.marginLeft = avance * 2 + "px";
+        heisenberg.style.transition = "3s";
+    }
+    if(scrolling > 800) {
+        profesor.style.transition = "3s";
+        profesor.style.transform = `scale(1.1)`;
+    }
+    else {
+        profesor.style.transition = "3s";
+        profesor.style.transform = `scale(1)`;
     }
 }
 
 // botonera de eventos
 
 let botones = document.getElementsByClassName("buttonAcordeon");
-/* let guardado = false; */
-let abierto = false;
+let evento = document.querySelectorAll(".evento");
+let lastClicked = null;
 
 for (let boton = 0; boton < botones.length; boton ++) {
     botones[boton].addEventListener("click", function() {
-    this.classList.toggle("buttonActivo");
-    let evento = this.nextElementSibling;
-    evento.style.height = "0px";
-    evento.style.transition = "2s";    
-    if (evento.style.height == 280 || abierto) {
-        evento.style.height = "0px";
-        abierto = false;
-    } else {
-        evento.style.height = "280px";
-        abierto = true;
-    }
-    ocultarRestantes(botones, botones[boton]);
-  });
+        evento[boton].style.transition = "2s"; 
+        if (evento[boton] == lastClicked) {
+            evento[boton].style.height = "0px";
+            lastClicked = null;
+        } else {
+            evento[boton].style.height = "280px";
+            lastClicked = evento[boton];
+        }
+        ocultarRestantes(evento[boton]);
+    });
 }
 
-/* for (let boton = 0; boton < botones.length; boton ++) {
-    botones[boton].addEventListener("click", function() {
-    this.classList.toggle("buttonActivo");
-    let evento = this.nextElementSibling;
-    evento.style.height = "0px";
-    evento.style.transition = "2s";    
-    if (evento.style.height == 280) {
-        evento.style.height = "0px";
-    } else {
-        evento.style.height = "280px";
-    }
-    ocultarRestantes(botones, botones[boton]);
-  });
-} */
-
-function ocultarRestantes(botones, pos) {
+function ocultarRestantes(eventoAbierto) {
     for (let boton = 0; boton < botones.length; boton ++) {
-        if(botones[boton] != pos) {
-            let evento = botones[boton].nextElementSibling;
-            evento.style.transition = "2s";
-            if(botones[boton].classList.contains("buttonActivo")) {
-                evento.style.height = "0px";
-                botones[boton].classList.toggle("buttonActivo", false);
-            }
+        if(evento[boton] != eventoAbierto) {
+            evento[boton].style.height = "0px";
+            evento[boton].style.transition = "2s";
         }
     }
 }
@@ -142,10 +141,10 @@ function mouseMove(publicidad, e) {
     let yPerson = (window.innerHeight / 5 - e.offsetY) / 10;
     publicidad.style.transform = `rotateX(${xPerson}deg) rotateY(${yPerson}deg)`;
     publicidad.style.transition = "none"; 
-  }
+}
   
-  function mouseLeave(publicidad) {
-    publicidad.style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
-    publicidad.style.transition = "3s"; 
-  }
+function mouseLeave(publicidad) {
+publicidad.style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
+publicidad.style.transition = "3s"; 
+}
 

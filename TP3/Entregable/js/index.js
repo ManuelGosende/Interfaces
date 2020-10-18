@@ -2,13 +2,6 @@
 
 // Grilla de Personajes 
 
-/* let personajes = document.querySelectorAll('.personaje');
-personajes.addEventListener('mousemove', function(e) {
-    let xPerson = (window.innerWidth / 2 - e.pageX) / 5;
-    let yPerson = (window.innerHeight / 2 - e.pageY) / 10;
-    personajes.style.transform = `rotateY(${xPerson}deg) rotateX(${yPerson}deg)`;
-}); */
-
 // NO SUPE CÓMO CONSULTAR SI EL USUARIO ESTÁ POSICIONADO SOBRE UN PERSONAJE,
 // POR LO QUE LLAMÉ A LOS SIGUIENTES MÉTODOS EN EL html. 
 
@@ -68,13 +61,17 @@ window.onscroll = function() {
   }
   if(scrolling > 100) {
     menu[0].style.backgroundColor = "rgba(26, 26, 26, 0.960)";
+    ulDesplegable.style.backgroundColor = "rgba(26, 26, 26, 0.960)";
     menu[0].style.transition = "2s";
+    ulDesplegable.style.transition = "2s";
     tituloMov[0].style.animation = `deslizarTitulo 3s 1`;
     tituloMov[0].style.visibility = "visible";
   }
   else {
     menu[0].style.backgroundColor = "rgb(5, 5, 5)";
+    ulDesplegable.style.backgroundColor = "rgb(5, 5, 5)";
     menu[0].style.transition = "2s";
+    ulDesplegable.style.transition = "2s";
   }
   if(scrolling > 550) {
     tituloMov[1].style.animation = `deslizarTitulo 3s 1`;

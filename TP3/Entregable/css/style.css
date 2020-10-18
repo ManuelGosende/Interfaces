@@ -38,26 +38,24 @@ h1 {
 header {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: rgb(5, 5, 5);
     position: fixed;
     top: 0;
     z-index: 50;
 }
 
-.navegador .desplegable, #menu {
+#menu {
     display: none;
+}
+
+#menu: ~ .desplegable {
+    height: 0px;
 }
 
 .navegador {
     font-family: Arial, Helvetica, sans-serif;
     padding: 1%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;  
-}
-
-#menu:checked ~ .desplegable {
     display: flex;
 }
 
@@ -73,16 +71,25 @@ header {
 }
 
 .desplegable {
-    width: 400px;
+    width: 200px;
+    overflow: hidden;
+    position: fixed;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    background-color: rgb(5, 5, 5);
+    border-radius: 0 0 30px 0;
+    margin-top: 70px;
+    margin-left: -20px;
     /* NO ME FUNCIONA ESTA TRANSICION CUANDO CLICKEO SOBRE MENU, Y MODIFICO EL DISPLAY */
-    transition: 5s;
 }
 
 .desplegable a {
     text-decoration: none;
     color: white;
+}
+
+.desplegable a:hover {
+    color: rgb(134, 167, 197);
 }
 
 .parallaxContenedor, .carrouselContenedor {
@@ -149,7 +156,7 @@ h2 {
     height: auto;
 }
 
-.sinopsis p {
+.sinopsis p, .textoCurso p {
     font-size: 85%;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 20px;
@@ -188,6 +195,8 @@ h2 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
     transform: translateZ(60px);
+    transform-style: preserve-3d;
+    user-select: none;
 }
 
 .carrousel {
@@ -354,14 +363,14 @@ h2 {
     transform-style: preserve-3d;
 }
 
-.countDown, .countDownContenedor, .cards, .personaje, .eventosContenedor {
+.countDown, .countDownContenedor, .cards, .personaje, .eventosContenedor, .redes {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .countDownContenedor {
-    background-color: rgb(5, 92, 2);
+    background-color: #1e3f20;
     overflow: hidden;
 }
 
@@ -383,8 +392,8 @@ h2 {
 .eventosContenedor {
     width: 100%;
     height: auto;
+    padding-bottom: 80px;
     background-color: rgb(26, 26, 26);
-    margin-bottom: 140px;
 }
 
 .buttonAcordeon {
@@ -412,15 +421,23 @@ h2 {
     height: 0px;
     padding: 0 20px;
     background-color: white;
-    /* display: none; */
     overflow: hidden;
-    transition: 5s;
+    transition: 3s;
 }
 
-.eventoConjunto {
+.eventoConjunto, .iconosContenedor {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.iconosContenedor {
+    width: 200px;
+    justify-content: space-around;
+}
+
+.iconosContenedor img:hover {
+    width: 43px;
 }
 
 .eventoConjunto img {
@@ -431,4 +448,85 @@ h2 {
     color:  rgb(70, 70, 70);
     font-size: 14px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.redes {
+    width: auto;
+    padding: 2%;
+    background-color: #1e3f20;
+}
+
+.heisenberg {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin: -42px 58px;
+    background-image: url("../img/heinsenberg.png");
+    background-size: 100%;
+}
+
+.iconosRedes {
+    width: 40px;
+    height: auto;
+}
+
+.cursoContenedor {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.textoCurso {
+    width: 300px;
+    padding: 1%;
+    margin: 30px;
+    background-color:#1e3f20;
+    border-radius: 20px;
+}
+
+.textoCurso h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.textoCurso h4 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: chartreuse;
+}
+
+.textoCurso button {
+    font-family: 'Montserrat', sans-serif;
+    width: 100px;
+    color: #1e3f20;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.textoCurso button:hover {
+    transform: scale(1.2);
+    transition: 1s;
+}
+
+.profesor {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    margin: -42px 40px;
+    background-image: url("../img/curso.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+footer {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: solid #1e3f20 2px;
+    background-color: rgb(26, 26, 26);
+    font-family: 'Montserrat', sans-serif;
+    color: white;
 }
