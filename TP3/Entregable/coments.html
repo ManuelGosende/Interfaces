@@ -6,6 +6,7 @@
     <title>Breaking Bad</title>
     <link rel="stylesheet" href="css/style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Geo:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -31,6 +32,56 @@
                 </ul>
             </nav>
         </header>
+        <section class="formulario">
+            <h2 class="tituloMov">SALUDA A LOS PROTAGONISTAS</h2>
+            <div class="saludo">
+                <p>Somos una comunidad muy acercada a los protagonistas de esta serie reconicida
+                    mundialmente, por lo que te brindamos la posibilidad de que puedas enviar un
+                    pequeño saludo al protagonista con el que más te hayas sentido identificado.
+                    Ante todo, pedimos respeto y amabilidad a la hora de dirigirnos a cualquiera
+                    de ellos, ya que forman parte de una de las mejores series de la historia.</p>
+                <p>Breaking Bad fue creada por Vince Gilligan, quien previamente había trabajado 
+                    como guionista en la serie The X Files, de Fox. Gilligan quería crear una serie 
+                    en la que el protagonista se convirtiera en el antagonista.</p>
+            </div>
+            <img src="img/flecha.png" alt="" class="flecha">
+            <h2 class="tituloMov">COMPLETA EL FORMULARIO</h2>
+                <div class="caras">
+                    <div class="caraIzq"></div>
+                    <div class="caraDer"></div>
+                </div>
+            <form>
+                <div class="puntoForm">
+                    <label for="name">Seleccionar Personaje</label>
+                    <select name="select">
+                        <option value="value1">Walter White</option> 
+                        <option value="value2">Jesse Pinkman</option>
+                        <option value="value3">Gustavo Fring</option>
+                        <option value="value4">Hank Schrander</option>
+                        <option value="value5">Mike Ehrmantraut</option>
+                    </select>
+                </div>
+                <div class="puntoForm">
+                    <label for="name">Escriba su mensaje</label>
+                    <textarea name="saludo" id="saludo" cols="40" rows="8"></textarea>
+                </div>
+                <div class="puntoForm">
+                    <label for="name">Nombre</label><br>
+                    <input type="text" id="fname" name="name" placeholder="Escriba su nombre aquí">
+                </div>
+                <div class="puntoForm">
+                    <label for="surname">Apellido</label>
+                    <input type="text" id="lname" name="surname" placeholder="Escriba su apellido aquí">
+                </div>
+                <div class="puntoForm">
+                    <label for="mail">Mail</label>
+                    <input type="text" id="lname" name="mail" placeholder="example@gmail.com">
+                </div>
+                <div class="puntoForm">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </section>
         <footer>
             <p>Breaking Bad</p>
             <p>Resolución recomendada - 1336 x 768</p>
@@ -38,7 +89,7 @@
     </div>
     
     <script src="js/inCommon.js"></script>
-    <script src="js/js.js"></script>
+    <script src="js/coments.js"></script>
     
 </body>
 </html>
