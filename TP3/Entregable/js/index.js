@@ -48,6 +48,10 @@ for(let t = 0; t < tituloMov.length; t ++) {
 }
 let imgDesierto = document.querySelector(".desiertoAtard");
 let menu = document.getElementsByTagName("header");
+let cards = document.querySelectorAll(".personaje");
+for(let c = 0; c < cards.length; c ++) {
+  cards[c].style.visibility = "hidden";
+}
 
 window.onscroll = function() {
   let scrolling = window.scrollY;
@@ -76,10 +80,19 @@ window.onscroll = function() {
   if(scrolling > 550) {
     tituloMov[1].style.animation = `deslizarTitulo 3s 1`;
     tituloMov[1].style.visibility = "visible";
+    ingresoCards();
   }
   if(scrolling > 1000) {
     tituloMov[2].style.animation = `deslizarTitulo 3s 1`;
     tituloMov[2].style.visibility = "visible";
+  }
+}
+
+function ingresoCards() {
+  for(let i = 0; i < cards.length; i ++) {
+    cards[i].style.animationDelay = "1s";
+    cards[i].style.animation = "ingresarPersonaje 2s 1";
+    cards[i].style.visibility = "visible";
   }
 }
 

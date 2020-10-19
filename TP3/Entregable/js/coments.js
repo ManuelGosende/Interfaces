@@ -28,13 +28,21 @@ window.onscroll = function() {
         menu[0].style.transition = "2s";
         ulDesplegable.style.transition = "2s";
     }
-    if(scrolling > 570) {
+    if(scrolling > 500) {
         caraIzq.style.transition = "2s";
         caraDer.style.transition = "2s";
-        caraIzq.style.transform = `translateX(-700px)`;
-        caraDer.style.transform = `translateX(700px)`;
+        caraIzq.style.transform = `translateX(-180px)`;
+        caraDer.style.transform = `translateX(180px)`;
         form[0].style.animationDelay = "1s";
-        form[0].style.transition = "2s";
+        form[0].style.transition = "4s";
         form[0].style.opacity = "1";
+    }
+    else {
+        caraIzq.style.transition = "2s";
+        caraDer.style.transition = "2s";
+        caraIzq.style.transform = `translateX(0px)`;
+        caraDer.style.transform = `translateX(0px)`;
+        form[0].style.transition = "2s";
+        form[0].style.opacity = "0";
     }
 }

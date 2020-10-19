@@ -60,7 +60,7 @@ tiempo = setInterval(generarCountDown, 1000);
 let scrolling = 0;
 let menu = document.getElementsByTagName("header");
 let countDown = document.querySelector(".countDownContenedor");
-countDown.style.height = "0px";
+countDown.style.maxHeight = "0px";
 let tituloMov = document.querySelectorAll(".tituloMov");
 for(let t = 0; t < tituloMov.length; t ++) {
     tituloMov[t].style.visibility = "hidden";
@@ -68,12 +68,12 @@ for(let t = 0; t < tituloMov.length; t ++) {
 let heisenberg = document.querySelector(".heisenberg");
 let angulo = null;
 let profesor = document.querySelector(".profesor");
+let aplicaciones = document.getElementsByName("aplicacion");
 
 window.onscroll = function() {
     scrolling = window.scrollY;
-    console.log(scrolling);
     if(scrolling > 80) {
-        countDown.style.height = "150px";
+        countDown.style.maxHeight = "150px";
         countDown.style.transition = "2s";
         menu[0].style.backgroundColor = "rgba(26, 26, 26, 0.960)";
         ulDesplegable.style.backgroundColor = "rgba(26, 26, 26, 0.960)";
@@ -83,14 +83,12 @@ window.onscroll = function() {
         tituloMov[0].style.visibility = "visible";  
     }
     else {
-        countDown.style.height = "0px";
-        countDown.style.transition = "2s";
         menu[0].style.backgroundColor = "rgb(5, 5, 5)";
         ulDesplegable.style.backgroundColor = "rgb(5, 5, 5)";
         menu[0].style.transition = "2s";
         ulDesplegable.style.transition = "2s";
     }
-    if(scrolling > 240 && scrolling < 900) {
+    if(scrolling > 240 && scrolling < 880) {
         let avance = scrolling - 240;
         angulo = avance;
         heisenberg.style.transform = `rotate(${angulo}deg)`;
@@ -100,6 +98,11 @@ window.onscroll = function() {
     if(scrolling > 800) {
         profesor.style.transition = "3s";
         profesor.style.transform = `scale(1.1)`;
+        for(let i = 0; i < aplicaciones.length; i++) {
+            aplicaciones[i].style.transform = "rotate(360deg)";
+            aplicaciones[i].style.transition = "3s";
+            aplicaciones[i].style.animationDelay = "1" + i + "s";
+        }
     }
     else {
         profesor.style.transition = "3s";
