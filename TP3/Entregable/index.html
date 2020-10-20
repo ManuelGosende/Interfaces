@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking Bad</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geo:ital@1&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+    <div id="loader">
+        <h1>LOADING...</h1>
+        <div class="spinLoader"></div>
+    </div>
+
+    <div class="divContenedor">
+        <header>
+            <nav class="navegador">
+                <input type="checkbox" id="menu">
+                <label for="menu" id="burguer"></label>
+                <ul class="desplegable">
+                    <a href="index.html">Home</a>
+                    <a href="event.html">Eventos</a>
+                    <a href="coments.html">Comentarios</a>
+                    <a href="https://www.culturagenial.com/es/serie-breaking-bad/" target="_blank">Resumen de temporadas</a>
+                    <a href="https://www.bluestacks.com/apps/strategy/breaking-bad-criminal-elements-on-pc.html" target="_blank">Descarga el juego</a>
+                    <a href="https://www.instagram.com/breakingbad" target="_blank">Instagram</a>
+                    <a href="https://twitter.com/breakingbad" target="_blank">Twitter</a>
+                    <a href="http://www.netflix.com" target="_blank">Mirala en Netflix</a>
+                </ul>
+            </nav>
+        </header>
+    
+        <section class="parallaxContenedor">
+            <div class="imgParallax">
+                <div class="cieloAtard"></div>
+                <div class="desiertoAtard"></div>
+                <div class="actoresAtard"></div>
+            </div>
+            <div class="carrouselContenedor">
+                <h2 class="tituloMov">SINOPSIS</h2>
+                <div class="sinopsis">
+                    <p>Walter White es un frustrado profesor de química en un instituto, 
+                    padre de un joven discapacitado y con una mujer embarazada. Además, trabaja en
+                    un lavadero de vehículos por las tardes. Cuando le diagnostican un cáncer pulmonar terminal
+                    se plantea qué pasará con su familia cuando él muera. En una redada de la DEA, a la cual
+                    fue invitado por su cuñado -el agente Hank Schrader-, Walt reconoce a un
+                    antiguo alumno suyo, Jesse Pinkman, a quien contacta para fabricar y vender
+                    metanfetamina y así asegurar el bienestar económico de su familia. Pero el acercamiento
+                    al mundo de las drogas y el trato con traficantes y mafiosos contamina la personalidad de
+                    Walter, el cual va abandonando poco a poco su personalidad recta y predecible para convertirse
+                    en alguien sin demasiados escrúpulos cuando se trata de conseguir lo que quiere.</p>
+                </div>
+                <section class="cards">
+                    <h2 class="tituloMov">PERSONAJES DESTACADOS</h2>
+                    <div id="grilla">
+                        <div class="personaje" onmousemove= "mouseMove(this, event)" onmouseout="mouseLeave(this)">
+                            <img src="img/gustavo.png">
+                        </div>
+                        <div class="personaje" onmousemove= "mouseMove(this, event)" onmouseout="mouseLeave(this)">
+                            <img src="img/jesse.png">
+                        </div>
+                        <div class="personaje" onmousemove= "mouseMove(this, event)" onmouseout="mouseLeave(this)">
+                            <img src="img/walter.png">
+                        </div>
+                        <div class="personaje" onmousemove= "mouseMove(this, event)" onmouseout="mouseLeave(this)">
+                            <img src="img/hank.png">
+                        </div>
+                        <div class="personaje" onmousemove= "mouseMove(this, event)" onmouseout="mouseLeave(this)"> 
+                            <img src="img/mike.png">
+                        </div>        
+                    </div>
+                </section>
+                <h2 class="tituloMov">ESCENAS DESTACADAS</h2>
+                <div class="carrousel">
+                    <div class="imgCarrousel1 slide carrouselOpacity"></div>
+                    <div class="imgCarrousel2 slide carrouselOpacity"></div>
+                    <div class="imgCarrousel3 slide carrouselOpacity"></div>
+                    <div class="imgCarrousel4 slide carrouselOpacity"></div>
+                </div>
+                <div class="circulosCarrousel">
+                    <span class="carrouselUbic"></span> 
+                    <span class="carrouselUbic"></span> 
+                    <span class="carrouselUbic"></span>
+                    <span class="carrouselUbic"></span>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>Google Chrome</p>
+            <p>Resolución recomendada - 1336 x 768</p>
+        </footer>
+    </div>
+
+    <script src="js/inCommon.js"></script>
+    <script src="js/index.js"></script>
+    
+</body>
+</html>
