@@ -62,9 +62,12 @@ let menu = document.getElementsByTagName("header");
 let countDown = document.querySelector(".countDownContenedor");
 countDown.style.maxHeight = "0px";
 let tituloMov = document.querySelectorAll(".tituloMov");
+
 for(let t = 0; t < tituloMov.length; t ++) {
     tituloMov[t].style.visibility = "hidden";
 }
+
+
 let heisenberg = document.querySelector(".heisenberg");
 let angulo = null;
 let profesor = document.querySelector(".profesor");

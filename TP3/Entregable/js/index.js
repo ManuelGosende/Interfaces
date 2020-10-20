@@ -43,9 +43,12 @@ function moverCarrousel() {
 // movimiento de objetos con Scroll en Y
 
 let tituloMov = document.querySelectorAll(".tituloMov");
+
 for(let t = 0; t < tituloMov.length; t ++) {
   tituloMov[t].style.visibility = "hidden";
 }
+
+
 let imgDesierto = document.querySelector(".desiertoAtard");
 let menu = document.getElementsByTagName("header");
 let cards = document.querySelectorAll(".personaje");

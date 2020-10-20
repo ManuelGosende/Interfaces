@@ -4,9 +4,12 @@ let menu = document.getElementsByTagName("header");
 let tituloMov = document.querySelectorAll(".tituloMov");
 tituloMov[0].style.animation = `deslizarTitulo 3s 1`;
 tituloMov[0].style.visibility = "visible";
+
 for(let t = 1; t < tituloMov.length; t ++) {
   tituloMov[t].style.visibility = "hidden";
 }
+
+
 let caraIzq = document.querySelector(".caraIzq");
 let caraDer = document.querySelector(".caraDer");
 let form = document.getElementsByTagName("form");

@@ -2,7 +2,7 @@
 
 // Loading
 
-/* let pagina = document.querySelector(".divContenedor");
+let pagina = document.querySelector(".divContenedor");
 loader();
 
 function loader() {
@@ -13,11 +13,13 @@ function loader() {
 function loadingPage() {
   document.getElementById("loader").style.display = "none";
   pagina.style.display = "block";
-} */
+}
 
 let menuClick = document.getElementById("menu");
 let ulDesplegable = document.querySelector(".desplegable");
 ulDesplegable.style.height = "0px";
+
+
 menuClick.addEventListener("click", function(e) {
   ulDesplegable.style.transition = "2s";
   if(ulDesplegable.style.height == "0px") {
