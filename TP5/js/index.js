@@ -1,27 +1,33 @@
 "use strict";
 
-let botones = document.getElementsByClassName("buttonLog");
+let botonesLog = document.getElementsByClassName("buttonLog");
 let formLog = document.querySelectorAll(".formLog");
 let lastClicked = null;
 
-for (let boton = 0; boton < botones.length; boton ++) {
-    botones[boton].addEventListener("click", function() {
+for (let boton = 0; boton < botonesLog.length; boton ++) {
+    botonesLog[boton].addEventListener("click", function() {
         formLog[boton].style.transition = "2s"; 
         if (formLog[boton] == lastClicked) {
             formLog[boton].style.height = "0px";
+            botonesLog[boton].style.width = "200px";
+            botonesLog[boton].style.borderRadius = "40px";
             lastClicked = null;
         } else {
-            formLog[boton].style.height = "280px";
+            formLog[boton].style.height = "auto";
+            botonesLog[boton].style.borderRadius = "40px 40px 0px  0px";
+            botonesLog[boton].style.width = "240px";
             lastClicked = formLog[boton];
         }
         ocultarRestantes(formLog[boton]);
     });
 }
 
-function ocultarRestantes(eventoAbierto) {
-    for (let boton = 0; boton < botones.length; boton ++) {
-        if(formLog[boton] != eventoAbierto) {
+function ocultarRestantes(botonSeleccionado) {
+    for (let boton = 0; boton < botonesLog.length; boton ++) {
+        if(formLog[boton] != botonSeleccionado) {
             formLog[boton].style.height = "0px";
+            botonesLog[boton].style.width = "200px";
+            botonesLog[boton].style.borderRadius = "40px";
             formLog[boton].style.transition = "2s";
         }
     }

@@ -5,55 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spoiler Five</title>
     <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <!-- Mobile -->
-        <div class="contenedorLogin">
-            <img src="logo-original.png" alt="">
-        </div>        
+        <img src="logo-original.png" alt="">       
     </header> 
 
     <h3 class="colorBlanco">Conecta con tus <br> momentos favoritos</h3>
 
-    <button class="buttonRegist colorBlanco backVerde buttonLog">Registrarme</button>
+    <button class="buttonLog colorBlanco backVerde">Registrarme</button>
 
-    <form action="">
+    <form action="" class="formLog backBlanco">
         <p>Mail</p>
         <input type="text">
+        <p>Contraseña</p>
         <div class="displayHoriz">
-            <p>Contraseña</p>
+            <input type="password">
             <img src="Icons/control-password.png" alt="">
         </div>
-        <input type="password">
+        <p>Repetir contraseña</p>
         <div class="displayHoriz">
-            <p>Repetir contraseña</p>
+            <input type="password">
             <img src="Icons/control-password.png" alt="">
         </div>
-        <input type="password">
-        <p>Registrarme con</p>
-        <div class="displayHoriz">
-            <img src="Icons/facebook.png" alt="">
-            <img src="Icons/google.png" alt="">
+        <div class="displayVert">
+            <p>Registrarme con</p>
+            <div class="displayHoriz" >
+                <img src="Icons/facebook.png" alt="">
+                <img src="Icons/google.png" alt="">
+            </div>
         </div>
-        <input type="submit" placeholder="Crear cuenta">
+        <div class="displayVert">
+            <input type="submit" value="Crear cuenta" class="buttonForm backGris colorVerde" formaction="home.html">
+        </div>
     </form>
 
     <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
 
-    <button class="buttonSignIn colorBlanco backGris buttonLog">Iniciar Sesión</button>
+    <button class="buttonLog colorBlanco backGris">Iniciar Sesión</button>
 
-    <form action="">
+    <form action="" class="formLog backBlanco">
         <p>Mail</p>
         <input type="text">
         <p>Contraseña</p>
-        <input type="password">
         <div class="displayHoriz">
-            <p>Iniciar sesion con</p>   
+            <input type="password">
+            <img src="Icons/control-password.png" alt="">
         </div>
-        <div class="displayHoriz">
-            <img src="Icons/facebook.png" alt="">
-            <img src="Icons/google.png" alt="">
+        <div class="displayVert">
+            <p>Iniciar sesión con</p>   
+            <div class="displayHoriz" >
+                <img src="Icons/facebook.png" alt="">
+                <img src="Icons/google.png" alt="">
+            </div>
+        </div>
+        <div class="displayVert">
+            <input type="submit" value="Iniciar sesión" class="buttonForm backGris colorVerde" formaction="home.html">
         </div>
     </form>
 

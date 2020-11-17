@@ -56,13 +56,30 @@ h3 {
     
 }
 
-.buttonRegist, .buttonSignIn {
+.buttonLog {
     font-family: 'Poppins', sans-serif;
-    width: 50%;
-    height: 50px;
+    width: 200px;
+    height: 60px;
     border-radius: 40px;
-    margin: 2%;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+}
+
+.formLog {
+    height: 0px;
+    width: 200px;
+    margin-top: 0px;
+    padding: 0 20px;
+    overflow: hidden;
+    border-radius: 0 0 30px 30px;
+    transition: 3s;
+}
+
+.buttonForm {
+    font-family: 'Poppins', sans-serif;
+    margin: 10%;
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
 }
 
 .colorVerde  {
@@ -116,6 +133,9 @@ h3 {
 
     svg {
         margin: 10%;
+    }
+    .displayHoriz img {
+        padding: 5px;
     }
 
 }
