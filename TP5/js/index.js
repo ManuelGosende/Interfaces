@@ -1,28 +1,28 @@
 "use strict";
 
-let botones = document.getElementsByClassName("buttonAcordeon");
-let evento = document.querySelectorAll(".evento");
+let botones = document.getElementsByClassName("buttonLog");
+let formLog = document.querySelectorAll(".formLog");
 let lastClicked = null;
 
 for (let boton = 0; boton < botones.length; boton ++) {
     botones[boton].addEventListener("click", function() {
-        evento[boton].style.transition = "2s"; 
-        if (evento[boton] == lastClicked) {
-            evento[boton].style.height = "0px";
+        formLog[boton].style.transition = "2s"; 
+        if (formLog[boton] == lastClicked) {
+            formLog[boton].style.height = "0px";
             lastClicked = null;
         } else {
-            evento[boton].style.height = "280px";
-            lastClicked = evento[boton];
+            formLog[boton].style.height = "280px";
+            lastClicked = formLog[boton];
         }
-        ocultarRestantes(evento[boton]);
+        ocultarRestantes(formLog[boton]);
     });
 }
 
 function ocultarRestantes(eventoAbierto) {
     for (let boton = 0; boton < botones.length; boton ++) {
-        if(evento[boton] != eventoAbierto) {
-            evento[boton].style.height = "0px";
-            evento[boton].style.transition = "2s";
+        if(formLog[boton] != eventoAbierto) {
+            formLog[boton].style.height = "0px";
+            formLog[boton].style.transition = "2s";
         }
     }
 }
