@@ -1,5 +1,6 @@
 "use strict";
 
+
 let botonesLog = document.getElementsByClassName("buttonLog");
 let formLog = document.querySelectorAll(".formLog");
 let lastClicked = null;
@@ -32,3 +33,5 @@ function ocultarRestantes(botonSeleccionado) {
         }
     }
 }
+
+
