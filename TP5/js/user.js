@@ -1,5 +1,9 @@
 "use strict";
 
+
+// Cambiar colores de navegador
+
+
 // Desplegar configuración.
 
 let configClick = document.getElementById("configInput");
