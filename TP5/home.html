@@ -11,31 +11,71 @@
     
     <header>
         <!-- Mobile -->
-        <img src="logo-mobile.png" alt="">
-        <img src="Icons/help.png" alt="">
+        <div class="displayHoriz navSuperior sombraFuera">
+            <img src="logo-mobile.png" alt="">
+            <div>
+                <img src="Icons/help.png" alt="">
+            </div>
+        </div>
+        <nav class="displayHoriz sombraFuera">
+            <a href="home.html">
+                <div id="btnHome" class="displayHoriz sombraAdentro">
+                    <img src="Icons/home.png" alt="">
+                </div>
+            </a>
+            <a href="search.html">
+                <div id="btnSearch" class="displayHoriz sombraAdentro">
+                    <img src="Icons/search.png" alt="">
+                </div>
+            </a>
+            <a href="user.html">
+                <div id="btnUser" class="displayHoriz sombraAdentro">
+                    <img src="Icons/user.png" alt="">
+                </div>
+            </a>
+        </nav>
     </header> 
 
-    <nav>
-        <a href="home.html">
-            <div id="btnHome" class="displayHoriz">
-                <img src="Icons/home.png" alt="">
+    <div class="space"></div>
+
+    <!-- REPRODUCTOR -->
+
+    <div class="reproductor backNegro">
+        <div class="displayVert">
+            <img src="Icons/barra-play.png" alt="">
+        </div>
+        <div class="displayHoriz empty">
+            <a href="">
+                <div class="backGris infoReproductor">
+                    <p class="colorVerde">Artista</p>
+                    <p class="colorBlanco subText">Archivo de audio</p>
+                </div>
+            </a>
+            <div>
+                <img src="Icons/play-rep.png" alt="">
             </div>
-        </a>
-        <a href="search.html">
-            <div id="btnSearch" class="displayHoriz">
-                <img src="Icons/search.png" alt="">
+            <div>
+                <img src="Icons/favourite.png" alt="">
             </div>
-        </a>
-        <a href="user.html">
-            <div id="btnUser" class="displayHoriz">
-                <img src="Icons/user.png" alt="">
+            <div>
+                <img src="Icons/volume.png" alt="">
             </div>
-        </a>
-    </nav>
+            <div>
+                <img src="Icons/desplegable.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    
 
     <h2 class="colorBlanco">Sugerido para vos</h2>
 
     <div class="contenedorAudios">
+        <div class="displayVert">
+            <img src="Mobile-image/podcast/ultimoscartuchos.png" alt="">
+            <p class="colorBlanco">Últimos Cartuchos</p>
+            <p class="colorGris">107.3 AM</p>
+        </div>
         <div class="displayVert">
             <img src="Mobile-image/artista/badbunny.png" alt="">
             <p class="colorBlanco">Bad Bunny</p>
@@ -53,11 +93,6 @@
         <div class="displayVert">
             <img src="Mobile-image/artista/bobmarley.png" alt="">
             <p class="colorBlanco">Bob Marley</p>
-        </div>
-        <div class="displayVert">
-            <img src="Mobile-image/podcast/ultimoscartuchos.png" alt="">
-            <p class="colorBlanco">Últimos Cartuchos</p>
-            <p class="colorGris">107.3 AM</p>
         </div>
     </div>
 
@@ -163,11 +198,11 @@
         </div>
         <div class="displayVert">
             <img src="Mobile-image/artista/acru.png" alt="">
-            <p class="colorBlanco">Acru</p>
+            <p class="colorBlanco">Lo último</p>
         </div>
         <div class="displayVert">
             <img src="Mobile-image/artista/jamesbrown.png" alt="">
-            <p class="colorBlanco">James Brown</p>
+            <p class="colorBlanco">Un viaje al pasado</p>
         </div>
     </div>
 
@@ -209,7 +244,7 @@
             <picture>
                 <img src="Icons/instagram.png" alt="">
             </picture>
-            <p>Spoiler Five</p>
+            <p>spoilerfive</p>
         </div>
     </footer>
 
