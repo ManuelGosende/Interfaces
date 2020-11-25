@@ -80,13 +80,23 @@ for (let x = 0; x < xDrop.length; x ++) {
 
 let buttonsOpinion = document.getElementsByClassName("buttonOpinions");
 let formOpinion = document.querySelectorAll(".formOpinion");
+let lastClicked = null;
 
 for (let boton = 0; boton < buttonsOpinion.length; boton ++) {
     buttonsOpinion[boton].addEventListener("click", function() {
         formOpinion[boton].style.transition = "2s"; 
-        formOpinion[boton].style.height = "auto";
-        buttonsOpinion[boton].style.width = "280px";
-        buttonsOpinion[boton].style.borderRadius = "40px 40px 0px  0px";
+        if (formOpinion[boton] == lastClicked) {
+            formOpinion[boton].style.height = "0px";
+            buttonsOpinion[boton].style.width = "200px";
+            buttonsOpinion[boton].style.borderRadius = "40px";
+            lastClicked = null;
+        }
+        else {
+            formOpinion[boton].style.height = "auto";
+            buttonsOpinion[boton].style.width = "280px";
+            buttonsOpinion[boton].style.borderRadius = "40px 40px 0px  0px";
+            lastClicked = formOpinion[boton];
+        }
     });
 }
 
