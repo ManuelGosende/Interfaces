@@ -7,7 +7,7 @@
 /* Desplegar configuración. */
 
 let configClick = document.getElementById("configInput");
-let xClick = document.getElementById("xInput");
+let xClick = document.getElementById("xConfig");
 let configDesplegable = document.querySelector(".config");
 configDesplegable.style.maxWidth = "0px";
 configDesplegable.style.padding = "0%";
@@ -23,8 +23,3 @@ xClick.addEventListener("click", function() {
     configDesplegable.style.maxWidth = "0px";
     configDesplegable.style.padding = "0%";
 });
-
-// let xDrop=document.querySelector("#xDrop")
-// xDrop.addEventListener("click",function() {
-//     this.classList.add("hidden")
-// })
