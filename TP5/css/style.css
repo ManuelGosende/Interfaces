@@ -1,3 +1,8 @@
+.hidden{
+    visibility: hidden;
+    display: none;
+}
+
 body {
     width: 100%;
     margin: 0;
@@ -20,6 +25,7 @@ header {
 footer {
     width: 100%;
 }
+
 
 footer picture {
     padding: 2%;
@@ -161,6 +167,7 @@ a {
 
 /* Mobile */
 
+
 @media (max-width: 411px) {
 
     /* --------------------General----------------------------*/
@@ -177,7 +184,7 @@ a {
         padding: 8% 0;
     }
     
-    nav, nav a, .contenedorDesplegable {
+    nav, nav a, .contenedorDesplegable, .dropDown {
         width: 100%;
     }
 
@@ -308,7 +315,7 @@ a {
 
     .config {
         width: 260px;
-        height: 351px;
+        height: 360px;
         overflow-y: hidden;
         position: fixed;
         margin: 155px 0 auto 80px;
@@ -338,6 +345,15 @@ a {
         width: 100%;
     }
 
+    .audio:active .playAudioItem {
+        transform: scale3d(1.3,1.3,1.3);
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
+    }
+    .audio:active {
+        background-color: #3f3e3e;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+    }
+
     .subAudio {
         padding: 0 4%;
     }
@@ -359,13 +375,17 @@ a {
     }
 
     .infoReproductor {
-        width: 100%;
-        padding: 2% 8%;
+        width: 110px;
+        padding: 2% 0 2% 6%;
         border-radius: 15px;
     }
 
     .infoReproductor .subText {
         font-size: 10px;
+    }
+
+    .contActionsRepr {
+        width: 110px;
     }
 
     .subAudio p {
@@ -402,6 +422,17 @@ a {
 
     .contenedorBusqRecientes {
         width: 70%;
+    }
+
+    /* --------------------DropDown----------------------------*/
+
+    .dropDown h2, .dropDown h3 {
+        line-height: 2px;
+    }
+
+    .imgTemp {
+        width: 100%;
+        height: 200px;
     }
 
 }

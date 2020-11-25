@@ -1,10 +1,10 @@
 "use strict";
 
 
-// Cambiar colores de navegador
+/* Cambiar colores de navegador */
 
 
-// Desplegar configuración.
+/* Desplegar configuración. */
 
 let configClick = document.getElementById("configInput");
 let xClick = document.getElementById("xInput");
@@ -23,3 +23,8 @@ xClick.addEventListener("click", function() {
     configDesplegable.style.maxWidth = "0px";
     configDesplegable.style.padding = "0%";
 });
+
+// let xDrop=document.querySelector("#xDrop")
+// xDrop.addEventListener("click",function() {
+//     this.classList.add("hidden")
+// })

@@ -33,6 +33,28 @@ function setButtonsUser(){
     btnSearch.classList = "home_for_search displayHoriz";
 }
 
+let homeColSugs=document.querySelectorAll(".contenedorAudios")
+for (let colsug of homeColSugs){
+    let itemsSug= colsug.getElementsByClassName("displayVert");    
+    for(let item of itemsSug){
+        item.addEventListener("touchstart",function(){slideDropDown(this)})
+        // let inputTypeArchive=item.getElementsByTagName("input")
+        // let typeArchive= inputTypeArchive[0].value
+    }
+}
+
+
+function slideDropDown(item){
+    let inputTypeArchive=item.getElementsByTagName("input")
+    let typeArchive=inputTypeArchive[0].value
+    console.log(typeArchive)
+    let dropDown
+    
+    //agarro el drop
+    //hidden al header
+    //drop changeClass (visible->hidden)
+}
+
 // setButtonsUser();
 // setButtonsSearch();
 // setButtonsHome();
