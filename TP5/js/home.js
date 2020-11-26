@@ -38,43 +38,43 @@ function setButtonsUser(){
 
 /* Desplegar DropDown */
 
-let homeColSugs = document.querySelectorAll(".contenedorAudios")
-for (let colSug of homeColSugs) {
-    let itemsSug = colSug.getElementsByClassName("displayVert");    
-    for(let item of itemsSug) {
-        item.addEventListener("click", function() { slideDropDown(this) })
-    }
-}
+// let homeColSugs = document.querySelectorAll(".contenedorAudios")
+// for (let colSug of homeColSugs) {
+//     let itemsSug = colSug.getElementsByClassName("displayVert");    
+//     for(let item of itemsSug) {
+//         item.addEventListener("click", function() { slideDropDown(this) })
+//     }
+// }
     
-let dropsDown = document.querySelectorAll(".dropDown");
-let header = document.getElementsByTagName("header");
-let dropClicked = null;
+// let dropsDown = document.querySelectorAll(".dropDown");
+// let header = document.getElementsByTagName("header");
+// let dropClicked = null;
 
-function slideDropDown(item) {
-    let inputTypeArchive = item.getElementsByTagName("input");
-    let typeArchive = inputTypeArchive[0].value;
-    for(let drop of dropsDown) {
-        let typeAudio = drop.getAttribute("data-value");
-        if(typeArchive == typeAudio) {
-            drop.classList.remove("oculto");
-            drop.classList.add("dropFijo");
-            dropClicked = drop;
-        }
-        header[0].style.display = "none";
-    }
-}
+// function slideDropDown(item) {
+//     let inputTypeArchive = item.getElementsByTagName("input");
+//     let typeArchive = inputTypeArchive[0].value;
+//     for(let drop of dropsDown) {
+//         let typeAudio = drop.getAttribute("data-value");
+//         if(typeArchive == typeAudio) {
+//             drop.classList.remove("hidden");
+//             drop.classList.add("dropFijo");
+//             dropClicked = drop;
+//         }
+//         header[0].style.display = "none";
+//     }
+// }
 
 /* Ocultar DropDown */
 
-let xDrop = document.querySelectorAll(".xDrop");
-for (let x = 0; x < xDrop.length; x ++) {
-    xDrop[x].addEventListener("click", function() {
-        dropClicked.classList.remove("dropFijo");
-        dropClicked.classList.add("oculto");
-        dropClicked = null;
-        header[0].style.display = "flex";
-    });
-}
+// let xDrop = document.querySelectorAll(".xDrop");
+// for (let x = 0; x < xDrop.length; x ++) {
+//     xDrop[x].addEventListener("click", function() {
+//         dropClicked.classList.remove("dropFijo");
+//         dropClicked.classList.add("hidden");
+//         dropClicked = null;
+//         header[0].style.display = "flex";
+//     });
+// }
 
 /* Ver opiniones */
 

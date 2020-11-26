@@ -39,7 +39,8 @@
     <div class="space"></div>
 
     <!-- DESPLEGABLE CONFIGURACION -->
-
+    
+    <!-- <div class="mobScroll style="overflow:scroll; height:400px;"> -->
     <div class="config backNegro displayVert">
         <div class="displayBetween contenedorDesplegable">
             <div>
@@ -68,7 +69,6 @@
             <p class="colorGris">Cerrar Sesión</p>
         </div>
     </div>
-
     
     <div class="displayHoriz perfilUser">
         <div class="displayHoriz">
@@ -374,7 +374,8 @@
             </div>
             <div class="displayHoriz subAudio">
                 <img src="Icons/following.png" alt="">
-                <img src="Icons/desplegable.png" alt="">
+                <img src="Icons/desplegable.png" class="seeDropDown" alt="">
+                <input type="text" value="artist" class="hidden">
             </div>
         </div>
         <div class="displayHoriz audio"> 
@@ -388,6 +389,8 @@
             </div>
         </div>
     </div>
+    
+</div>
     
     <!-- REPRODUCTOR -->
 
@@ -422,5 +425,7 @@
     <div class="space"></div>
 
     <script src="js/user.js"></script>
+    
+    <script src="js/main.js"></script>
 </body>
 </html>
