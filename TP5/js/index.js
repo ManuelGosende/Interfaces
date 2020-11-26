@@ -19,11 +19,11 @@ for (let boton = 0; boton < botonesLog.length; boton ++) {
             botonesLog[boton].style.width = "240px";
             lastClicked = formLog[boton];
         }
-        ocultarRestantes(formLog[boton]);
+        ocultarRestantesMobile(formLog[boton]);
     });
 }
 
-function ocultarRestantes(botonSeleccionado) {
+function ocultarRestantesMobile(botonSeleccionado) {
     for (let boton = 0; boton < botonesLog.length; boton ++) {
         if(formLog[boton] != botonSeleccionado) {
             formLog[boton].style.height = "0px";

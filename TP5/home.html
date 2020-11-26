@@ -42,31 +42,30 @@
         <h2 class="colorBlanco">Sugerido para vos</h2>
 
         <div class="contenedorAudios">
-            <div class="displayVert">
+            <div class="displayVert seeDropDown">
                 <input type="text" value="podcast" class="hidden">
                 <img src="Mobile-image/podcast/ultimoscartuchos.png" alt="">
                 <p class="colorBlanco">Últimos Cartuchos</p>
                 <p class="colorGris">107.3 AM</p>
             </div>
-            <div class="displayVert">
+            <div class="displayVert seeDropDown">
                 <input type="text" value="song" class="hidden">
                 <img src="Mobile-image/artista/badbunny.png" alt="">
                 <p class="colorBlanco">Bad Bunny</p>
                 <p class="colorGris">La difícil</p>
             </div>
-            <div class="displayVert">
-                
+            <div class="displayVert seeDropDown">
                 <input type="text" value="artist" class="hidden">
                 <img src="Mobile-image/artista/2pac.png" alt="">
                 <p class="colorBlanco">2pac</p>
             </div>
-            <div class="displayVert">
+            <div class="displayVert seeDropDown">
                 <input type="text" value="disk" class="hidden">
                 <img src="Mobile-image/artista/elplan.png" alt="">
                 <p class="colorBlanco">Trance habitante</p>
                 <p class="colorGris">El Plan de la M...</p>
             </div>
-            <div class="displayVert">
+            <div class="displayVert seeDropDown">
                 <input type="text" value="artist" class="hidden">
                 <img src="Mobile-image/artista/bobmarley.png" alt="">
                 <p class="colorBlanco">Bob Marley</p>
@@ -80,7 +79,7 @@
         </div>
 
         <div class="contenedorAudios">
-            <div class="displayVert">
+            <div class="displayVert seeDropDown">
                 <input type="text" value="song" class="hidden">
                 <img src="Mobile-image/artista/ozuna.png" alt="">
                 <p class="colorBlanco">Ozuna</p>
@@ -91,7 +90,7 @@
                 <img src="Mobile-image/artista/jquiles.png" alt="">
                 <p class="colorBlanco">J Quiles</p>
             </div>
-            <div class="displayVert">
+            <div class="displayVert seeDropDown">
                 <input type="text" value="playlist" class="hidden">
                 <img src="Mobile-image/playlist/ruteando.png" alt="">
                 <p class="colorBlanco">Ruteando</p>
@@ -229,7 +228,7 @@
             </div>
         </div>
 
-        <!-- DROPDOWN -->
+        <!----------------------------- DROPDOWN ---------------------------------------------------->
 
         <!-- episode -->
 
@@ -243,7 +242,7 @@
                 </div>   
                 <h3 class="colorVerde">La Vendetta</h3>
                 <!-- Opciones de Drop Down -->
-                <div class="optionsDropDown">
+                <div class="optionsDropDown option">
                     <p class="colorBlanco">Agregar a/borrar de favoritos</p>
                     <div class="seeProfile">
                         <p class="colorBlanco">Ver información</p>
@@ -274,11 +273,82 @@
                 <div class="displayHoriz">
                     <h2 class="colorVerde">4.5</h2>
                     <img src="Icons/estrella.png" alt="">
-                </div>
-                
+                </div>           
                 <button class="buttonOpinions colorNegro backGris">
                     Dejá tu opinión
                 </button>
+
+                <form onsubmit="return false" class="formOpinion displayVert backGris">
+                    <div class="calification">
+                        <object data-value="1" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="2" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="3" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="4" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="5" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <!-- <svg attributeName="2" class="estrella" width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                        </svg>
+                        <svg class="estrella" width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                        </svg>
+                        <svg class="estrella" width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                        </svg>
+                        <svg class="estrella" width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                        </svg> -->
+                        <!-- <object class="estrella" type="image/svg+xml" data="Icons/estrella.svg"></object> -->
+                    </div>
+                    <div class="deleteCalif"> <p class="colorNegro">Eliminar Calificacion</p></div>
+                    <p class="colorNegro">Comentá</p>
+                    <button class="buttonSearch"  >
+                        <div class="displayBetween">
+                            <p class="colorNegro"></p>
+                            <input type="text" style="border-style: none;" placeholder="Deje su comentario">
+                        </div>
+                    </button>  
+                    <div class="displayVert">
+                        <input type="submit" value="Enviar opinión" class="submitOpinion backVerde colorBlanco">
+                    </div>
+                </form> 
 
                 <!-- formulario y estrellas -->
                 <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
@@ -459,7 +529,7 @@
                     <img src="Mobile-image/dropDown/oktubre.png" alt="">
                 </div> 
                 <h3 class="colorVerde">Música para pastillas</h3>
-                <div class="optionsDropDown">
+                <div class="optionsDropDown option">
                     <p class="colorBlanco">Agregar a/borrar de favoritos</p>
                     <p class="colorBlanco">Agregar a/borrar de Playlist</p>
                     <div class="seeProfile">
@@ -474,11 +544,7 @@
                     <p class="colorBlanco">Compartir</p>
                     <p class="colorBlanco">Reproducir</p>
                 </div>
-                <h3 class="colorVerde">CALIFICACIÓN</h3> 
-                <div class="displayHoriz">
-                    <h2 class="colorVerde">4.4</h2>
-                    <img src="Icons/estrella.png" alt="">
-                </div>
+                
 
                 <div class="hidden displayVert profile">
                 
@@ -496,9 +562,66 @@
                     </div>
                 </div>
 
+                <h3 class="colorVerde">CALIFICACIÓN</h3> 
+                <div class="displayHoriz">
+                    <h2 class="colorVerde">4.4</h2>
+                    <img src="Icons/estrella.png" alt="">
+                </div>
                 <button class="buttonOpinions colorNegro backGris">
                     Dejá tu opinión
                 </button>
+
+                <form onsubmit="return false" class="formOpinion displayVert backGris">
+                    <div class="calification">
+                        <object data-value="1" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="2" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="3" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="4" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="5" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        
+                    </div>
+                    <div class="deleteCalif"> <p class="colorNegro">Eliminar Calificacion</p></div>
+                    <p class="colorNegro">Comentá</p>
+                    <button class="buttonSearch"  >
+                        <div class="displayBetween">
+                            <p class="colorNegro"></p>
+                            <input type="text" style="border-style: none;" placeholder="Deje su comentario">
+                        </div>
+                    </button>  
+                    <div class="displayVert">
+                        <input type="submit" value="Enviar opinión" class="submitOpinion backVerde colorBlanco">
+                    </div>
+                </form>
 
                 <!-- formulario y estrellas -->
                 <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
@@ -679,7 +802,7 @@
                     <img src="Mobile-image/dropDown/oktubre.png" alt="">
                 </div>  
                 <h3 class="colorVerde">Oktubre</h3>
-                <div class="optionsDropDown">
+                <div class="optionsDropDown option">
                     <p class="colorBlanco">Agregar a/borrar de favoritos</p>
                     <div class="seeProfile">
                         <p class="colorBlanco">Ver información</p>
@@ -844,7 +967,7 @@
                     <img src="Mobile-image/dropDown/ultimoscartuchos.png" alt="">
                 </div>   
                 <h3 class="colorVerde">Últimos Cartuchos</h3>
-                <div class="optionsDropDown">
+                <div class="optionsDropDown option">
                     <p class="colorBlanco">Agregar a/borrar de favoritos</p>
                     <div class="seeProfile">
                         <p class="colorBlanco">Ver información</p>
@@ -878,6 +1001,78 @@
                 <button class="buttonOpinions colorNegro backGris">
                     Dejá tu opinión
                 </button>
+
+                <form onsubmit="return false" class="formOpinion displayVert backGris">
+                    <div class="calification">
+                        <object data-value="1" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="2" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="3" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="4" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="5" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <!-- <svg attributeName="2" class="estrella" width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                        </svg>
+                        <svg class="estrella" width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                        </svg>
+                        <svg class="estrella" width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                        </svg>
+                        <svg class="estrella" width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                        </svg> -->
+                        <!-- <object class="estrella" type="image/svg+xml" data="Icons/estrella.svg"></object> -->
+                    </div>
+                    <div class="deleteCalif"> <p class="colorNegro">Eliminar Calificacion</p></div>
+                    <p class="colorNegro">Comentá</p>
+                    <button class="buttonSearch"  >
+                        <div class="displayBetween">
+                            <p class="colorNegro"></p>
+                            <input type="text" style="border-style: none;" placeholder="Deje su comentario">
+                        </div>
+                    </button>  
+                    <div class="displayVert">
+                        <input type="submit" value="Enviar opinión" class="submitOpinion backVerde colorBlanco">
+                    </div>
+                </form>
 
                 <h3 class="colorVerde">CALIFICACIÓN</h3> 
                 <div class="displayHoriz">
@@ -1187,13 +1382,12 @@
                 </div>   
 
                 <h3 class="colorVerde">De fiesta</h3>
-                <div class="optionsDropDown">
+                <div class="option optionsDropDown">
                     <p class="colorBlanco">Agregar a/borrar de favoritos</p>
                     <div class="seeProfile">
                         <p class="colorBlanco">Ver información</p>
                         <input type="text" value="ownPlaylist" class="hidden">
                     </div>
-                    
                     <p class="colorBlanco">Modificar</p>
                     <p class="colorBlanco">Eliminar</p>
                     <p class="colorBlanco">Compartir</p>
@@ -1542,7 +1736,7 @@
                     <img src="Mobile-image/dropDown/ruta.png" alt="">
                 </div>   
                 <h3 class="colorVerde">Ruteando</h3>
-                <div class="optionsDropDown">
+                <div class="optionsDropDown option">
                     <p class="colorBlanco">Agregar a/borrar de favoritos</p>
                     <div class="seeProfile">
                         <p class="colorBlanco">Ver información</p>
@@ -1569,9 +1763,9 @@
                 </div>
             </div> 
 
-            <button class="buttonOpinions colorNegro backGris">
+            <!-- <button class="buttonOpinions colorNegro backGris">
                 Dejá tu opinión
-            </button>
+            </button> -->
 
                 <h3 class="colorVerde">CALIFICACIÓN</h3> 
                 <div class="displayHoriz">
@@ -1931,13 +2125,42 @@
                     </div>
                 </div> 
 
+               
                 <button class="buttonOpinions colorNegro backGris">
                     Dejá tu opinión
                 </button>
 
-                <form action="" class="formOpinion displayVert backGris">
+                <form onsubmit="return false" class="formOpinion displayVert backGris">
                     <div class="calification">
-                        <object class="estrella">
+                        <object data-value="1" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="2" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="3" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="4" class="estrella">
+                            <svg width="20" height="25" viewBox="0 0 170 165">
+                            <polygon fill="#353535"
+                            points="129,150 85,119 41,150 57,104 15,66
+                            68,66 85,15 102,65 156,66 113,98" />
+                            </svg>
+                        </object>
+                        <object data-value="5" class="estrella">
                             <svg width="20" height="25" viewBox="0 0 170 165">
                             <polygon fill="#353535"
                             points="129,150 85,119 41,150 57,104 15,66
@@ -1966,10 +2189,12 @@
                         </svg> -->
                         <!-- <object class="estrella" type="image/svg+xml" data="Icons/estrella.svg"></object> -->
                     </div>
+                    <div class="deleteCalif"> <p class="colorNegro">Eliminar Calificacion</p></div>
                     <p class="colorNegro">Comentá</p>
-                    <button class="buttonSearch">
+                    <button class="buttonSearch"  >
                         <div class="displayBetween">
-                            <p class="colorNegro">...</p>
+                            <p class="colorNegro"></p>
+                            <input type="text" style="border-style: none;" placeholder="Deje su comentario">
                         </div>
                     </button>  
                     <div class="displayVert">
@@ -2516,9 +2741,9 @@
 
     <!-- User -->
 
-    <div class="displayHoriz">
+    <div class="displayUserAndHome">
         <!-- LADO IZQUIERDO -->
-        <div class="displayVert contenedorUser">
+        <div class="displayVert contenedorUser backNegro">
             <div class="displayBetween sombraFuera infoUser">
                 <div class="displayHoriz">
                     <img src="Icons/userpick.png" alt="">
@@ -2797,47 +3022,160 @@
             </div>
         </div>
 
+        <div class="spaceHoriz"></div>
+
         <!-- LADO DERECHO -->
 
         <div class="displayVert contenedorHome">
             <div class="contenedorTitulos">
                 <h2 class="colorBlanco">Sugerido para vos</h2>
             </div>
-            <div class="displayVert">
+            <div class="displayVert contenedorTipoAudio sombraFuera">
                 <div class="contenedorTitulos">
                     <h3 class="colorVerde">Principales</h3>
                 </div>
+                <div class="contenedorAudiosDesktop">
+                    <div class="displayVert">
+                        <input type="text" value="podcast" class="hidden">
+                        <img src="Desktop-image/podcast/ultimoscartuchos.png" alt="">
+                        <p class="colorBlanco">Últimos Cartuchos</p>
+                        <p class="colorGris">107.3 AM</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="song" class="hidden">
+                        <img src="Desktop-image/artista/badbunny.png" alt="">
+                        <p class="colorBlanco">Bad Bunny</p>
+                        <p class="colorGris">La difícil</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="disk" class="hidden">
+                        <img src="Desktop-image/artista/elplan.png" alt="">
+                        <p class="colorBlanco">Trance habitante</p>
+                        <p class="colorGris">El Plan de la M...</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="artist" class="hidden">
+                        <img src="Desktop-image/artista/bobmarley.png" alt="">
+                        <p class="colorBlanco">Bob Marley</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="playlist" class="hidden">
+                        <img src="Desktop-image/playlist/defiesta.png" alt="">
+                        <p class="colorBlanco">De fiesta</p>
+                        <p class="colorGris">Fer Juarez</p>
+                    </div>
+                </div>
+                <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
             </div>
-            <div class="contenedorAudios">
-                <div class="displayVert">
-                    <input type="text" value="podcast" class="hidden">
-                    <img src="Mobile-image/podcast/ultimoscartuchos.png" alt="">
-                    <p class="colorBlanco">Últimos Cartuchos</p>
-                    <p class="colorGris">107.3 AM</p>
+
+            <div class="displayVert contenedorTipoAudio sombraFuera">
+                <div class="contenedorTitulos">
+                    <h3 class="colorVerde">Tarde con amigos</h3>
                 </div>
-                <div class="displayVert">
-                    <input type="text" value="song" class="hidden">
-                    <img src="Mobile-image/artista/badbunny.png" alt="">
-                    <p class="colorBlanco">Bad Bunny</p>
-                    <p class="colorGris">La difícil</p>
+                <div class="contenedorAudiosDesktop">
+                    <div class="displayVert">
+                        <input type="text" value="artist" class="hidden">
+                        <img src="Desktop-image/artista/queen.png" alt="">
+                        <p class="colorBlanco">Queen</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="song" class="hidden">
+                        <img src="Desktop-image/artista/ca7riel.png" alt="">
+                        <p class="colorBlanco">Polvo</p>
+                        <p class="colorGris">Ca7riel</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="disk" class="hidden">
+                        <img src="Desktop-image/disco/oktubre.png" alt="">
+                        <p class="colorBlanco">Oktubre</p>
+                        <p class="colorGris">Los Redondos</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="song" class="hidden">
+                        <img src="Desktop-image/artista/ciro.png" alt="">
+                        <p class="colorBlanco">Antes y Despues</p>
+                        <p class="colorGris">Ciro y Los Personas</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="playlist" class="hidden">
+                        <img src="Desktop-image/playlist/tarde.png" alt="">
+                        <p class="colorBlanco">La tardecita - Melani</p>
+                    </div>
                 </div>
-                <div class="displayVert">
-                    
-                    <input type="text" value="artist" class="hidden">
-                    <img src="Mobile-image/artista/2pac.png" alt="">
-                    <p class="colorBlanco">2pac</p>
+                <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
+            </div>
+
+            <svg width="300" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
+
+            <div class="contenedorTitulos">
+                <h2 class="colorBlanco">Recomendado para vos</h2>
+            </div>
+            <div class="displayVert contenedorTipoAudio sombraFuera">
+                <div class="contenedorTitulos">
+                    <h3 class="colorVerde">Música</h3>
                 </div>
-                <div class="displayVert">
-                    <input type="text" value="disk" class="hidden">
-                    <img src="Mobile-image/artista/elplan.png" alt="">
-                    <p class="colorBlanco">Trance habitante</p>
-                    <p class="colorGris">El Plan de la M...</p>
+                <div class="contenedorAudiosDesktop">
+                    <div class="displayVert">
+                        <input type="text" value="music" class="hidden">
+                        <img src="Desktop-image/dropDown/lomasescuchado.png" alt="">
+                        <p class="colorBlanco">Lo más Escuchado</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="music" class="hidden">
+                        <img src="Desktop-image/artista/ca7riel.png" alt="">
+                        <p class="colorBlanco">Seguí escuchando</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="music" class="hidden">
+                        <img src="Desktop-image/dropDown/loultimo.png" alt="">
+                        <p class="colorBlanco">Lo último</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="music" class="hidden">
+                        <img src="Desktop-image/artista/brown.png" alt="">
+                        <p class="colorBlanco">Un viaje al pasado</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="artist" class="hidden">
+                        <img src="Desktop-image/playlist/defiesta.png" alt="">
+                        <p class="colorBlanco">¡A mover el cuerpo!</p>
+                    </div>
                 </div>
-                <div class="displayVert">
-                    <input type="text" value="artist" class="hidden">
-                    <img src="Mobile-image/artista/bobmarley.png" alt="">
-                    <p class="colorBlanco">Bob Marley</p>
+                <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
+            </div>
+            
+            <div class="displayVert contenedorTipoAudio sombraFuera">
+                <div class="contenedorTitulos">
+                    <h3 class="colorVerde">Podcast</h3>
                 </div>
+                <div class="contenedorAudiosDesktop">
+                    <div class="displayVert">
+                        <input type="text" value="podcast" class="hidden">
+                        <img src="Desktop-image/podcast/patrullaperdida.png" alt="">
+                        <p class="colorBlanco">Populares</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="podcast" class="hidden">
+                        <img src="Desktop-image/podcast/somosnovios.png" alt="">
+                        <p class="colorBlanco">Noticias del día</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="podcast" class="hidden">
+                        <img src="Desktop-image/podcast/caso63.png" alt="">
+                        <p class="colorBlanco">Cuentos e historias</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="podcast" class="hidden">
+                        <img src="Desktop-image/podcast/ultimoscartuchos" alt="">
+                        <p class="colorBlanco">Diversión</p>
+                    </div>
+                    <div class="displayVert">
+                        <input type="text" value="podcast" class="hidden">
+                        <img src="Desktop-image/podcast/ultimoscartuchos" alt="">
+                        <p class="colorBlanco">Diversión</p>
+                    </div>
+                </div>
+                <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
             </div>
         </div>
 

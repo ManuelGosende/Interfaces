@@ -1,7 +1,7 @@
 "use strict";
 
-let botonesLogDesk = document.getElementsByClassName("buttonLog");
-let formLogDesk = document.querySelectorAll(".formLog");
+let botonesLogDesk = document.getElementsByClassName("buttonLogDesktop");
+let formLogDesk = document.querySelectorAll(".formLogDesktop");
 let lastClickedDesk = null;
 
 for (let boton = 0; boton < botonesLogDesk.length; boton ++) {
@@ -18,11 +18,11 @@ for (let boton = 0; boton < botonesLogDesk.length; boton ++) {
             botonesLogDesk[boton].style.width = "570px";
             lastClickedDesk = formLogDesk[boton];
         }
-        ocultarRestantes(formLogDesk[boton]);
+        ocultarRestantesDesktop(formLogDesk[boton]);
     });
 }
 
-function ocultarRestantes(botonSeleccionado) {
+function ocultarRestantesDesktop(botonSeleccionado) {
     for (let boton = 0; boton < botonesLogDesk.length; boton ++) {
         if(formLogDesk[boton] != botonSeleccionado) {
             formLogDesk[boton].style.height = "0px";

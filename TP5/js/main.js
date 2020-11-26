@@ -91,3 +91,92 @@ for (let x = 0; x < xDrop.length; x ++) {
         header[0].style.display = "flex";
     });
 }
+
+/* Ver opiniones */
+
+let submitsOpinion = document.getElementsByClassName("submitOpinion");
+for(let subm of submitsOpinion){
+    let submFather=subm.parentElement
+    subm.addEventListener("click",function () {
+        let form=submFather.parentElement
+        form.style.transition = "2s"; 
+        form.style.height = "0px";
+        let btnForm=form.previousElementSibling
+        console.log(btnForm)
+        btnForm.style.width = "200px";
+        btnForm.style.borderRadius = "40px";
+    })
+}
+
+let buttonsOpinion = document.getElementsByClassName("buttonOpinions");
+let formOpinion = document.querySelectorAll(".formOpinion");
+let lastClicked = null;
+
+for (let boton = 0; boton < buttonsOpinion.length; boton ++) {
+    buttonsOpinion[boton].addEventListener("click", function() {
+        formOpinion[boton].style.transition = "2s"; 
+        if (formOpinion[boton] == lastClicked) {
+            formOpinion[boton].style.height = "0px";
+            buttonsOpinion[boton].style.width = "200px";
+            buttonsOpinion[boton].style.borderRadius = "40px";
+            lastClicked = null;
+        }
+        else {
+            formOpinion[boton].style.height = "auto";
+            buttonsOpinion[boton].style.width = "280px";
+            buttonsOpinion[boton].style.borderRadius = "40px 40px 0px  0px";
+            lastClicked = formOpinion[boton];
+        }
+    });
+}
+
+/*Calificar con estrellas*/
+let estrellas = document.getElementsByClassName("estrella");
+
+let estrellasSelected = document.getElementsByClassName("estrellaSelected");
+
+for(let e = 0; e < estrellas.length; e ++) {
+    estrellas[e].addEventListener("click", function() {
+        if(estrellas[e] == estrellas[0]) {
+            
+            console.log("es la primera")
+            /* estrellas[e].getSVGDocument().getElementById("svgInternalID").setAttribute("fill", "networking") */
+            let svgStar=estrellas[e].getElementsByTagName("svg")[0]
+            svgStar.lastElementChild.setAttribute("fill",("#BDFF00"))
+           }else{
+                let fat=estrellas[e].previousElementSibling
+                console.log(estrellas[e].getAttribute("data-value"))
+                paintStar(fat.parentElement,estrellas[e].getAttribute("data-value"),true)
+           }
+        // else {
+        //     for(let st=0;st<=e;st++){
+        //         let svgStar= estrellas[st].getElementsByTagName("svg")[0]
+        //         svgStar.lastElementChild.setAttribute("fill",("#BDFF00"))               
+        //     }
+        //     // llamo funcion hasta mi
+        // }
+    }); 
+}
+function paintStar(colectionStars,positionStarClicked,print){
+    let stars=colectionStars.getElementsByClassName("estrella")
+    for(let st=0;st<positionStarClicked;st++){
+        if(print){
+            let svgStar=stars[st].getElementsByTagName("svg")[0]
+            svgStar.lastElementChild.setAttribute("fill",("#BDFF00"))
+        }else{ 
+            let svgStar=stars[st].getElementsByTagName("svg")[0]
+            svgStar.lastElementChild.setAttribute("fill",("#353535"))
+        }
+    }
+}
+
+let elimCalification =document.getElementsByClassName("deleteCalif");
+for (let elim of elimCalification){
+    elim.addEventListener("click",function() {
+        console.log(elim.previousElementSibling)
+        elim.previousElementSibling   
+        paintStar(elim.previousElementSibling,5,false)
+    })
+}
+
+

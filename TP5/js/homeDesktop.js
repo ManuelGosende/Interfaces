@@ -20,11 +20,11 @@ for (let boton = 0; boton < buttonUserDesktop.length; boton ++) {
             buttonUserDesktop[boton].style.width = "300px";
             lastClickedDesktop = collectionsUser[boton];
         }
-        ocultarRestantes(collectionsUser[boton]);
+        ocultarRestantesHome(collectionsUser[boton]);
     });
 }
 
-function ocultarRestantes(botonSeleccionado) {
+function ocultarRestantesHome(botonSeleccionado) {
     for (let boton = 0; boton < buttonUserDesktop.length; boton ++) {
         if(collectionsUser[boton] != botonSeleccionado) {
             collectionsUser[boton].style.display = "none";

@@ -76,43 +76,43 @@ function setButtonsUser(){
 //     });
 // }
 
-/* Ver opiniones */
+// /* Ver opiniones */
 
-let buttonsOpinion = document.getElementsByClassName("buttonOpinions");
-let formOpinion = document.querySelectorAll(".formOpinion");
-let lastClicked = null;
+// let buttonsOpinion = document.getElementsByClassName("buttonOpinions");
+// let formOpinion = document.querySelectorAll(".formOpinion");
+// let lastClicked = null;
 
-for (let boton = 0; boton < buttonsOpinion.length; boton ++) {
-    buttonsOpinion[boton].addEventListener("click", function() {
-        formOpinion[boton].style.transition = "2s"; 
-        if (formOpinion[boton] == lastClicked) {
-            formOpinion[boton].style.height = "0px";
-            buttonsOpinion[boton].style.width = "200px";
-            buttonsOpinion[boton].style.borderRadius = "40px";
-            lastClicked = null;
-        }
-        else {
-            formOpinion[boton].style.height = "auto";
-            buttonsOpinion[boton].style.width = "280px";
-            buttonsOpinion[boton].style.borderRadius = "40px 40px 0px  0px";
-            lastClicked = formOpinion[boton];
-        }
-    });
-}
+// for (let boton = 0; boton < buttonsOpinion.length; boton ++) {
+//     buttonsOpinion[boton].addEventListener("click", function() {
+//         formOpinion[boton].style.transition = "2s"; 
+//         if (formOpinion[boton] == lastClicked) {
+//             formOpinion[boton].style.height = "0px";
+//             buttonsOpinion[boton].style.width = "200px";
+//             buttonsOpinion[boton].style.borderRadius = "40px";
+//             lastClicked = null;
+//         }
+//         else {
+//             formOpinion[boton].style.height = "auto";
+//             buttonsOpinion[boton].style.width = "280px";
+//             buttonsOpinion[boton].style.borderRadius = "40px 40px 0px  0px";
+//             lastClicked = formOpinion[boton];
+//         }
+//     });
+// }
 
-let estrellas = document.getElementsByClassName("estrella");
-for(let e = 0; e < estrellas.length; e ++) {
-    estrellas[e].addEventListener("click", function() {
-        if(estrellas[e] == estrellas[0]) {
-            console.log("es la primera")
-            /* estrellas[e].getSVGDocument().getElementById("svgInternalID").setAttribute("fill", "networking") */
-            estrellas[e].getSVGDocument().setAttribute("fill", "#BDFF00");
-        }
-        else {
-            // llamo funcion hasta mi
-        }
-    }); 
-}
+// let estrellas = document.getElementsByClassName("estrella");
+// for(let e = 0; e < estrellas.length; e ++) {
+//     estrellas[e].addEventListener("click", function() {
+//         if(estrellas[e] == estrellas[0]) {
+//             console.log("es la primera")
+//             /* estrellas[e].getSVGDocument().getElementById("svgInternalID").setAttribute("fill", "networking") */
+//             estrellas[e].getSVGDocument().setAttribute("fill", "#BDFF00");
+//         }
+//         else {
+//             // llamo funcion hasta mi
+//         }
+//     }); 
+// }
 
 // setButtonsUser();
 // setButtonsSearch();
