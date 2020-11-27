@@ -2,12 +2,20 @@
     display: none !important;
     visibility: hidden;
 }
-/* .mobScroll{
-FLOAT: left;
-margin-left: 5%;
-padding: 1%;
-overflow:scroll;
-} */
+
+.desktopProfile{
+    margin-top: 100px;
+    width: 100%;
+}
+
+/* Deja el dropDown arriba, fijo. */
+.dropFijo {
+    top: 0;
+    bottom:0;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
 .mobile, .desktop {
     width: 100%;
@@ -80,7 +88,15 @@ h3 {
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
-.buttonForm, .submitOpinion {
+.buttonOpinionsDesktop {
+    font-family: 'Poppins', sans-serif;
+    width: 280px;
+    height: 60px;
+    border-radius: 40px 40px 0px  0px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+}
+
+.buttonForm, .submitOpinion, .submitOpinionDesktop {
     font-family: 'Poppins', sans-serif;
     margin: 10%;
     width: 200px;
@@ -467,16 +483,7 @@ a {
         position: relative;
     }
 
-    /* Deja el dropDown arriba, fijo. */
-    .dropFijo {
-        display: flex;
-        top: 0;
-        bottom:0;
-        position: fixed;
-        overflow-y: scroll;
-        overflow-x: hidden;
-    }
-
+    
     /* Opiniones */
 
     .optionsDropDown p {
@@ -535,12 +542,55 @@ a {
 @media (min-width: 1300px) {
 
     /* Reproductor */
+    #x_desktop {
+        position: fixed;
+        top: 121px;
+        left:412px ;
+        width: 35px;
+        height: 35px;
+        z-index: 12;
+        background-image: url("../Icons/x.png");
+    }
 
     .reproductorDesktop {
         position: fixed;
-        margin-left: 375px;
-        margin-top: 455px;
+        margin-left: 330px;
+        margin-top: 445px;
+        padding: 5px 60px;
+        box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
     }
+    #vol-control{
+        width: 70px;
+        position: fixed;
+        margin-left:30px;
+        margin-top:3px;
+    }
+
+    input[type='range'] {
+        overflow: hidden;
+        width: 62px;
+        -webkit-appearance: none;
+        background-color: #878787;
+      }
+      
+      input[type='range']::-webkit-slider-runnable-track {
+        height: 10px;
+        -webkit-appearance: none;
+        color: #BDFF00;
+        margin-top: -1px;
+      }
+      
+      input[type='range']::-webkit-slider-thumb {
+        width: 10px;
+        -webkit-appearance: none;
+        height: 10px;
+        cursor: ew-resize;
+        background: #434343;
+        box-shadow: -80px 0 0 80px #BDFF00;
+
+      
+  
+  }
 
     .infoReproductor {
         width: 180px;
@@ -674,6 +724,18 @@ a {
 
     /* User */
 
+    .OwnPlaylist {
+        width: 150px;
+        height: 160px;
+        padding: 5px;
+        position: fixed;
+        margin-left: 420px;
+        margin-top: 200px;
+        line-height: 10px;
+        box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 0 40px 40px 40px;
+    }
+
     .contenedorUser::-webkit-scrollbar {
         -webkit-appearance: none;
     }   
@@ -690,6 +752,7 @@ a {
         flex-direction: column;
         align-items: center;
         box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+        z-index: 90;
     }
 
     .contenedorUser svg {
@@ -818,11 +881,12 @@ a {
         margin: 5px;
     }
 
-    .btnOwnPlaylist{
+    .btnOwnPlaylist {
+        position: absolute;
         width: 139px;
         height: 40px;
         border-radius: 40px;
-        margin: 1%;
+        margin-right: 500px;
         box-shadow:(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
 
@@ -848,13 +912,17 @@ a {
     /* ------------------------------Calification----------------------------------------- */
 
     .formOpinion {
-        height: 0px;
+        height: auto;
         width: 260px;
         margin-top: 0px;
         padding: 0 10px;
         overflow: hidden;
         border-radius: 0 0 30px 30px;
         transition: 3s;
+    }
+
+    .comentador {
+        margin-right: 50px
     }
 
     .estrella {

@@ -79,9 +79,7 @@ for (let x = 0; x < xDrop.length; x ++) {
         hiddeOpinionsCards()
     });
 }
-//QUITAR CAMPANA DE LOS LOGOS DE USUARIOS EN LOS COMENTARIOS
-//Cambiar la imagen por otra sin ella pero manteniendo el nombre
-//Y la imagen del usuario cambiearle solo el nombre
+
 /* ---------------------Ver opiniones ---------------------*/
 
 function showOpiniosOnScroll(e,windowPage){
@@ -140,6 +138,8 @@ function add3dOptions(indexStart,y_StartPos,coments,verMas){
 }
 
 
+//------------------------------------------------------------HACER
+
 //AGREGAR AL INDIO Y UN EPISODIO DE PODCAST AL HOME
 
 function hiddeOpinionsCards(){
@@ -159,8 +159,7 @@ for(let subm of submitsOpinion){
         let form=submFather.parentElement
         form.style.transition = "2s"; 
         form.style.height = "0px";
-        let btnForm=form.previousElementSibling
-        console.log(btnForm)
+        let btnForm=form.previousElementSibling;
         btnForm.style.width = "200px";
         btnForm.style.borderRadius = "40px";
     })
