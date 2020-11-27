@@ -34,3 +34,35 @@ function ocultarRestantesHome(botonSeleccionado) {
         }
     }
 }
+
+/* Ver más en Home y Search */
+
+let verMas = document.querySelectorAll(".verMas");
+let verMenos = document.querySelectorAll(".verMenos");
+for (let botonVerMas = 0; botonVerMas < verMas.length; botonVerMas ++) {
+    verMas[botonVerMas].addEventListener("click", function() {
+        let ocultos = verMas[botonVerMas].previousElementSibling;
+        ocultos.classList.remove("hidden");
+        verMas[botonVerMas].classList.add("hidden");
+        verMenos[botonVerMas].classList.remove("hidden");
+    });
+}
+
+for (let botonVerMenos = 0; botonVerMenos < verMenos.length; botonVerMenos ++) {
+    verMenos[botonVerMenos].addEventListener("click", function() {
+        let desplegado = verMenos[botonVerMenos].previousElementSibling;
+        desplegado.classList.add("hidden");
+        verMenos[botonVerMenos].classList.add("hidden");
+        verMas[botonVerMenos].classList.remove("hidden");
+    });
+}
+
+
+
+
+
+
+
+
+
+

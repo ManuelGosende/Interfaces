@@ -35,85 +35,81 @@ function setButtonsUser(){
     btnSearch.className = '';
     btnSearch.classList = "home_for_search displayHoriz";
 }
+/*---------Listado 3d Home-----------------*/
 
-/* Desplegar DropDown */
+let audioContents = document.querySelectorAll(".contenedorAudios");
+for(let audioContent of audioContents){
+    audioContent.onscroll=function(e){showColItemsOnScroll(e,this)}
+}
 
-// let homeColSugs = document.querySelectorAll(".contenedorAudios")
-// for (let colSug of homeColSugs) {
-//     let itemsSug = colSug.getElementsByClassName("displayVert");    
-//     for(let item of itemsSug) {
-//         item.addEventListener("click", function() { slideDropDown(this) })
-//     }
-// }
-    
-// let dropsDown = document.querySelectorAll(".dropDown");
-// let header = document.getElementsByTagName("header");
-// let dropClicked = null;
+let x_StartPos=1;
+function showColItemsOnScroll(e,itemsContainer){
+    let aux=itemsContainer.scrollLeft;
+    let x_LastPos=aux
+    let items=itemsContainer.getElementsByClassName("seeDropDown")
+    console.log(x_StartPos)
+    if(itemsContainer!=audioContents[0]){
+        console.log(x_StartPos)
+        if(x_StartPos>=20&& x_StartPos<28){
+            if(x_LastPos>x_StartPos){
+                console.log("rigth1")
+                show_in_out(items[0],items[2])       
+                // items[0].classList.add("rotate-center-in")
+                // items[2].classList.add("rotate-center-out")
+                // items[0].classList.remove("rotate-center-out")
+                // items[2].classList.remove("rotate-center-in")
 
-// function slideDropDown(item) {
-//     let inputTypeArchive = item.getElementsByTagName("input");
-//     let typeArchive = inputTypeArchive[0].value;
-//     for(let drop of dropsDown) {
-//         let typeAudio = drop.getAttribute("data-value");
-//         if(typeArchive == typeAudio) {
-//             drop.classList.remove("hidden");
-//             drop.classList.add("dropFijo");
-//             dropClicked = drop;
-//         }
-//         header[0].style.display = "none";
-//     }
-// }
+                // items[2].classList.add("slide-rotate-ver-left")
+                // items[0].classList.add("slide-rotate-ver-right")
+            }else{
+                console.log("left1")
+                show_in_out(items[2],items[0])       
+                // items[0].classList.add("rotate-center-out")
+                // items[2].classList.add("rotate-center-in")
+                // items[0].classList.remove("rotate-center-in")
+                // items[2].classList.remove("rotate-center-out")
+                
+                // items[2].classList.remove("slide-rotate-ver-left")
+                // items[0].classList.remove("slide-rotate-ver-right")
+                // items[0].classList.add("slide-rotate-ver-left")
+                // items[2].classList.add("slide-rotate-ver-right")
+            }
+            // items[2].classList.add("rotate-center")
+        }
+        if(x_StartPos>=158&& x_StartPos<178){
+            
+            if(x_LastPos>x_StartPos){
+                console.log("rigth2")
+                show_in_out(items[1],items[3])       
+                // items[1].classList.remove("rotate-center-out")
+                // items[3].classList.remove("rotate-center-in")
+                // items[1].classList.add("rotate-center-in")
+                // items[3].classList.add("rotate-center-out")
+            }else{
+                show_in_out(items[3],items[1])       
+                console.log("left2")
+                // items[1].classList.remove("rotate-center-in")
+                // items[3].classList.remove("rotate-center-out")
+                // items[1].classList.add("rotate-center-in")
+                // items[3].classList.add("rotate-center-out")
+            }
+        // if(x_StartPos>=143&& x_StartPos<158){
+            // //    items[2].classList.add("slide-rotate-ver-left")
+            //    items[3].classList.add("rotate-center")
+            // }
+        }
+        x_StartPos=itemsContainer.scrollLeft;
+    }
+}
 
-/* Ocultar DropDown */
+function show_in_out(inner,outer){
+    // inner.classList.remove("rotate-center-out")
+    // outer.classList.remove("rotate-center-in")
+    // inner.classList.add("rotate-center-in")
+    // outer.classList.add("rotate-center-out")
+    inner.classList.togle("rotate-center-out")
+    outer.classList.togle("rotate-center-in")
+    inner.classList.togle("rotate-center-in")
+    outer.classList.togle("rotate-center-out")
 
-// let xDrop = document.querySelectorAll(".xDrop");
-// for (let x = 0; x < xDrop.length; x ++) {
-//     xDrop[x].addEventListener("click", function() {
-//         dropClicked.classList.remove("dropFijo");
-//         dropClicked.classList.add("hidden");
-//         dropClicked = null;
-//         header[0].style.display = "flex";
-//     });
-// }
-
-// /* Ver opiniones */
-
-// let buttonsOpinion = document.getElementsByClassName("buttonOpinions");
-// let formOpinion = document.querySelectorAll(".formOpinion");
-// let lastClicked = null;
-
-// for (let boton = 0; boton < buttonsOpinion.length; boton ++) {
-//     buttonsOpinion[boton].addEventListener("click", function() {
-//         formOpinion[boton].style.transition = "2s"; 
-//         if (formOpinion[boton] == lastClicked) {
-//             formOpinion[boton].style.height = "0px";
-//             buttonsOpinion[boton].style.width = "200px";
-//             buttonsOpinion[boton].style.borderRadius = "40px";
-//             lastClicked = null;
-//         }
-//         else {
-//             formOpinion[boton].style.height = "auto";
-//             buttonsOpinion[boton].style.width = "280px";
-//             buttonsOpinion[boton].style.borderRadius = "40px 40px 0px  0px";
-//             lastClicked = formOpinion[boton];
-//         }
-//     });
-// }
-
-// let estrellas = document.getElementsByClassName("estrella");
-// for(let e = 0; e < estrellas.length; e ++) {
-//     estrellas[e].addEventListener("click", function() {
-//         if(estrellas[e] == estrellas[0]) {
-//             console.log("es la primera")
-//             /* estrellas[e].getSVGDocument().getElementById("svgInternalID").setAttribute("fill", "networking") */
-//             estrellas[e].getSVGDocument().setAttribute("fill", "#BDFF00");
-//         }
-//         else {
-//             // llamo funcion hasta mi
-//         }
-//     }); 
-// }
-
-// setButtonsUser();
-// setButtonsSearch();
-// setButtonsHome();
+}

@@ -66,19 +66,6 @@ function slideDropDown(type,archive) {
     hiddeOpinionsCards()
 }
 
-// function slideDropDown(item) {
-//     let inputTypeArchive = item.getElementsByTagName("input");
-//     let typeArchive = inputTypeArchive[0].value;
-//     for(let drop of dropsDown) {
-//         let typeAudio = drop.getAttribute("data-value");
-//         if(typeArchive == typeAudio) {
-//             drop.classList.remove("hidden");
-//             drop.classList.add("dropFijo");
-//             dropClicked = drop;
-//         }
-//         header[0].style.display = "none";
-//     }
-// }
 
 /* Ocultar DropDown */
 
@@ -92,7 +79,9 @@ for (let x = 0; x < xDrop.length; x ++) {
         hiddeOpinionsCards()
     });
 }
-
+//QUITAR CAMPANA DE LOS LOGOS DE USUARIOS EN LOS COMENTARIOS
+//Cambiar la imagen por otra sin ella pero manteniendo el nombre
+//Y la imagen del usuario cambiearle solo el nombre
 /* ---------------------Ver opiniones ---------------------*/
 
 function showOpiniosOnScroll(e,windowPage){
@@ -148,7 +137,6 @@ function add3dOptions(indexStart,y_StartPos,coments,verMas){
         verMas.classList.add("slide-rotate-hor-top")
         verMas.classList.remove("hidden")
     }
-
 }
 
 

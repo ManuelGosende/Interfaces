@@ -11,7 +11,6 @@
     
 <!-- ----------------------------------MOBILE------------------------------------------------->
 
-
     <div class="displayVert mobile">
         <header>
             <div class="displayHoriz navSuperior sombraFuera">
@@ -52,9 +51,24 @@
              
         <div class="contenedorBusqRecientes">
             <h3 class="colorGris">Búsquedas recientes</h3>
-            <p class="colorBlanco">Oktubre</p>
-            <p class="colorBlanco">Los Redondos</p>
-            <p class="colorBlanco">Últimos Cartuchos</p>
+            <div class="displayBetween">
+                <p class="colorBlanco">Oktubre</p>
+                <div>
+                    <img src="Icons/x.png" alt="">
+                </div>
+            </div>
+            <div class="displayBetween">
+                <p class="colorBlanco">Los Redondos</p>
+                <div>
+                    <img src="Icons/x.png" alt="">
+                </div>
+            </div>
+            <div class="displayBetween">
+                <p class="colorBlanco">Últimos Cartuchos</p>
+                <div>
+                    <img src="Icons/x.png" alt="">
+                </div>
+            </div>
         </div>
     
         <!-- REPRODUCTOR -->
@@ -98,12 +112,16 @@
         <div class="displayVert">
             <header>
                 <div class="displayBetween contenedorHeader sombraFuera">
-                    <img src="logo-original.png" alt="">
-                    <div class="displayHoriz">
-                        <img src="Icons/home.png" alt="">    
-                        <p class="colorBlanco">Inicio</p>    
-                    </div>
-                    <button class="buttonSearch backGris">
+                    <a href="home.html">
+                        <img src="logo-original.png" alt="">
+                    </a>
+                    <a href="home.html">
+                        <div class="displayHoriz homeDesktop">
+                            <img src="Icons/home.png" alt="">    
+                            <p class="colorBlanco">Inicio</p>    
+                        </div>
+                    </a>
+                    <button class="buttonSearchWidth backGris">
                         <a href="searchFilter.html">
                             <div class="displayBetween">
                                 <p class="colorBlanco">Search</p>
@@ -406,7 +424,68 @@
                     <div class="contenedorTitulos">
                         <h2 class="colorBlanco">Búsquedas recientes</h2>
                     </div>
-                    <div></div>
+                    <div class="displayVert">
+                        <div class="displayBetween">
+                            <div class="displayHoriz subAudio subBusqueda">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Oktubre</p>
+                            </div>
+                            <div class="displayHoriz subAudio subBusqueda">
+                                <p class="colorGris">12 canciones | Los Redondos</p>
+                            </div>
+                            <div>
+                                <img src="Icons/x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayBetween">
+                            <div class="displayHoriz subAudio subBusqueda">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Vicentico</p>
+                            </div>
+                            <div class="displayHoriz subAudio subBusqueda">
+                                <p class="colorGris">4 discos | 189 canciones</p>
+                            </div>
+                            <div>
+                                <img src="Icons/x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayBetween">
+                            <div class="displayHoriz subAudio subBusqueda">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">El Baile de la Gambeta</p>
+                            </div>
+                            <div class="displayHoriz subAudio subBusqueda">
+                                <p class="colorGris">La Bersuit | 2004</p>
+                            </div>
+                            <div>
+                                <img src="Icons/x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayBetween">
+                            <div class="displayHoriz subAudio subBusqueda">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Maradó</p>
+                            </div>
+                            <div class="displayHoriz subAudio subBusqueda">
+                                <p class="colorGris">Los Piojos | Civilización</p>
+                            </div>
+                            <div>
+                                <img src="Icons/x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayBetween">
+                            <div class="displayHoriz subAudio subBusqueda">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Cultura Profética</p>
+                            </div>
+                            <div class="displayHoriz subAudio subBusqueda">
+                                <p class="colorGris">5 discos | 91 canciones</p>
+                            </div>
+                            <div>
+                                <img src="Icons/x.png" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- reproductor -->
@@ -445,7 +524,8 @@
             </div>
         </div>
 
-        <script src="js/homeDesktop.js"></script>
+        <script src="js/mainDesktop.js"></script>
+
     </div>
 
     <script src="js/search.js"></script>
