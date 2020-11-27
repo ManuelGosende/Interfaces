@@ -58,12 +58,12 @@ function slideDropDown(type,archive) {
         if(archive == typeAudio) {
             drop.classList.remove("hidden");
             drop.classList.add("dropFijo");
+            drop.onscroll=function(e){showOpiniosOnScroll(e,this)}
             dropClicked = drop;
         }
         header[0].style.display = "none";
     }
-
-
+    hiddeOpinionsCards()
 }
 
 // function slideDropDown(item) {
@@ -89,10 +89,93 @@ for (let x = 0; x < xDrop.length; x ++) {
         dropClicked.classList.add("hidden");
         dropClicked = null;
         header[0].style.display = "flex";
+        hiddeOpinionsCards()
     });
 }
 
-/* Ver opiniones */
+/* ---------------------Ver opiniones ---------------------*/
+
+function showOpiniosOnScroll(e,windowPage){
+    let y_StartPos=windowPage.scrollTop;
+    console.log(y_StartPos)
+    let name=windowPage.getElementsByClassName("profileData")[0]
+    console.log(windowPage)
+    let optionDrop=name.classList.contains("hidden")
+    let coments=windowPage.getElementsByClassName("comentDisplay")
+    let verMas=coments[2].nextElementSibling
+    if(optionDrop){
+    
+        let typeDrop=windowPage.getAttribute("data-value")
+            
+        if( typeDrop=="artist"){
+            let indexStart=150
+
+            if(y_StartPos>=indexStart&& y_StartPos<indexStart+100){
+                coments[0].classList.add("slide-rotate-hor-top")
+                coments[0].classList.remove("hidden")
+            }
+            if(y_StartPos>=indexStart*2&&y_StartPos<indexStart*2+100){
+                coments[1].classList.add("slide-rotate-hor-top")
+                coments[1].classList.remove("hidden")
+                // console.log(e.scrollY)
+            }
+            if(y_StartPos>=indexStart*3&&y_StartPos<indexStart*3+100){
+                coments[2].classList.add("slide-rotate-hor-top")
+                coments[2].classList.remove("hidden")
+            }
+            if(y_StartPos>=indexStart+300){
+                verMas.classList.add("slide-rotate-hor-top")
+                verMas.classList.remove("hidden")
+            }
+        }else if(typeDrop=="podcast" || typeDrop=="episode" ){//episode
+            let indexStart=201
+
+            if(y_StartPos>=indexStart&& y_StartPos <=indexStart+100){
+                coments[0].classList.add("slide-rotate-hor-top")
+            coments[0].classList.remove("hidden")
+            }
+            if(y_StartPos>=indexStart*2&&y_StartPos<indexStart*2+100){
+                coments[1].classList.add("slide-rotate-hor-top")
+                coments[1].classList.remove("hidden")
+                // console.log(e.scrollY)
+            }
+            if(y_StartPos>=indexStart*3&&y_StartPos<indexStart*3+100){
+                coments[2].classList.add("slide-rotate-hor-top")
+                coments[2].classList.remove("hidden")
+            }
+            if(y_StartPos>=indexStart*3+50){
+                verMas.classList.add("slide-rotate-hor-top")
+                verMas.classList.remove("hidden")
+            }
+
+        }else if(typeDrop=="playlist"){
+            //176
+        }else if(typeDrop=="ownPlaylist"){
+            //140    
+        }else if(typeDrop=="song"){
+            //300
+        }else if(typeDrop=="episode"){//disk
+            //240       
+        }else if(typeDrop=="disk"){
+            //240
+        }       
+    }else{
+
+    }
+
+}
+
+//AGREGAR AL INDIO Y UN EPISODIO DE PODCAST AL HOME
+
+function hiddeOpinionsCards(){
+    let coments=document.getElementsByClassName("comentDisplay")
+    for(let cmnt of coments ){
+        cmnt.classList.remove("slide-rotate-hor-top")
+        cmnt.classList.add("hidden")
+    }
+}
+
+/* Ver form opiniones */
 
 let submitsOpinion = document.getElementsByClassName("submitOpinion");
 for(let subm of submitsOpinion){

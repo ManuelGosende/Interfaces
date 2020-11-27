@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spoiler Five</title>
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/3dTest.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -96,7 +97,7 @@
                 <p class="colorBlanco">J Quiles</p>
             </div>
             <div class="displayVert seeDropDown">
-                <input type="text" value="playlist" class="hidden">
+                <input type="text" value="ownPlaylist" class="hidden">
                 <img src="Mobile-image/playlist/ruteando.png" alt="">
                 <p class="colorBlanco">Ruteando</p>
                 <p class="colorGris">Julian Gomez</p>
@@ -122,18 +123,18 @@
                 <img src="Mobile-image/artista/divididos.png" alt="">
                 <p class="colorBlanco">Divididos</p>
             </div>
-            <div class="displayVert">
+            <div class="displayVert seeDropDown">
                 <input type="text" value="song" class="hidden">
                 <img src="Mobile-image/artista/ciro.png" alt="">
                 <p class="colorBlanco">Ciro y los Persas</p>
                 <p class="colorGris">Mirenla</p>
             </div>
-            <div class="displayVert">
-                <input type="text" value="artist" class="hidden">
+            <div class="displayVert seeDropDown">
+                <input type="text" value="episode" class="hidden">
                 <img src="Mobile-image/artista/thestrokes.png" alt="">
                 <p class="colorBlanco">The Strokes</p>
             </div>
-            <div class="displayVert">
+            <div class="displayVert seeDropDown">
                 <input type="text" value="disk" class="hidden">
                 <img src="Mobile-image/artista/queen.png" alt="">
                 <p class="colorBlanco">The very best of</p>
@@ -148,25 +149,25 @@
         </div>
 
         <div class="contenedorAudios">
-            <div class="displayVert">
+            <div class="displayVert seeDropDown">
                 <input type="text" value="disk" class="hidden">
                 <img src="Mobile-image/disco/Oktubre.png" alt="">
                 <p class="colorBlanco">Oktubre</p>
                 <p class="colorGris">Los Redondos</p>
             </div>
-            <div class="displayVert">
+            <div class="displayVert seeDropDown">
                 <input type="text" value="song" class="hidden">
                 <img src="Mobile-image/disco/especial.png" alt="">
                 <p class="colorBlanco">Todo sigue igual</p>
                 <p class="colorGris">Viejas Locas</p>
             </div>
-            <div class="displayVert">
+            <div class="displayVert seeDropDown">
                 <input type="text" value="song" class="hidden">
                 <img src="Mobile-image/disco/sed.png" alt="">
                 <p class="colorBlanco">Sed</p>
                 <p class="colorGris">Callejeros</p>
             </div>
-            <div class="displayVert">
+            <div class="displayVert seeDropDown">
                 <input type="text" value="playlist" class="hidden">
                 <img src="Mobile-image/playlist/fiesta.png" alt="">
                 <p class="colorBlanco">De fiesta</p>
@@ -260,7 +261,7 @@
                     <p class="colorBlanco">Compartir</p>
                     <p class="colorBlanco">Reproducir</p>
                 </div>
-                <div class="hidden displayVert profile">
+                <div class="hidden profileData displayVert profile">
                 
                     <div class="btnsOptions displayHoriz">
                         <img src="Icons/favourite.png" alt="">
@@ -364,7 +365,7 @@
                 </div>
 
                 <div class="comentarios sombraFuera displayVert">
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -414,7 +415,7 @@
                         <p class="colorBlanco">Me copa, está copada!</p>
                     </div>
         
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -464,7 +465,7 @@
                         <p class="colorBlanco">Mmm, hasta ahí...</p>
                     </div>
         
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -513,7 +514,7 @@
                         </div>
                         <p class="colorBlanco">No me gusta para nada.</p>
                     </div>
-                    <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
+                    <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
                 </div>
 
                 <div class=" listsArtist hidden displayVert profile">
@@ -552,7 +553,7 @@
                 </div>
                 
 
-                <div class="hidden displayVert profile">
+                <div class="hidden profileData displayVert profile">
                 
                     <div class="btnsOptions displayHoriz">
                         <img src="Icons/following.png" alt="">
@@ -630,164 +631,164 @@
                 </form>
 
                 <!-- formulario y estrellas -->
-                <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
+                    <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
 
-                <div class="optionsDropDown">
-                    <h3 class="colorBlanco">Últimas votaciones</h3>
-                </div>
+                    <div class="optionsDropDown">
+                        <h3 class="colorBlanco">Últimas votaciones</h3>
+                    </div>
 
-                <div class="comentarios sombraFuera displayVert">
-                    <div class="displayVert contenedorComent sombraAdentro">
-                        <div class="displayHoriz opinionUser">
-                            <div class="displayHoriz">
-                                <img src="Icons/userpick.png">
-                                <div class="displayVert">
-                                    <div class="displayHoriz">
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#BDFF00"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#BDFF00"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#BDFF00"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#BDFF00"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#BDFF00"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
+                    <div class="comentarios sombraFuera displayVert">
+                        <div class="displayVert contenedorComent comentDisplay sombraAdentro">
+                            <div class="displayHoriz opinionUser">
+                                <div class="displayHoriz">
+                                    <img src="Icons/userpick.png">
+                                    <div class="displayVert">
+                                        <div class="displayHoriz">
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                        </div>
+                                        <p class="colorBlanco">Juana</p>
                                     </div>
-                                    <p class="colorBlanco">Juana</p>
                                 </div>
+                                <p class="colorGris">03/05/2020</p>
                             </div>
-                            <p class="colorGris">03/05/2020</p>
+                            <p class="colorBlanco">Me copa, está copada!</p>
                         </div>
-                        <p class="colorBlanco">Me copa, está copada!</p>
-                    </div>
-        
-                    <div class="displayVert contenedorComent sombraAdentro">
-                        <div class="displayHoriz opinionUser">
-                            <div class="displayHoriz">
-                                <img src="Icons/userpick.png">
-                                <div class="displayVert">
-                                    <div class="displayHoriz">
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#BDFF00"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#BDFF00"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#BDFF00"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#878787"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#878787"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
+            
+                        <div class="displayVert contenedorComent comentDisplay sombraAdentro">
+                            <div class="displayHoriz opinionUser">
+                                <div class="displayHoriz">
+                                    <img src="Icons/userpick.png">
+                                    <div class="displayVert">
+                                        <div class="displayHoriz">
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#878787"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#878787"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                        </div>
+                                        <p class="colorBlanco">Ariel</p>
                                     </div>
-                                    <p class="colorBlanco">Ariel</p>
                                 </div>
+                                <p class="colorGris">19/07/2020</p>
                             </div>
-                            <p class="colorGris">19/07/2020</p>
+                            <p class="colorBlanco">Mmm, hasta ahí...</p>
                         </div>
-                        <p class="colorBlanco">Mmm, hasta ahí...</p>
-                    </div>
-        
-                    <div class="displayVert contenedorComent sombraAdentro">
-                        <div class="displayHoriz opinionUser">
-                            <div class="displayHoriz">
-                                <img src="Icons/userpick.png">
-                                <div class="displayVert">
-                                    <div class="displayHoriz">
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#BDFF00"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#878787"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#878787"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#878787"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
-                                        <object>
-                                            <svg width="14" height="19" viewBox="0 0 170 165">
-                                            <polygon fill="#878787"
-                                            points="129,150 85,119 41,150 57,104 15,66
-                                            68,66 85,15 102,65 156,66 113,98" />
-                                            </svg>
-                                        </object>
+            
+                        <div class="displayVert contenedorComent comentDisplay sombraAdentro">
+                            <div class="displayHoriz opinionUser">
+                                <div class="displayHoriz">
+                                    <img src="Icons/userpick.png">
+                                    <div class="displayVert">
+                                        <div class="displayHoriz">
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#878787"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#878787"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#878787"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#878787"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                        </div>
+                                        <p class="colorBlanco">Juan Ignacio</p>
                                     </div>
-                                    <p class="colorBlanco">Juan Ignacio</p>
                                 </div>
+                                <p class="colorGris">2/11/2020</p>
                             </div>
-                            <p class="colorGris">2/11/2020</p>
+                            <p class="colorBlanco">No me gusta para nada.</p>
                         </div>
-                        <p class="colorBlanco">No me gusta para nada.</p>
+                        <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
                     </div>
-                    <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
-                </div>
 
                 <div class=" listsArtist hidden displayVert profile">
                     <button class="buttonLog colorBlanco backVerde">Reproducir</button>
@@ -822,7 +823,7 @@
                     <p class="colorBlanco">Reproducir</p>
                 </div>
                 <!-- Detalle cuando apreta "ver info" -->
-                <div class="hidden displayVert profile">
+                <div class="hidden profileData displayVert profile">
                 
                     <div class="btnsOptions displayHoriz">
                         <img src="Icons/favourite.png" alt="">
@@ -836,6 +837,175 @@
                         <p class="colorGris">30.193 reproduciones</p>
                     </div>
                 </div>
+
+                <button class="buttonOpinions colorNegro backGris">
+                    Dejá tu opinión
+                </button>
+    
+                    <h3 class="colorVerde">CALIFICACIÓN</h3> 
+                    <div class="displayHoriz">
+                        <h2 class="colorVerde">4.5</h2>
+                        <img src="Icons/estrella.png" alt="">
+                    </div>
+    
+                    <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
+    
+                    <div class="optionsDropDown">
+                        <h3 class="colorBlanco">Últimas votaciones</h3>
+                    </div>
+    
+                    <div class="comentarios sombraFuera displayVert">
+                        <div class="displayVert contenedorComent comentDisplay sombraAdentro">
+                            <div class="displayHoriz opinionUser">
+                                <div class="displayHoriz">
+                                    <img src="Icons/userpick.png">
+                                    <div class="displayVert">
+                                        <div class="displayHoriz">
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                        </div>
+                                        <p class="colorBlanco">Juana</p>
+                                    </div>
+                                </div>
+                                <p class="colorGris">03/05/2020</p>
+                            </div>
+                            <p class="colorBlanco">Me copa, está copada!</p>
+                        </div>
+            
+                        <div class="displayVert contenedorComent comentDisplay sombraAdentro">
+                            <div class="displayHoriz opinionUser">
+                                <div class="displayHoriz">
+                                    <img src="Icons/userpick.png">
+                                    <div class="displayVert">
+                                        <div class="displayHoriz">
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#878787"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#878787"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                        </div>
+                                        <p class="colorBlanco">Ariel</p>
+                                    </div>
+                                </div>
+                                <p class="colorGris">19/07/2020</p>
+                            </div>
+                            <p class="colorBlanco">Mmm, hasta ahí...</p>
+                        </div>
+            
+                        <div class="displayVert contenedorComent comentDisplay sombraAdentro">
+                            <div class="displayHoriz opinionUser">
+                                <div class="displayHoriz">
+                                    <img src="Icons/userpick.png">
+                                    <div class="displayVert">
+                                        <div class="displayHoriz">
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#BDFF00"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#878787"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#878787"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#878787"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                            <object>
+                                                <svg width="14" height="19" viewBox="0 0 170 165">
+                                                <polygon fill="#878787"
+                                                points="129,150 85,119 41,150 57,104 15,66
+                                                68,66 85,15 102,65 156,66 113,98" />
+                                                </svg>
+                                            </object>
+                                        </div>
+                                        <p class="colorBlanco">Juan Ignacio</p>
+                                    </div>
+                                </div>
+                                <p class="colorGris">2/11/2020</p>
+                            </div>
+                            <p class="colorBlanco">No me gusta para nada.</p>
+                        </div>
+                        <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
+                    </div>
 
                 <div class="hidden displayVert profile">
                     <button class="buttonLog colorBlanco backVerde">Reproducir</button>
@@ -989,7 +1159,7 @@
                 </div>
 
                 <!-- Detalle cuando apreta "ver info" -->
-                <div class="hidden displayVert profile">
+                <div class="hidden profileData displayVert profile">
                                             
                     <div class="btnsOptions displayHoriz">
                         <img src="Icons/following.png" alt="">
@@ -1094,7 +1264,7 @@
                 </div>
 
                 <div class="comentarios sombraFuera displayVert">
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -1144,7 +1314,7 @@
                         <p class="colorBlanco">Me copa, está copada!</p>
                     </div>
         
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -1194,7 +1364,7 @@
                         <p class="colorBlanco">Mmm, hasta ahí...</p>
                     </div>
         
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -1243,7 +1413,7 @@
                         </div>
                         <p class="colorBlanco">No me gusta para nada.</p>
                     </div>
-                    <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
+                    <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
                 </div>
 
 
@@ -1400,7 +1570,7 @@
                     <p class="colorBlanco">Reproducir</p>
                 </div>
 
-                <div class="hidden displayVert profile">
+                <div class="hidden profileData displayVert profile">
                 
                     <div class="btnsOptions displayHoriz">
                         <img src="Icons/share.png" alt="">
@@ -1420,12 +1590,15 @@
                     <h2 class="colorVerde">4.5</h2>
                     <img src="Icons/estrella.png" alt="">
                 </div>
+
+                <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
+               
                 <div class="optionsDropDown">
                     <h3 class="colorBlanco">Últimas votaciones</h3>
                 </div>
 
                 <div class="comentarios sombraFuera displayVert">
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -1475,7 +1648,7 @@
                         <p class="colorBlanco">Me copa, está copada!</p>
                     </div>
         
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -1525,7 +1698,7 @@
                         <p class="colorBlanco">Mmm, hasta ahí...</p>
                     </div>
         
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -1574,7 +1747,7 @@
                         </div>
                         <p class="colorBlanco">No me gusta para nada.</p>
                     </div>
-                    <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
+                    <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
                 </div>
 
                 <div class=" listsArtist hidden displayVert profile">
@@ -1754,7 +1927,7 @@
                     <p class="colorBlanco">Reproducir</p>
                 </div>
             <!-- Detalle cuando apreta "ver info" -->
-            <div class="hidden displayVert profile">
+            <div class="hidden profileData displayVert profile">
                             
                 <div class="btnsOptions displayHoriz">
                     <img src="Icons/following.png" alt="">
@@ -1769,16 +1942,67 @@
                 </div>
             </div> 
 
-            <!-- <button class="buttonOpinions colorNegro backGris">
+            <button class="buttonOpinions colorNegro backGris">
                 Dejá tu opinión
-            </button> -->
+            </button>
+            
+            <form onsubmit="return false" class="formOpinion displayVert backGris">
+                <div class="calification">
+                    <object data-value="1" class="estrella">
+                        <svg width="20" height="25" viewBox="0 0 170 165">
+                        <polygon fill="#353535"
+                        points="129,150 85,119 41,150 57,104 15,66
+                        68,66 85,15 102,65 156,66 113,98" />
+                        </svg>
+                    </object>
+                    <object data-value="2" class="estrella">
+                        <svg width="20" height="25" viewBox="0 0 170 165">
+                        <polygon fill="#353535"
+                        points="129,150 85,119 41,150 57,104 15,66
+                        68,66 85,15 102,65 156,66 113,98" />
+                        </svg>
+                    </object>
+                    <object data-value="3" class="estrella">
+                        <svg width="20" height="25" viewBox="0 0 170 165">
+                        <polygon fill="#353535"
+                        points="129,150 85,119 41,150 57,104 15,66
+                        68,66 85,15 102,65 156,66 113,98" />
+                        </svg>
+                    </object>
+                    <object data-value="4" class="estrella">
+                        <svg width="20" height="25" viewBox="0 0 170 165">
+                        <polygon fill="#353535"
+                        points="129,150 85,119 41,150 57,104 15,66
+                        68,66 85,15 102,65 156,66 113,98" />
+                        </svg>
+                    </object>
+                    <object data-value="5" class="estrella">
+                        <svg width="20" height="25" viewBox="0 0 170 165">
+                        <polygon fill="#353535"
+                        points="129,150 85,119 41,150 57,104 15,66
+                        68,66 85,15 102,65 156,66 113,98" />
+                        </svg>
+                    </object>
+                    
+                </div>
+                <div class="deleteCalif"> <p class="colorNegro">Eliminar Calificacion</p></div>
+                <p class="colorNegro">Comentá</p>
+                <button class="buttonSearch"  >
+                    <div class="displayBetween">
+                        <p class="colorNegro"></p>
+                        <input type="text" style="border-style: none;" placeholder="Deje su comentario">
+                    </div>
+                </button>  
+                <div class="displayVert">
+                    <input type="submit" value="Enviar opinión" class="submitOpinion backVerde colorBlanco">
+                </div>
+            </form>
 
                 <h3 class="colorVerde">CALIFICACIÓN</h3> 
                 <div class="displayHoriz">
                     <h2 class="colorVerde">4.5</h2>
                     <img src="Icons/estrella.png" alt="">
                 </div>
-
 
                 <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
 
@@ -1787,7 +2011,7 @@
                 </div>
 
                 <div class="comentarios sombraFuera displayVert">
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -1837,7 +2061,7 @@
                         <p class="colorBlanco">Me copa, está copada!</p>
                     </div>
         
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -1887,7 +2111,7 @@
                         <p class="colorBlanco">Mmm, hasta ahí...</p>
                     </div>
         
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -1936,7 +2160,7 @@
                         </div>
                         <p class="colorBlanco">No me gusta para nada.</p>
                     </div>
-                    <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
+                    <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
                 </div>
 
                 <div class=" listsArtist hidden displayVert profile">
@@ -2116,7 +2340,7 @@
                     <p class="colorBlanco">Reproducir</p>
                 </div>
                 <!-- Detalle cuando apreta "ver info" -->
-                <div class="hidden displayVert profile">
+                <div class="hidden profileData displayVert profile">
                 
                     <div class="btnsOptions displayHoriz">
                         <img src="Icons/following.png" alt="">
@@ -2208,6 +2432,7 @@
                     </div>
                 </form>
 
+            
                 <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
 
                 <div class="optionsDropDown">
@@ -2215,7 +2440,7 @@
                 </div>
 
                 <div class="comentarios sombraFuera displayVert">
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay hidden sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -2265,7 +2490,7 @@
                         <p class="colorBlanco">Me copa, está copada!</p>
                     </div>
         
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay hidden sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -2315,7 +2540,7 @@
                         <p class="colorBlanco">Mmm, hasta ahí...</p>
                     </div>
         
-                    <div class="displayVert contenedorComent sombraAdentro">
+                    <div class="displayVert contenedorComent comentDisplay hidden sombraAdentro">
                         <div class="displayHoriz opinionUser">
                             <div class="displayHoriz">
                                 <img src="Icons/userpick.png">
@@ -2364,11 +2589,11 @@
                         </div>
                         <p class="colorBlanco">No me gusta para nada.</p>
                     </div>
-                    <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
+                    <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
                 </div>
 
                 
-                <div class=" listsArtist hidden displayVert profile">
+                <div class="listsArtist hidden displayVert profile">
                     <button class="buttonLog colorBlanco backVerde">Reproducir</button>
                     <div class="archiveList">
                         <div class="displayVert contenedorLista sombraAdentro">
@@ -2445,6 +2670,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="space"></div>          
             </div>
         </div>
@@ -2702,8 +2928,12 @@
                 </div>
                 <div class="displayBetween contActionsRepr">
                     <div>
+                        <img src="Icons/add.png" alt="">
+                    </div>
+                    <div>
                         <img src="Icons/favourite.png" alt="">
                     </div>
+                    
                     <div>
                         <img src="Icons/volume.png" alt="">
                     </div>
@@ -2720,473 +2950,485 @@
 
     <!-- ----------------------------------DESKTOP------------------------------------------------->
 
-    <div class="displayVert desktop">
-        <header>
-            <div class="displayBetween contenedorHeader sombraFuera">
-                <img src="logo-original.png" alt="">
-                <div class="displayHoriz">
-                    <img src="Icons/home.png" alt="">    
-                    <p class="colorBlanco">Inicio</p>    
+    <div class="desktop">
+        <div class="displayVert">
+            <header>
+                <div class="displayBetween contenedorHeader sombraFuera">
+                    <img src="logo-original.png" alt="">
+                    <div class="displayHoriz">
+                        <img src="Icons/home.png" alt="">    
+                        <p class="colorBlanco">Inicio</p>    
+                    </div>
+                    <button class="buttonSearch backGris">
+                        <a href="searchFilter.html">
+                            <div class="displayBetween">
+                                <p class="colorBlanco">Search</p>
+                                <img src="Icons/search.png" alt="">
+                            </div>
+                        </a> 
+                    </button> 
+                    <div>
+                        <img src="Icons/config.png" alt="">
+                    </div>
                 </div>
-                <button class="buttonSearch backGris">
-                    <a href="searchFilter.html">
-                        <div class="displayBetween">
-                            <p class="colorBlanco">Search</p>
-                            <img src="Icons/search.png" alt="">
+            </header>
+            <div class="space"></div>
+            <div class="displayUserAndHome">
+                <!-- LADO IZQUIERDO -->
+                <div class="displayVert contenedorUser backNegro">
+                    <div class="displayBetween sombraFuera infoUser">
+                        <div class="displayHoriz">
+                            <img src="Icons/userpick.png" alt="">
+                            <div class="nombreUser">
+                                <p class="colorBlanco">Juan</p>
+                                <p class="colorVerde">González</p>
+                            </div>
                         </div>
-                    </a> 
-                </button> 
-                <div>
-                    <img src="Icons/config.png" alt="">
+                        <div class="displayVert">
+                            <p class="colorGris">Plan Actual</p>
+                            <p class="colorBlanco planActual">Bronce</p>
+                        </div>
+                    </div>
+                    <div class="contenedorTitulos">
+                        <h3 class="colorVerde">Playlist</h3>
+                    </div>
+                    <button class="buttonLog colorBlanco backGris">
+                        <div class="displayHoriz">
+                            <img src="Icons/add.png" alt="">
+                            Crear Playlist
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorLista sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">La jodita</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">45 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Con amigos!</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">91 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">¡Buen día!</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">25 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Estudio</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">70 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <svg width="200" height="2"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
+        
+                    <h2 class="colorBlanco">Biblioteca de favoritos</h2>
+        
+                    <button class="buttonCollections colorVerde backNegro sombraFuera">
+                        <div class="displayHoriz">
+                            Canciones
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorListaUser sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">La cumbita - Tambo tambo</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">3:17</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Rompe - Daddy Yankee</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">2:33</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Jurabas tú - Jambao</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">3:40</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Swing - Peralta</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">3:28</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buttonCollections colorVerde backNegro sombraFuera">
+                        <div class="displayHoriz">
+                            Episodios
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorListaUser sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">La Vendetta - Cuentos</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">31:17</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">El retrato - Luisito</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">13:19</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">La mañana - Eugenia Sils</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">19:21</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buttonCollections colorVerde backNegro sombraFuera">
+                        <div class="displayHoriz">
+                            Discos
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorListaUser sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Oktubre - Los Redondos</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">10 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Gardeliando - Los Gardelitos</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">13 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <svg width="200" height="2"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
+        
+                    <h2 class="colorBlanco">Colecciones <br> que sigues</h2>
+        
+                    <button class="buttonCollections colorVerde backNegro sombraFuera">
+                        <div class="displayHoriz">
+                            Artistas
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorListaUser sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Los Gardelitos</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">5 discos</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Led Zeppelin</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">7 discos</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buttonCollections colorVerde backNegro sombraFuera">
+                        <div class="displayHoriz">
+                            Podcast
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorListaUser sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Últimos Cartuchos</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">31 epi...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Cuentos e historias</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">17 epi...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buttonCollections colorVerde backNegro sombraFuera">
+                        <div class="displayHoriz">
+                            Playlist
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorListaUser sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">La buenaa - Ariel</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">31 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Moments - Julia</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">170 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Relax! - Kike</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">123 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="spaceHoriz"></div>
+        
+                <!-- LADO DERECHO -->
+        
+                <div class="displayVert contenedorHome">
+                    <div class="contenedorTitulos">
+                        <h2 class="colorBlanco">Sugerido para vos</h2>
+                    </div>
+                    <div class="displayVert contenedorTipoAudio sombraFuera">
+                        <div class="contenedorTitulos">
+                            <h3 class="colorVerde">Principales</h3>
+                        </div>
+                        <div class="contenedorAudiosDesktop">
+                            <div class="displayVert">
+                                <input type="text" value="podcast" class="hidden">
+                                <img src="Desktop-image/podcast/ultimoscartuchos.png" alt="">
+                                <p class="colorBlanco">Últimos Cartuchos</p>
+                                <p class="colorGris">107.3 AM</p>
+                            </div>
+                            <div class="displayVert">
+                                <input type="text" value="song" class="hidden">
+                                <img src="Desktop-image/artista/badbunny.png" alt="">
+                                <p class="colorBlanco">Bad Bunny</p>
+                                <p class="colorGris">La difícil</p>
+                            </div>
+                            <div class="displayVert">
+                                <input type="text" value="disk" class="hidden">
+                                <img src="Desktop-image/artista/elplan.png" alt="">
+                                <p class="colorBlanco">Trance habitante</p>
+                                <p class="colorGris">El Plan de la M...</p>
+                            </div>
+                            <div class="displayVert">
+                                <input type="text" value="artist" class="hidden">
+                                <img src="Desktop-image/artista/bobmarley.png" alt="">
+                                <p class="colorBlanco">Bob Marley</p>
+                            </div>
+                        </div>
+                        <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
+                    </div>
+        
+                    <div class="displayVert contenedorTipoAudio sombraFuera">
+                        <div class="contenedorTitulos">
+                            <h3 class="colorVerde">Tarde con amigos</h3>
+                        </div>
+                        <div class="contenedorAudiosDesktop">
+                            <div class="displayVert">
+                                <input type="text" value="artist" class="hidden">
+                                <img src="Desktop-image/artista/queen.png" alt="">
+                                <p class="colorBlanco">Queen</p>
+                            </div>
+                            <div class="displayVert">
+                                <input type="text" value="song" class="hidden">
+                                <img src="Desktop-image/artista/ca7riel.png" alt="">
+                                <p class="colorBlanco">Polvo</p>
+                                <p class="colorGris">Ca7riel</p>
+                            </div>
+                            <div class="displayVert">
+                                <input type="text" value="disk" class="hidden">
+                                <img src="Desktop-image/disco/oktubre.png" alt="">
+                                <p class="colorBlanco">Oktubre</p>
+                                <p class="colorGris">Los Redondos</p>
+                            </div>
+                            <div class="displayVert">
+                                <input type="text" value="song" class="hidden">
+                                <img src="Desktop-image/artista/ciro.png" alt="">
+                                <p class="colorBlanco">Antes y Despues</p>
+                                <p class="colorGris">Ciro y Los Personas</p>
+                            </div>
+                        </div>
+                        <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
+                    </div>
+        
+                    <svg width="300" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
+        
+                    <div class="contenedorTitulos">
+                        <h2 class="colorBlanco">Recomendado para vos</h2>
+                    </div>
+                    <div class="displayVert contenedorTipoAudio sombraFuera">
+                        <div class="contenedorTitulos">
+                            <h3 class="colorVerde">Música</h3>
+                        </div>
+                        <div class="contenedorAudiosDesktop">
+                            <div class="displayVert">
+                                <input type="text" value="music" class="hidden">
+                                <img src="Desktop-image/dropDown/lomasescuchado.png" alt="">
+                                <p class="colorBlanco">Lo más Escuchado</p>
+                            </div>
+                            <div class="displayVert">
+                                <input type="text" value="music" class="hidden">
+                                <img src="Desktop-image/artista/ca7riel.png" alt="">
+                                <p class="colorBlanco">Seguí escuchando</p>
+                            </div>
+                            <div class="displayVert">
+                                <input type="text" value="music" class="hidden">
+                                <img src="Desktop-image/dropDown/loultimo.png" alt="">
+                                <p class="colorBlanco">Lo último</p>
+                            </div>
+                            <div class="displayVert">
+                                <input type="text" value="music" class="hidden">
+                                <img src="Desktop-image/artista/brown.png" alt="">
+                                <p class="colorBlanco">Un viaje al pasado</p>
+                            </div>
+                        </div>
+                        <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
+                    </div>
+                    
+                    <div class="displayVert contenedorTipoAudio sombraFuera">
+                        <div class="contenedorTitulos">
+                            <h3 class="colorVerde">Podcast</h3>
+                        </div>
+                        <div class="contenedorAudiosDesktop">
+                            <div class="displayVert">
+                                <input type="text" value="podcast" class="hidden">
+                                <img src="Desktop-image/podcast/patrullaperdida.png" alt="">
+                                <p class="colorBlanco">Populares</p>
+                            </div>
+                            <div class="displayVert">
+                                <input type="text" value="podcast" class="hidden">
+                                <img src="Desktop-image/podcast/somosnovios.png" alt="">
+                                <p class="colorBlanco">Noticias del día</p>
+                            </div>
+                            <div class="displayVert">
+                                <input type="text" value="podcast" class="hidden">
+                                <img src="Desktop-image/podcast/caso63.png" alt="">
+                                <p class="colorBlanco">Cuentos e historias</p>
+                            </div>
+                            <div class="displayVert">
+                                <input type="text" value="podcast" class="hidden">
+                                <img src="Desktop-image/podcast/ultimoscartuchos.png" alt="">
+                                <p class="colorBlanco">Diversión</p>
+                            </div>
+                        </div>
+                        <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
+                    </div>
+                </div>
+
+                <!-- reproductor -->
+        
+                <div class="reproductorDesktop displayVert backNegro">
+                <img src="Icons/barradesktop.png" alt="">
+                <div class="displayHoriz empty">
+                    <a href="">
+                        <div class="backGris infoReproductor">
+                            <p class="colorVerde">Artista</p>
+                            <p class="colorBlanco subText">Archivo de audio</p>
+                        </div>
+                    </a>
+                    <div>
+                        <img src="Icons/play-rep.png" alt="">
+                    </div>
+                    <div class="displayBetween contActionsRepr">
+                        <div>
+                            <img src="Icons/favourite.png" alt="">
+                        </div>
+                        <div>
+                            <button class="buttonOpiRep colorBlanco backGris">
+                                Opiná
+                            </button>
+                        </div>   
+                        <div>
+                            <img src="Icons/volumedesktop.png" alt="">
+                        </div>
+                        <div>
+                            <img src="Icons/desplegable.png" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </header>
-    </div>
 
-    <div class="space"></div>
-
-    <!-- User -->
-
-    <div class="displayUserAndHome">
-        <!-- LADO IZQUIERDO -->
-        <div class="displayVert contenedorUser backNegro">
-            <div class="displayBetween sombraFuera infoUser">
-                <div class="displayHoriz">
-                    <img src="Icons/userpick.png" alt="">
-                    <div class="nombreUser">
-                        <p class="colorBlanco">Juan</p>
-                        <p class="colorVerde">González</p>
-                    </div>
-                </div>
-                <div class="displayVert">
-                    <p class="colorGris">Plan Actual</p>
-                    <p class="colorBlanco planActual">Bronce</p>
-                </div>
-            </div>
-            <div class="contenedorTitulos">
-                <h3 class="colorVerde">Playlist</h3>
-            </div>
-            <button class="buttonLog colorBlanco backGris">
-                <div class="displayHoriz">
-                    <img src="Icons/add.png" alt="">
-                    Crear Playlist
-                </div>
-            </button>
-            <div class="displayVert contenedorLista sombraAdentro">
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">La jodita</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">45 can...</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Con amigos!</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">91 can...</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">¡Buen día!</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">25 can...</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Estudio</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">70 can...</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <svg width="200" height="2"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
-
-            <h2 class="colorBlanco">Biblioteca de favoritos</h2>
-
-            <button class="buttonCollections colorVerde backNegro sombraFuera">
-                <div class="displayHoriz">
-                    Canciones
-                </div>
-            </button>
-            <div class="displayVert contenedorListaUser sombraAdentro">
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">La cumbita - Tambo tambo</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">3:17</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Rompe - Daddy Yankee</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">2:33</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Jurabas tú - Jambao</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">3:40</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Swing - Peralta</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">3:28</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <button class="buttonCollections colorVerde backNegro sombraFuera">
-                <div class="displayHoriz">
-                    Episodios
-                </div>
-            </button>
-            <div class="displayVert contenedorListaUser sombraAdentro">
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">La Vendetta - Cuentos</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">31:17</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">El retrato - Luisito</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">13:19</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">La mañana - Eugenia Sils</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">19:21</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <button class="buttonCollections colorVerde backNegro sombraFuera">
-                <div class="displayHoriz">
-                    Discos
-                </div>
-            </button>
-            <div class="displayVert contenedorListaUser sombraAdentro">
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Oktubre - Los Redondos</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">10 can...</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Gardeliando - Los Gardelitos</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">13 can...</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <svg width="200" height="2"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
-
-            <h2 class="colorBlanco">Colecciones <br> que sigues</h2>
-
-            <button class="buttonCollections colorVerde backNegro sombraFuera">
-                <div class="displayHoriz">
-                    Artistas
-                </div>
-            </button>
-            <div class="displayVert contenedorListaUser sombraAdentro">
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Los Gardelitos</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">5 discos</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Led Zeppelin</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">7 discos</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <button class="buttonCollections colorVerde backNegro sombraFuera">
-                <div class="displayHoriz">
-                    Podcast
-                </div>
-            </button>
-            <div class="displayVert contenedorListaUser sombraAdentro">
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Últimos Cartuchos</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">31 epi...</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Cuentos e historias</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">17 epi...</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <button class="buttonCollections colorVerde backNegro sombraFuera">
-                <div class="displayHoriz">
-                    Playlist
-                </div>
-            </button>
-            <div class="displayVert contenedorListaUser sombraAdentro">
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">La buenaa - Ariel</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">31 can...</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Moments - Julia</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">170 can...</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-                <div class="displayHoriz audio"> 
-                    <div class="displayHoriz subAudio">
-                        <img src="Icons/play.png" alt="" class="playAudioItem">
-                        <p class="colorBlanco">Relax! - Kike</p>
-                    </div>
-                    <div class="displayHoriz subAudio">
-                        <p class="colorBlanco">123 can...</p>
-                        <img src="Icons/desplegable.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="spaceHoriz"></div>
-
-        <!-- LADO DERECHO -->
-
-        <div class="displayVert contenedorHome">
-            <div class="contenedorTitulos">
-                <h2 class="colorBlanco">Sugerido para vos</h2>
-            </div>
-            <div class="displayVert contenedorTipoAudio sombraFuera">
-                <div class="contenedorTitulos">
-                    <h3 class="colorVerde">Principales</h3>
-                </div>
-                <div class="contenedorAudiosDesktop">
-                    <div class="displayVert">
-                        <input type="text" value="podcast" class="hidden">
-                        <img src="Desktop-image/podcast/ultimoscartuchos.png" alt="">
-                        <p class="colorBlanco">Últimos Cartuchos</p>
-                        <p class="colorGris">107.3 AM</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="song" class="hidden">
-                        <img src="Desktop-image/artista/badbunny.png" alt="">
-                        <p class="colorBlanco">Bad Bunny</p>
-                        <p class="colorGris">La difícil</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="disk" class="hidden">
-                        <img src="Desktop-image/artista/elplan.png" alt="">
-                        <p class="colorBlanco">Trance habitante</p>
-                        <p class="colorGris">El Plan de la M...</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="artist" class="hidden">
-                        <img src="Desktop-image/artista/bobmarley.png" alt="">
-                        <p class="colorBlanco">Bob Marley</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="playlist" class="hidden">
-                        <img src="Desktop-image/playlist/defiesta.png" alt="">
-                        <p class="colorBlanco">De fiesta</p>
-                        <p class="colorGris">Fer Juarez</p>
-                    </div>
-                </div>
-                <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
-            </div>
-
-            <div class="displayVert contenedorTipoAudio sombraFuera">
-                <div class="contenedorTitulos">
-                    <h3 class="colorVerde">Tarde con amigos</h3>
-                </div>
-                <div class="contenedorAudiosDesktop">
-                    <div class="displayVert">
-                        <input type="text" value="artist" class="hidden">
-                        <img src="Desktop-image/artista/queen.png" alt="">
-                        <p class="colorBlanco">Queen</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="song" class="hidden">
-                        <img src="Desktop-image/artista/ca7riel.png" alt="">
-                        <p class="colorBlanco">Polvo</p>
-                        <p class="colorGris">Ca7riel</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="disk" class="hidden">
-                        <img src="Desktop-image/disco/oktubre.png" alt="">
-                        <p class="colorBlanco">Oktubre</p>
-                        <p class="colorGris">Los Redondos</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="song" class="hidden">
-                        <img src="Desktop-image/artista/ciro.png" alt="">
-                        <p class="colorBlanco">Antes y Despues</p>
-                        <p class="colorGris">Ciro y Los Personas</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="playlist" class="hidden">
-                        <img src="Desktop-image/playlist/tarde.png" alt="">
-                        <p class="colorBlanco">La tardecita - Melani</p>
-                    </div>
-                </div>
-                <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
-            </div>
-
-            <svg width="300" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
-
-            <div class="contenedorTitulos">
-                <h2 class="colorBlanco">Recomendado para vos</h2>
-            </div>
-            <div class="displayVert contenedorTipoAudio sombraFuera">
-                <div class="contenedorTitulos">
-                    <h3 class="colorVerde">Música</h3>
-                </div>
-                <div class="contenedorAudiosDesktop">
-                    <div class="displayVert">
-                        <input type="text" value="music" class="hidden">
-                        <img src="Desktop-image/dropDown/lomasescuchado.png" alt="">
-                        <p class="colorBlanco">Lo más Escuchado</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="music" class="hidden">
-                        <img src="Desktop-image/artista/ca7riel.png" alt="">
-                        <p class="colorBlanco">Seguí escuchando</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="music" class="hidden">
-                        <img src="Desktop-image/dropDown/loultimo.png" alt="">
-                        <p class="colorBlanco">Lo último</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="music" class="hidden">
-                        <img src="Desktop-image/artista/brown.png" alt="">
-                        <p class="colorBlanco">Un viaje al pasado</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="artist" class="hidden">
-                        <img src="Desktop-image/playlist/defiesta.png" alt="">
-                        <p class="colorBlanco">¡A mover el cuerpo!</p>
-                    </div>
-                </div>
-                <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
-            </div>
-            
-            <div class="displayVert contenedorTipoAudio sombraFuera">
-                <div class="contenedorTitulos">
-                    <h3 class="colorVerde">Podcast</h3>
-                </div>
-                <div class="contenedorAudiosDesktop">
-                    <div class="displayVert">
-                        <input type="text" value="podcast" class="hidden">
-                        <img src="Desktop-image/podcast/patrullaperdida.png" alt="">
-                        <p class="colorBlanco">Populares</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="podcast" class="hidden">
-                        <img src="Desktop-image/podcast/somosnovios.png" alt="">
-                        <p class="colorBlanco">Noticias del día</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="podcast" class="hidden">
-                        <img src="Desktop-image/podcast/caso63.png" alt="">
-                        <p class="colorBlanco">Cuentos e historias</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="podcast" class="hidden">
-                        <img src="Desktop-image/podcast/ultimoscartuchos" alt="">
-                        <p class="colorBlanco">Diversión</p>
-                    </div>
-                    <div class="displayVert">
-                        <input type="text" value="podcast" class="hidden">
-                        <img src="Desktop-image/podcast/ultimoscartuchos" alt="">
-                        <p class="colorBlanco">Diversión</p>
-                    </div>
-                </div>
-                <div class="verMas backGris"><p class="colorBlanco">Ver más</p></div>
             </div>
         </div>
 
         <script src="js/homeDesktop.js"></script>
     </div>
+
 
     <script src="js/main.js"></script>
 </body>

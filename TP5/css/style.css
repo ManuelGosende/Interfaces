@@ -370,8 +370,6 @@ a {
         border-radius: 15px;
     }
 
-    
-
     .reproductor {
         width: 100%;
         padding: 2% 0;
@@ -529,10 +527,6 @@ a {
         width: 90%;
         border-radius: 40px;
     }
-    
-    /* Profile */
-    .btnsOptions{
-    }
 
 }
 
@@ -540,11 +534,51 @@ a {
 
 @media (min-width: 1300px) {
 
+    /* Reproductor */
+
+    .reproductorDesktop {
+        position: fixed;
+        margin-left: 375px;
+        margin-top: 455px;
+    }
+
+    .infoReproductor {
+        width: 180px;
+        padding: 1% 0 1% 8%;
+        border-radius: 40px;
+    }
+
+    .infoReproductor .subText {
+        font-size: 10px;
+    }
+
+    .reproductorDesktop .empty {
+        width: 100%;
+    }
+
+    .buttonOpiRep {
+        font-family: 'Poppins', sans-serif;
+        width: 100px;
+        padding: 10%;
+        border-radius: 40px;
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .contActionsRepr {
+        width: 300px;
+    }
+
+    /* General */
+
     .displayUserAndHome {
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .displayUserAndHome svg {
+        margin: 30px;
     }
 
     footer {
@@ -599,7 +633,8 @@ a {
 
     .formLogDesktop {
         height: 0px;
-        width:570px;
+        height: 0px;
+        width: 570px;
         margin-top: 0px;
         padding: 0;
         overflow: hidden;
@@ -607,6 +642,9 @@ a {
         margin-bottom: 30px;
     }
 
+    .formLogDesktop p {
+        line-height: 25px;
+    }
     .logosRegist, .formLog .displayVert .displayHoriz img {
         padding: 5%;
     }
@@ -639,7 +677,8 @@ a {
     .contenedorUser {
         position: fixed;
         padding: 2%;
-        height: 600px;
+        margin-top: -5px;
+        height: 620px;
         overflow-y: auto;
         overflow-x: hidden;
         display: flex;
@@ -705,6 +744,7 @@ a {
         width: 90%;
         padding: 0 2%;
         border-radius: 40px;
+        margin: 2%;
     }
 
     .contenedorAudios {
@@ -725,6 +765,50 @@ a {
 
     .contenedorAudiosDesktop .displayVert {
         padding: 0 2%;
+    }
+
+    /* Profile */
+
+    .calificationProfile {
+        width: auto;
+        padding: 5%;
+        border-radius: 40px;
+    }
+
+    .contListaDesktop {
+        border-radius: 40px;
+    }
+
+    .episodeProfile, .podcastProfile, .songProfile, .diskProfile, .artistProfile, .contListaDesktop {
+        width: 80%;
+    }
+
+    .contListaDesktop img {
+        margin: 0 20px;
+    }
+
+    .subConjuntoNombreDesktop {
+        justify-content: start;
+    }
+    
+    .subConjuntoListaDesktop, .subConjuntoNombreDesktop {
+        width: 200px;
+    }
+
+    .subConjuntoNombreDesktop .displayVert p {
+        line-height: 25px;
+    }
+    
+    .calificationProfile h3, .calificationProfile h2 {
+        line-height: 5px;
+    }
+
+    .buttonRepProfile {
+        margin: 5%;
+    }
+
+    .optionProfile {
+        margin: 5px;
     }
 
 }
