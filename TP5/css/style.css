@@ -785,6 +785,9 @@ a {
 
     .episodeProfile, .podcastProfile, .songProfile, .diskProfile, .artistProfile, .contListaDesktop, .playlistProfile {
         width: 80%;
+        /* width: 100%; */
+        position: relative;
+        /* position: absolute; */
     }
 
     .contListaDesktop img {
@@ -840,6 +843,66 @@ a {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+    }
+
+    /* ------------------------------Calification----------------------------------------- */
+
+    .formOpinion {
+        height: 0px;
+        width: 260px;
+        margin-top: 0px;
+        padding: 0 10px;
+        overflow: hidden;
+        border-radius: 0 0 30px 30px;
+        transition: 3s;
+    }
+
+    .estrella {
+        width: 22px;
+        height: 22px;
+    }
+
+    .calification {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 8%;
+        width: 100%;
+    }
+
+    .calification svg {
+        margin: 0;
+    }
+
+    .inputComent {
+        width: 100%;
+    }
+
+    .optionsDropDown {
+        width: 70%;
+    }
+
+    .comentarios {
+        width: 100%;
+        padding: 10%;
+        border-radius: 40px;
+        margin-bottom: 20px;
+    }
+
+    .contenedorComent {
+        margin: 20px;
+        padding: 5%;
+        width: 100%;
+        border-radius: 40px;
+    }
+
+    .opinionUser {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .opinionUser svg {
+        margin: 0;
     }
 
 }

@@ -49,26 +49,32 @@
     
         <div class="contenedorFiltros">
             <button class="buttonFilter backGris">
+                <input type="text" value="song" class="hidden">
                 <p class="colorBlanco">Canciones</p>
             </button>
             <button class="buttonFilter backGris">
+                <input type="text" value="disk" class="hidden">
                 <p class="colorBlanco">Discos</p>
             </button>
             <button class="buttonFilter backGris">
+                <input type="text" value="artist" class="hidden">
                 <p class="colorBlanco">Artistas</p>
             </button>
             <button class="buttonFilter backGris">
+                <input type="text" value="playlist" class="hidden">              
                 <p class="colorBlanco">Playlist</p>
             </button>
             <button class="buttonFilter backGris">
+                <input type="text" value="podcast" class="hidden">             
                 <p class="colorBlanco">Podcast</p>
             </button>
             <button class="buttonFilter backGris">
+                <input type="text" value="episode" class="hidden">
                 <p class="colorBlanco">Episodios</p>
             </button>
         </div>
     
-        <div class="displayVert contenedorLista sombraAdentro">
+        <div data-value="fsong" class="filterResults displayVert contenedorLista sombraAdentro">
             <div class="contenedorTitulos">
                 <h3 class="colorVerde">Canciones</h3>
             </div>
@@ -107,7 +113,7 @@
     
         <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
     
-        <div class="displayVert contenedorLista sombraAdentro">
+        <div data-value="fdisk" class="filterResults displayVert contenedorLista sombraAdentro">
             <div class="contenedorTitulos">
                 <h3 class="colorVerde">Discos</h3>
             </div>
@@ -146,7 +152,7 @@
     
         <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
     
-        <div class="displayVert contenedorLista sombraAdentro">
+        <div data-value="fartist" class="filterResults displayVert contenedorLista sombraAdentro">
             <div class="contenedorTitulos">
                 <h3 class="colorVerde">Artistas</h3>
             </div>
@@ -185,7 +191,7 @@
     
         <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
     
-        <div class="displayVert contenedorLista sombraAdentro">
+        <div data-value="fplaylist" class="filterResults displayVert contenedorLista sombraAdentro">
             <div class="contenedorTitulos">
                 <h3 class="colorVerde">Playlist</h3>
             </div>
@@ -244,7 +250,7 @@
     
         <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
     
-        <div class="displayVert contenedorLista sombraAdentro">
+        <div data-value="fpodcast" class="filterResults displayVert contenedorLista sombraAdentro">
             <div class="contenedorTitulos">
                 <h3 class="colorVerde">Podcast</h3>
             </div>
@@ -283,7 +289,7 @@
     
         <svg width="200" height="1"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
     
-        <div class="displayVert contenedorLista sombraAdentro">
+        <div data-value="fepisode" class="filterResults displayVert contenedorLista sombraAdentro">
             <div class="contenedorTitulos">
                 <h3 class="colorVerde">Episodios</h3>
             </div>
@@ -380,21 +386,27 @@
 
             <div class="contenedorFiltros">
                 <button class="buttonFilter backGris">
+                    <input type="text" value="song" class="hidden">
                     <p class="colorBlanco">Canciones</p>
                 </button>
                 <button class="buttonFilter backGris">
+                    <input type="text" value="disk" class="hidden">
                     <p class="colorBlanco">Discos</p>
                 </button>
                 <button class="buttonFilter backGris">
+                    <input type="text" value="artist" class="hidden">
                     <p class="colorBlanco">Artistas</p>
                 </button>
                 <button class="buttonFilter backGris">
+                    <input type="text" value="playlist" class="hidden">              
                     <p class="colorBlanco">Playlist</p>
                 </button>
                 <button class="buttonFilter backGris">
+                    <input type="text" value="podcast" class="hidden">             
                     <p class="colorBlanco">Podcast</p>
                 </button>
                 <button class="buttonFilter backGris">
+                    <input type="text" value="episode" class="hidden">
                     <p class="colorBlanco">Episodios</p>
                 </button>
             </div>
@@ -686,7 +698,7 @@
                 <!-- LADO DERECHO -->
 
                 <div class="displayVert contenedorHome">
-                    <div class="displayVert contenedorTipoAudio sombraFuera">
+                    <div class="displayVert contenedorTipoAudio sombraFuera filterResults" data-value="fsong">
                         <div class="contenedorTitulos">
                             <h3 class="colorVerde">Canciones</h3>
                         </div>
@@ -719,7 +731,7 @@
                         <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
                     </div>
 
-                    <div class="displayVert contenedorTipoAudio sombraFuera">
+                    <div class="displayVert contenedorTipoAudio sombraFuera filterResults" data-value="fplaylist">
                         <div class="contenedorTitulos">
                             <h3 class="colorVerde">Playlist</h3>
                         </div>
@@ -752,7 +764,7 @@
                         <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
                     </div>
 
-                    <div class="displayVert contenedorTipoAudio sombraFuera">
+                    <div class="displayVert contenedorTipoAudio sombraFuera filterResults" data-value="fartist">
                         <div class="contenedorTitulos">
                             <h3 class="colorVerde">Artistas</h3>
                         </div>
@@ -781,7 +793,7 @@
                         <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
                     </div>
 
-                    <div class="displayVert contenedorTipoAudio sombraFuera">
+                    <div class="displayVert contenedorTipoAudio sombraFuera filterResults" data-value="fdisk">
                         <div class="contenedorTitulos">
                             <h3 class="colorVerde">Discos</h3>
                         </div>
@@ -814,7 +826,7 @@
                         <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
                     </div>
 
-                    <div class="displayVert contenedorTipoAudio sombraFuera">
+                    <div class="displayVert contenedorTipoAudio sombraFuera filterResults" data-value="fpodcast">
                         <div class="contenedorTitulos">
                             <h3 class="colorVerde">Podcast</h3>
                         </div>
@@ -847,7 +859,7 @@
                         <div class="verMas backGris comentDisplay hidden"><p class="colorBlanco">Ver más</p></div>
                     </div>
 
-                    <div class="displayVert contenedorTipoAudio sombraFuera">
+                    <div class="displayVert contenedorTipoAudio sombraFuera filterResults" data-value="fepisode">
                         <div class="contenedorTitulos">
                             <h3 class="colorVerde">Episodios</h3>
                         </div>

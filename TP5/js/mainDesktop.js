@@ -37,32 +37,49 @@ function ocultarRestantesHome(botonSeleccionado) {
 
 /* Ver más en Home y Search */
 
-let verMas = document.querySelectorAll(".verMas");
-let verMenos = document.querySelectorAll(".verMenos");
+/* let verMas = document.querySelectorAll(".verMas");
+let verMenos = document.getElementsByTagName("verMenos");
+let verMenosDesplegado = null;
 for (let botonVerMas = 0; botonVerMas < verMas.length; botonVerMas ++) {
     verMas[botonVerMas].addEventListener("click", function() {
+        let ocultador = verMas[botonVerMas].nextElementSibling;
         let ocultos = verMas[botonVerMas].previousElementSibling;
         ocultos.classList.remove("hidden");
         verMas[botonVerMas].classList.add("hidden");
-        verMenos[botonVerMas].classList.remove("hidden");
+        ocultador.classList.remove("hidden");
+        verMenosDesplegado = ocultos;
     });
+} */
+
+// ------------------VISUALIZAR PERFILES-----------------------------
+
+let profiles =document.querySelectorAll(".desktopProfile")
+// let header = document.getElementsByTagName("header");
+let profClicked = null;
+
+let seeProf = document.querySelectorAll(".seeProfDesktop");
+for (let seeOpt of seeProf){
+    console.log(seeOpt)
+    let inptArchive= seeOpt.getElementsByTagName("input")[0].value
+    
+    seeOpt.addEventListener("click", function() { slideProfile(inptArchive) })
 }
 
-for (let botonVerMenos = 0; botonVerMenos < verMenos.length; botonVerMenos ++) {
-    verMenos[botonVerMenos].addEventListener("click", function() {
-        let desplegado = verMenos[botonVerMenos].previousElementSibling;
-        desplegado.classList.add("hidden");
-        verMenos[botonVerMenos].classList.add("hidden");
-        verMas[botonVerMenos].classList.remove("hidden");
-    });
+//archive define que archivo Drop debo mostrar)(artista,song,etc)
+function slideProfile(archive) {
+    console.log(archive)
+    //obtengo el drop del archive y lo muestro
+    for(let profDrop of profiles) {
+        let typeAudio = profDrop.getAttribute("data-value");
+        if(archive == typeAudio) {
+            profDrop.classList.remove("hidden");
+            profDrop.classList.add("dropFijo");
+            // profDrop.onscroll=function(e){showOpiniosOnScroll(e,this)}
+            dropClicked = profDrop;
+            console.log(profDrop)
+        }
+    }
+    // hiddeOpinionsCards()
 }
-
-
-
-
-
-
-
-
 
 

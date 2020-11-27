@@ -1,5 +1,4 @@
 
-
 let dropsDown = document.querySelectorAll(".dropDown");
 let header = document.getElementsByTagName("header");
 let dropClicked = null;
@@ -7,6 +6,7 @@ let dropClicked = null;
 
 /* Desplegar DropDown Options*/
 let seeOptions = document.querySelectorAll(".seeDropDown");
+
 for (let seeOpt of seeOptions){
     let inptArchive= seeOpt.getElementsByTagName("input")[0].value
 
