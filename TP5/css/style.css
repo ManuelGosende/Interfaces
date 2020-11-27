@@ -784,7 +784,7 @@ a {
     }
 
     .episodeProfile, .podcastProfile, .songProfile, .diskProfile, .artistProfile, .contListaDesktop, .playlistProfile {
-        width: 80%;
+        width: 100%;
         /* width: 100%; */
         position: relative;
         /* position: absolute; */
