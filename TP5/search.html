@@ -9,79 +9,443 @@
 </head>
 <body>
     
-    <header>
-        <!-- Mobile -->
-        <div class="displayHoriz navSuperior sombraFuera">
-            <img src="logo-mobile.png" alt="">
-            <div>
-                <img src="Icons/help.png" alt="">
-            </div>
-        </div>
-        <nav class="displayHoriz sombraFuera">
-            <a href="home.html">
-                <div id="btnHome" class="displayHoriz sombraAdentro">
-                    <img src="Icons/home.png" alt="">
+<!-- ----------------------------------MOBILE------------------------------------------------->
+
+
+    <div class="displayVert mobile">
+        <header>
+            <div class="displayHoriz navSuperior sombraFuera">
+                <img src="logo-mobile.png" alt="">
+                <div>
+                    <img src="Icons/help.png" alt="">
                 </div>
-            </a>
-            <a href="search.html">
-                <div id="btnSearch" class="displayHoriz sombraAdentro">
+            </div>
+            <nav class="displayHoriz sombraFuera">
+                <a href="home.html">
+                    <div id="btnHome" class="displayHoriz sombraAdentro">
+                        <img src="Icons/home.png" alt="">
+                    </div>
+                </a>
+                <a href="search.html">
+                    <div id="btnSearch" class="displayHoriz sombraAdentro">
+                        <img src="Icons/search.png" alt="">
+                    </div>
+                </a>
+                <a href="user.html">
+                    <div id="btnUser" class="displayHoriz sombraAdentro">
+                        <img src="Icons/user.png" alt="">
+                    </div>
+                </a>
+            </nav>
+        </header>
+        
+        <div class="space"></div>
+        
+        <button class="buttonSearch">
+            <a href="searchFilter.html">
+                <div class="displayBetween">
+                    <p class="colorNegro">Search</p>
                     <img src="Icons/search.png" alt="">
                 </div>
-            </a>
-            <a href="user.html">
-                <div id="btnUser" class="displayHoriz sombraAdentro">
-                    <img src="Icons/user.png" alt="">
-                </div>
-            </a>
-        </nav>
-    </header>
+            </a> 
+        </button>  
+             
+        <div class="contenedorBusqRecientes">
+            <h3 class="colorGris">Búsquedas recientes</h3>
+            <p class="colorBlanco">Oktubre</p>
+            <p class="colorBlanco">Los Redondos</p>
+            <p class="colorBlanco">Últimos Cartuchos</p>
+        </div>
     
-    <div class="space"></div>
+        <!-- REPRODUCTOR -->
     
-    <button class="buttonSearch">
-        <a href="searchFilter.html">
-            <div class="displayBetween">
-                <p class="colorNegro">Search</p>
-                <img src="Icons/search.png" alt="">
+        <div class="reproductor backNegro">
+            <div class="displayVert">
+                <img src="Icons/barra-play.png" alt="">
             </div>
-        </a> 
-    </button>  
-         
-    <div class="contenedorBusqRecientes">
-        <h3 class="colorGris">Búsquedas recientes</h3>
-        <p class="colorBlanco">Oktubre</p>
-        <p class="colorBlanco">Los Redondos</p>
-        <p class="colorBlanco">Últimos Cartuchos</p>
+            <div class="displayHoriz empty">
+                <a href="">
+                    <div class="backGris infoReproductor">
+                        <p class="colorVerde">Artista</p>
+                        <p class="colorBlanco subText">Archivo de audio</p>
+                    </div>
+                </a>
+                <div>
+                    <img src="Icons/play-rep.png" alt="">
+                </div>
+                <div class="displayBetween contActionsRepr">
+                    <div>
+                        <img src="Icons/favourite.png" alt="">
+                    </div>
+                    <div>
+                        <img src="Icons/volume.png" alt="">
+                    </div>
+                    <div>
+                        <img src="Icons/desplegable.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- REPRODUCTOR -->
 
-    <div class="reproductor backNegro">
+
+<!-- ----------------------------------DESKTOP------------------------------------------------->
+
+
+
+    <div class="desktop">
         <div class="displayVert">
-            <img src="Icons/barra-play.png" alt="">
-        </div>
-        <div class="displayHoriz empty">
-            <a href="">
-                <div class="backGris infoReproductor">
-                    <p class="colorVerde">Artista</p>
-                    <p class="colorBlanco subText">Archivo de audio</p>
+            <header>
+                <div class="displayBetween contenedorHeader sombraFuera">
+                    <img src="logo-original.png" alt="">
+                    <div class="displayHoriz">
+                        <img src="Icons/home.png" alt="">    
+                        <p class="colorBlanco">Inicio</p>    
+                    </div>
+                    <button class="buttonSearch backGris">
+                        <a href="searchFilter.html">
+                            <div class="displayBetween">
+                                <p class="colorBlanco">Search</p>
+                                <img src="Icons/search.png" alt="">
+                            </div>
+                        </a> 
+                    </button> 
+                    <div>
+                        <img src="Icons/config.png" alt="">
+                    </div>
                 </div>
-            </a>
-            <div>
-                <img src="Icons/play-rep.png" alt="">
+            </header>
+            <div class="space"></div>
+            <div class="displayUserAndHome">
+                <!-- LADO IZQUIERDO -->
+                <div class="displayVert contenedorUser backNegro">
+                    <div class="displayBetween sombraFuera infoUser">
+                        <div class="displayHoriz">
+                            <img src="Icons/userpick.png" alt="">
+                            <div class="nombreUser">
+                                <p class="colorBlanco">Juan</p>
+                                <p class="colorVerde">González</p>
+                            </div>
+                        </div>
+                        <div class="displayVert">
+                            <p class="colorGris">Plan Actual</p>
+                            <p class="colorBlanco planActual">Bronce</p>
+                        </div>
+                    </div>
+                    <div class="contenedorTitulos">
+                        <h3 class="colorVerde">Playlist</h3>
+                    </div>
+                    <button class="buttonLog colorBlanco backGris">
+                        <div class="displayHoriz">
+                            <img src="Icons/add.png" alt="">
+                            Crear Playlist
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorLista sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">La jodita</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">45 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Con amigos!</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">91 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">¡Buen día!</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">25 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Estudio</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">70 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <svg width="200" height="2"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
+        
+                    <h2 class="colorBlanco">Biblioteca de favoritos</h2>
+        
+                    <button class="buttonCollections colorVerde backNegro sombraFuera">
+                        <div class="displayHoriz">
+                            Canciones
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorListaUser sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">La cumbita - Tambo tambo</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">3:17</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Rompe - Daddy Yankee</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">2:33</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Jurabas tú - Jambao</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">3:40</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Swing - Peralta</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">3:28</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buttonCollections colorVerde backNegro sombraFuera">
+                        <div class="displayHoriz">
+                            Episodios
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorListaUser sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">La Vendetta - Cuentos</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">31:17</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">El retrato - Luisito</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">13:19</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">La mañana - Eugenia Sils</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">19:21</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buttonCollections colorVerde backNegro sombraFuera">
+                        <div class="displayHoriz">
+                            Discos
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorListaUser sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Oktubre - Los Redondos</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">10 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Gardeliando - Los Gardelitos</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">13 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <svg width="200" height="2"><line x1="0" y1="0" x2="300" y2="0" style="stroke:white;stroke-width:2" /></svg>
+        
+                    <h2 class="colorBlanco">Colecciones <br> que sigues</h2>
+        
+                    <button class="buttonCollections colorVerde backNegro sombraFuera">
+                        <div class="displayHoriz">
+                            Artistas
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorListaUser sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Los Gardelitos</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">5 discos</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Led Zeppelin</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">7 discos</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buttonCollections colorVerde backNegro sombraFuera">
+                        <div class="displayHoriz">
+                            Podcast
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorListaUser sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Últimos Cartuchos</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">31 epi...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Cuentos e historias</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">17 epi...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buttonCollections colorVerde backNegro sombraFuera">
+                        <div class="displayHoriz">
+                            Playlist
+                        </div>
+                    </button>
+                    <div class="displayVert contenedorListaUser sombraAdentro">
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">La buenaa - Ariel</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">31 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Moments - Julia</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">170 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                        <div class="displayHoriz audio"> 
+                            <div class="displayHoriz subAudio">
+                                <img src="Icons/play.png" alt="" class="playAudioItem">
+                                <p class="colorBlanco">Relax! - Kike</p>
+                            </div>
+                            <div class="displayHoriz subAudio">
+                                <p class="colorBlanco">123 can...</p>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="spaceHoriz"></div>
+        
+                <!-- LADO DERECHO -->
+        
+                <div class="displayVert contenedorHome">
+                    <div class="contenedorTitulos">
+                        <h2 class="colorBlanco">Búsquedas recientes</h2>
+                    </div>
+                    <div></div>
+                </div>
+
+                <!-- reproductor -->
+        
+                <div class="reproductorDesktop displayVert backNegro">
+                    <img src="Icons/barradesktop.png" alt="">
+                    <div class="displayHoriz empty">
+                        <a href="">
+                            <div class="backGris infoReproductor">
+                                <p class="colorVerde">Artista</p>
+                                <p class="colorBlanco subText">Archivo de audio</p>
+                            </div>
+                        </a>
+                        <div>
+                            <img src="Icons/play-rep.png" alt="">
+                        </div>
+                        <div class="displayBetween contActionsRepr">
+                            <div>
+                                <img src="Icons/favourite.png" alt="">
+                            </div>
+                            <div>
+                                <button class="buttonOpiRep colorBlanco backGris">
+                                    Opiná
+                                </button>
+                            </div>   
+                            <div>
+                                <img src="Icons/volumedesktop.png" alt="">
+                            </div>
+                            <div>
+                                <img src="Icons/desplegable.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="displayBetween contActionsRepr">
-                <div>
-                    <img src="Icons/favourite.png" alt="">
-                </div>
-                <div>
-                    <img src="Icons/volume.png" alt="">
-                </div>
-                <div>
-                    <img src="Icons/desplegable.png" alt="">
-                </div>
-            </div>
         </div>
+
+        <script src="js/homeDesktop.js"></script>
     </div>
 
     <script src="js/search.js"></script>

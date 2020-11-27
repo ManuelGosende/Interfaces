@@ -107,63 +107,50 @@ function showOpiniosOnScroll(e,windowPage){
     
         let typeDrop=windowPage.getAttribute("data-value")
             
-        if( typeDrop=="artist"){
+        if( typeDrop=="artist"||typeDrop=="playlist"){
             let indexStart=150
-
-            if(y_StartPos>=indexStart&& y_StartPos<indexStart+100){
-                coments[0].classList.add("slide-rotate-hor-top")
-                coments[0].classList.remove("hidden")
-            }
-            if(y_StartPos>=indexStart*2&&y_StartPos<indexStart*2+100){
-                coments[1].classList.add("slide-rotate-hor-top")
-                coments[1].classList.remove("hidden")
-                // console.log(e.scrollY)
-            }
-            if(y_StartPos>=indexStart*3&&y_StartPos<indexStart*3+100){
-                coments[2].classList.add("slide-rotate-hor-top")
-                coments[2].classList.remove("hidden")
-            }
-            if(y_StartPos>=indexStart+300){
-                verMas.classList.add("slide-rotate-hor-top")
-                verMas.classList.remove("hidden")
-            }
-        }else if(typeDrop=="podcast" || typeDrop=="episode" ){//episode
+            add3dOptions(indexStart,y_StartPos,coments,verMas)
+        }else if(typeDrop=="podcast" || typeDrop=="episode" ){
             let indexStart=201
-
-            if(y_StartPos>=indexStart&& y_StartPos <=indexStart+100){
-                coments[0].classList.add("slide-rotate-hor-top")
-            coments[0].classList.remove("hidden")
-            }
-            if(y_StartPos>=indexStart*2&&y_StartPos<indexStart*2+100){
-                coments[1].classList.add("slide-rotate-hor-top")
-                coments[1].classList.remove("hidden")
-                // console.log(e.scrollY)
-            }
-            if(y_StartPos>=indexStart*3&&y_StartPos<indexStart*3+100){
-                coments[2].classList.add("slide-rotate-hor-top")
-                coments[2].classList.remove("hidden")
-            }
-            if(y_StartPos>=indexStart*3+50){
-                verMas.classList.add("slide-rotate-hor-top")
-                verMas.classList.remove("hidden")
-            }
-
-        }else if(typeDrop=="playlist"){
-            //176
+            add3dOptions(indexStart,y_StartPos,coments,verMas) 
         }else if(typeDrop=="ownPlaylist"){
-            //140    
+            let indexStart=140
+            add3dOptions(indexStart,y_StartPos,coments,verMas)       
         }else if(typeDrop=="song"){
-            //300
-        }else if(typeDrop=="episode"){//disk
-            //240       
-        }else if(typeDrop=="disk"){
-            //240
-        }       
+            let indexStart=225
+            add3dOptions(indexStart,y_StartPos,coments,verMas)       
+        }else if(typeDrop=="disk"){//disk
+            let indexStart=203
+            add3dOptions(indexStart,y_StartPos,coments,verMas)       
+        }
     }else{
-
+        let indexProfiles=125
+        add3dOptions(indexProfiles,y_StartPos,coments,verMas)
     }
 
 }
+
+function add3dOptions(indexStart,y_StartPos,coments,verMas){
+    if(y_StartPos>=indexStart&& y_StartPos<indexStart+100){
+        coments[0].classList.add("slide-rotate-hor-top")
+        coments[0].classList.remove("hidden")
+    }
+    if(y_StartPos>=indexStart*2&&y_StartPos<indexStart*2+100){
+        coments[1].classList.add("slide-rotate-hor-top")
+        coments[1].classList.remove("hidden")
+        // console.log(e.scrollY)
+    }
+    if(y_StartPos>=indexStart*3&&y_StartPos<indexStart*3+100){
+        coments[2].classList.add("slide-rotate-hor-top")
+        coments[2].classList.remove("hidden")
+    }
+    if(y_StartPos>=indexStart*3+50){
+        verMas.classList.add("slide-rotate-hor-top")
+        verMas.classList.remove("hidden")
+    }
+
+}
+
 
 //AGREGAR AL INDIO Y UN EPISODIO DE PODCAST AL HOME
 
